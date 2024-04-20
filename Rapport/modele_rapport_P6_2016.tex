@@ -81,7 +81,7 @@ bookmarksopen=true}
 \fancypagestyle{courant}{
 	\fancyhf{}
     \setlength{\headheight}{27pt}
-    \fancyhead[L]{\raisebox{-2mm}{\includegraphics[width=30mm]{images/insalogo2.png}}}
+    \fancyhead[L]{\raisebox{-2mm}{\includegraphics[width=30mm]{Images/Logo INSA.png}}}
 \fancyhead[C]{}
 \fancyhead[R]{\color{INSA_GRIS}\thepage}%\scshape\leftmark}
 \fancyfoot[L]{\insertrefproj}
@@ -147,41 +147,47 @@ bookmarksopen=true}
 
 % Page de présentation
 
-\pagenumbering{Alph}
-\thispagestyle{empty}
+\pagenumbering{Alph} % Numérotation
+\thispagestyle{empty} % Type page
 
 \vspace{4cm}
 
 \begin{picture}(0,0) % Hauteur , Largeur
-%\put(-74,-776){\includegraphics[width=210mm]{images/couverture.png}}
-	\put(-44,-465){\includegraphics[scale=1]{images/imageGarde.png}}% Illustration à adapter
-%\put(-74,-776){\includegraphics[width=210mm]{images/couverture.png}}
-  \put(0,-20){\includegraphics[width=0.4\textwidth]{images/insalogo2.png}}
-	\put(240,0){\color{INSA_GM}{\begin{minipage}{12cm}\centering \Large \textbf{Projet de Physique P6}\\\textbf{STPI/P6/20xx-\#\#\#}\end{minipage}}}
-\put(-20,-150){\color{INSA_BLEU}{\begin{minipage}{\textwidth}\centering \Huge \textbf{Intitulé du projet}\end{minipage}}}
+	
+\put(80,-465){\includegraphics[scale=1]{images/Image Garde.png}} % Image de garde centrée horizontalement
+\put(0,-20){\includegraphics[width=0.4\textwidth]{images/Logo INSA.png}} % Logo INSA haut-gauche
+\put(240,0){\color{INSA_GM}{\begin{minipage}{12cm}\centering \Large % Caractéristiques projet haut droit
+	\textbf{Projet de Physique P6} \\ 
+	\textbf{STPI/P6/2024-\#\#\#}\end{minipage}}}
+\put(-20,-150){\color{INSA_BLEU}{\begin{minipage}{\textwidth}\centering \Huge % Titre princpal rapport
+	\textbf{Modélisation de l'impact des gaz à effet de serre}\end{minipage}}}
 
 \newsavebox{\noms}
 \savebox{\noms}(300, 300)[tl]{
-\put(0,98){\color{INSA_GRIS}{\begin{minipage}{6cm} \textbf{Étudiants :} \end{minipage}}}
-\put(0,60){\color{INSA_GRIS}{\begin{minipage}{6cm} Prénom1 NOM1 \\ Prénom3 NOM3 \\ Prénom5 NOM5 \\Prénom7 NOM7 \end{minipage}}}
-	\put(185,60){\color{INSA_GRIS}{\begin{minipage}{6cm} Prénom2 NOM2 \\ Prénom4 NOM4 \\ Prénom6 NOM6 \\ Prénom8 NOM8 \end{minipage}}}
-	%%\put(-74,-680){\color{INSA_GRIS}\begin{minipage}{6.8cm} \Large \raggedleft Enseignant responsable \\ Prénom NOM
+\put(0,98){\color{INSA_GRIS}{\begin{minipage}{6cm} 
+	\textbf{Étudiants :} \end{minipage}}} % Étudiants par ordre alphabétique de prénom
+\put(0,60){\color{INSA_GRIS}{\begin{minipage}{6cm}
+	Anouk PETIGAS  \\ Clara MÉLINE \\ Romane LANÈRES \end{minipage}}}
+\put(185,60){\color{INSA_GRIS}{\begin{minipage}{6cm}
+	Arthur SARRAU \\ Nina ZEDDOUN \\ Tom PHILIPPE \end{minipage}}}
 
-    \put(0,){\color{INSA_GRIS}\begin{minipage}{9cm}   \textbf{Enseignant-responsable du projet :}\\ Prénom NOM
-	%\put(-74,-680){\color{INSA_GRIS}\begin{minipage}{6.8cm} \Large \raggedleft Enseignant responsable \\ Prénom NOM
- \end{minipage}}
-}
+\put(0,){\color{INSA_GRIS}\begin{minipage}{9cm}   
+	\textbf{Enseignant-responsable du projet :}\\ Samuel PAILLAT \end{minipage}}}
 
 \put(100,-850){\usebox{\noms}}
 
 \end{picture}
-%\raggedleft
-%%%%%%%% Fin de la page de Présentation %%%%%%
+
+% Page complètement vierge
+
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \thispagestyle{empty}
-\null %rempli la page de rien
+\null
+
+% Page descriptions cractéristiques principales projet
+
 \newpage
 \pagestyle{special}
 
@@ -270,7 +276,7 @@ des gaz à effet de serre dans le système atmosphérique.
 \centering
 \vspace{-0.6cm} 
 %\includegraphics[width=0.62\linewidth]{PistonHeatReservoir.pdf}
-\includegraphics[width=43mm]{images/insalogo2.png}\captionof{figure}[LogoINSA]{Super Logo}
+\includegraphics[width=43mm]{Images/Logo INSA.png}\captionof{figure}[LogoINSA]{Super Logo}
 %\vspace{-2.cm} 
 \end{figure}
 

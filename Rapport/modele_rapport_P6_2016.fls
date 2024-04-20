@@ -1,6 +1,6 @@
-PWD c:\Users\sarra\OneDrive\Documents\INSA\P6\Rapport projet
+PWD c:\Users\sarra\OneDrive\Documents\INSA\P6\Rapport
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\sarra\OneDrive\Documents\INSA\P6\Rapport projet\modele_rapport_P6_2016.tex
+INPUT c:\Users\sarra\OneDrive\Documents\INSA\P6\Rapport\modele_rapport_P6_2016.tex
 OUTPUT modele_rapport_P6_2016.log
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\report.cls
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\report.cls
@@ -184,20 +184,20 @@ INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\images\imageGarde.png
-INPUT .\images\imageGarde.png
-INPUT .\images\imageGarde.png
-INPUT .\images\imageGarde.png
-INPUT .\images\imageGarde.png
-INPUT .\images\imageGarde.png
-INPUT .\images\imageGarde.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Image Garde.png
+INPUT .\images\Logo INSA.png
+INPUT .\images\Logo INSA.png
+INPUT .\images\Logo INSA.png
+INPUT .\images\Logo INSA.png
+INPUT .\images\Logo INSA.png
+INPUT .\images\Logo INSA.png
+INPUT .\images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1728.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx1728.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -228,73 +228,76 @@ INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx248
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\eccc1200.tfm
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
 INPUT .\modele_rapport_P6_2016.toc
 INPUT .\modele_rapport_P6_2016.toc
 INPUT modele_rapport_P6_2016.toc
 OUTPUT modele_rapport_P6_2016.toc
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ectt1200.tfm
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
-INPUT .\images\insalogo2.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
 INPUT modele_rapport_P6_2016.aux
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
