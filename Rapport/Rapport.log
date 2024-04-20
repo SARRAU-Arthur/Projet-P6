@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  20 APR 2024 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  20 APR 2024 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/sarra/OneDrive/Documents/INSA/P6/Rapport/modele_rapport_P6_2016.tex
-(c:/Users/sarra/OneDrive/Documents/INSA/P6/Rapport/modele_rapport_P6_2016.tex
+**c:/Users/sarra/OneDrive/Documents/INSA/P6/Rapport/Rapport.tex
+(c:/Users/sarra/OneDrive/Documents/INSA/P6/Rapport/Rapport.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/base\report.cls
@@ -442,8 +442,8 @@ Package hyperref Info: Option `bookmarksopen' set `true' on input line 59.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
 \l__pdf_internal_box=\box58
-) (modele_rapport_P6_2016.aux)
-\openout1 = `modele_rapport_P6_2016.aux'.
+) (Rapport.aux)
+\openout1 = `Rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
 LaTeX Font Info:    ... okay on input line 146.
@@ -584,9 +584,9 @@ File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
 Package pdftex.def Info: Images/Logo INSA.png  used on input line 234.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
-[2 <./Images/Logo INSA.png>] (modele_rapport_P6_2016.toc)
+[2 <./Images/Logo INSA.png>] (Rapport.toc)
 \tf@toc=\write3
-\openout3 = `modele_rapport_P6_2016.toc'.
+\openout3 = `Rapport.toc'.
 
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
@@ -701,7 +701,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 338.
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(modele_rapport_P6_2016.aux)
+(Rapport.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -709,14 +709,14 @@ L3 programming layer <2024-01-22>
  ) 
 Here is how much of TeX's memory you used:
  14741 strings out of 474542
- 238167 string characters out of 5744447
+ 237897 string characters out of 5744447
  1930978 words of memory out of 5000000
  36709 multiletter control sequences out of 15000+600000
  570560 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,16n,93p,1041b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,16n,93p,1026b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on modele_rapport_P6_2016.pdf (15 pages, 401849 bytes).
+Output written on Rapport.pdf (15 pages, 401849 bytes).
 PDF statistics:
  495 PDF objects out of 1000 (max. 8388607)
  37 named destinations out of 1000 (max. 500000)
