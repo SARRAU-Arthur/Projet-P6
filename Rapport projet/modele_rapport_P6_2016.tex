@@ -15,6 +15,9 @@
 \usepackage{indentfirst}
 \usepackage{underscore}
 \usepackage{nopageno} % Supprimer la pagination d'une page
+\usepackage{float, caption}	% Positionnement et légende des images
+\usepackage{fancyhdr}		% Marges
+\usepackage{calc,ifthen,xspace}	% Redéfinition des espaces et distances
 
 % Paramètres mathématiques
 
@@ -28,17 +31,18 @@
 % Paramètres graphiques
 
 \usepackage{graphicx} % Inclusion images
+\usepackage{epic,eepic}		% Positionnement image de garde
+\usepackage{wrapfig}		% Images sur le coté dans le texte
 
-\usepackage{palatino}		% choix personnel de police
-\usepackage{hyperref}		%pour les liens croisés à travers le fichier .pdf
-\usepackage{fancyhdr}		%pour les marges
-\usepackage{float, caption}	%pour le positionnement et légende des images
-\usepackage{color}		%pour la couleur dans le code
-\usepackage{listings}		%pour mettre du code, plutôt en Annexe
-\usepackage{lastpage}		%pour les références aux pages
-\usepackage{epic,eepic}		%pour le positionnement de l'image de garde
-\usepackage{wrapfig}		%pour les images sur le coté dans le texte
-\usepackage{calc,ifthen,xspace}	%pour redéfinir les espaces et distances
+% Autres
+
+\usepackage{hyperref}		% Liens croisés fichier PDF
+\usepackage{color}		% Couleur codes informatiques
+\usepackage{lastpage}		% Références aux pages
+
+% Identation automatique
+
+\setlength{\parindent}{0pt} % Supression des alinéas
 
 % Paramètres hyperliens
 
@@ -65,12 +69,12 @@ bookmarksopen=true}
 \definecolor{INSA_GRIS}{cmyk}{0.7,0.6,0.5,0.3}
 \definecolor{INSA_BLEU}{cmyk}{1,0.9,0.1,0}
 
-%
+% 
 
 \newcommand{\insertrefproj}[1]{}
 \newcommand{\refproj}[1]{\renewcommand{\insertrefproj}{\textbf{\color{INSA_GRIS}#1}}}
 
-% 
+% Style de page
 
 \pagestyle{fancy}
 
@@ -95,11 +99,13 @@ bookmarksopen=true}
 %  \fancyfoot[C]{}
 \renewcommand{\footrulewidth}{0pt}
 }
-% Redefine the plain page style (for chapters and toc)
+
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \pagestyle{courant}
 }
+
+% 
 
 \newcommand{\Scilab}{
 	\lstset{
@@ -128,9 +134,11 @@ bookmarksopen=true}
 	}
 }
 
+% Paramètres projet
+
 \title{Projet de P6}
 \refproj{STPI/P6/2024 - 39}
-\author{Martin ROSALIE}
+\author{}
 \date{}
 
 %%% Début d'édition du document
@@ -175,27 +183,35 @@ bookmarksopen=true}
 \newpage
 \pagestyle{special}
 
+\textbf{Date de remise du rapport :} XX/XX/20XX \\
 
+\textbf{Référence du projet:} STPI/P6/20 – \#\#\# \\
 
-	\textbf{Date de remise du rapport :} XX/XX/20XX\\
+\textbf{Intitulé du projet :} Modélisation de l'impact des gaz à effet de serre \\
 
+\textbf{Type de projet :} Modélisation numérique \\
 
+\textbf{Objectifs du projet :} \\ 
 
-	\textbf{Référence du projet:} STPI/P6/20xx – \#\#\# \\
+Ce projet a pour vocation de développer un modèle numérique 
+décrivant les mécanismes de régulation thermique de 
+l'atmosphère terrestre. Premièrement, nous allons réaliser
+une étude à travers quelques calculs en ordre de grandeurs afin
+d'identifier les différents paramètres d'influence de notre modèle.
+L'objectif est de mettre au point un modèle qui soit modulable
+en termes de paramètres et de complexité. Cette dernière est 
+ajustée par le traitement de différents gaz à effet de serre 
+et de divers modèles de température et de pression. 
+L'ensemble des modélisations numériques aspire à proposer 
+une version améliorée du travail réalisé par le 
+vulgarisateur scientifique David Louapre. À travers ce projet, 
+nous cherchons à reproduire le plus fidèlement possible le 
+phénomène d'équilibre thermique de la Terre en considérant 
+les flux principaux en jeux que sont le rayonnement solaire 
+et la géothermie.
+ \\
 
-	\textbf{Intitulé du projet :} x \\
-
-	\textbf{Type de projet :} \textit{(expérimental, simulation, veille technologique...)} \\
-
-	\textbf{Objectifs du projet :} \textit{($10$ lignes maximum)}\\ 
-
-	xxx\\
-
-
-\textbf{Mots-clefs du projet :} \textit{($4$ maximum)} \\ 
-
-
-	\textit{Si existant} \textbf{Numéro de cahier de laboratoire associé :} XXX
+\textbf{Mots-clefs du projet :} Transfert thermique, Corps noir, Effet de serre, Bilan radiatif \\ 
 
 \vfill
 %	\textbf{Remerciements :}\\
@@ -224,7 +240,9 @@ bookmarksopen=true}
 \newpage
 	\chapter*{Introduction}				% garde la même mise en page qu'un chapitre mais ne le numérote pas
 	\addcontentsline{toc}{chapter}{Introduction}	% permet de l'avoir dans le sommaire
-
+	Ce dernier se base principalement 
+	sur la physique des transferts thermiques, mais fait également
+	appel à des compétences en informatique et mathématiques. 
 	\begin{itemize}
 	\item Contexte du travail
 	\item Objectifs à atteindre pour le projet
@@ -307,9 +325,6 @@ Les annexes ne sont pas obligatoire, les annexes présentées ici le sont à tit
 	\chapter{Propositions de sujets de projets \\ (en lien ou pas avec le projet réalisé)}
 	\chapter{Mettre du code en annexe}
 
-	Voici comment mettre du code source en annexe. Attention ! Les accents et caractères spéciaux ne sont pas pris en compte pour l'insertion de code.\\
-
-	\Scilab
-	\lstinputlisting{code/code.sce}
+	Voici comment mettre du code source en annexe. Attention ! Les accents et caractères spéciaux ne sont pas pris en compte pour l'insertion de code.
 
 \end{document}
