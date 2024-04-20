@@ -1,18 +1,35 @@
-% Définition paramètres documents
+%%% Définition paramètres documents
 
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 12pt]{report} % Initilisation document
 
-\usepackage[utf8]{inputenc} 	%package pour le français sous ubuntu : à vous d'adapter
-\usepackage[french]{babel}	%pour le français
-\usepackage[T1]{fontenc}	%pour les polices
-\usepackage{amsmath}		%pour des maths
-\usepackage{amsfonts}		%pour des maths
-\usepackage{amssymb}		%pour des maths
-\usepackage{graphicx}		%pour les inclusions de graphique
-\usepackage{palatino}		%choix personnel de police
+% Paramètres texte
+
+\usepackage[utf8]{inputenc} 	% Français avec caractères spéciaux
+\usepackage[french]{babel}	% Français pour la biographie
+\usepackage[T1]{fontenc} % Polices d'écriture
+
+% Mise en page
+\usepackage{bookmark}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % Dimensions marges
+\usepackage{indentfirst}
+\usepackage{underscore}
+\usepackage{nopageno}
+
+% Paramètres mathématiques
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Paramètres graphiques
+
+\usepackage{graphicx} % Inclusion images
+
+\usepackage{palatino}		% choix personnel de police
 \usepackage{lscape}		%si vous voulez des images en paysage
-\usepackage{esint}		%pour les triples intégrales
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % choix personnel de marges
 \usepackage{hyperref}		%pour les liens croisés à travers le fichier .pdf
 \usepackage{fancyhdr}		%pour les marges
 \usepackage{float, caption}	%pour le positionnement et légende des images
@@ -25,9 +42,6 @@
 \usepackage{calc,ifthen,xspace}	%pour redéfinir les espaces et distances
 \pagestyle{fancy}
 
-
-
-
 \hypersetup{
 dvips,
 backref=true, %permet d'ajouter des liens dans...
@@ -39,11 +53,6 @@ urlcolor= blue, %couleur des hyperliens
 linkcolor= black, %couleur des liens internes
 bookmarks=blue, %créé des signets pour Acrobat
 bookmarksopen=true} 
-
-
-
-
-
 
 \definecolor{hellgelb}{rgb}{1,1,0.8} % couleur pour le code
 \definecolor{colKeys}{rgb}{0,0,1}
@@ -123,8 +132,12 @@ bookmarksopen=true}
 \author{Martin ROSALIE}
 \date{}
 
+%%% Début d'édition du document
+
 \begin{document}
-%%%%%%%%%%%% Page de Présentation %%%%%%%%%%%%%
+
+% Page de présentation
+
 \pagenumbering{Alph}
 \thispagestyle{empty}
 \vspace{4cm}
