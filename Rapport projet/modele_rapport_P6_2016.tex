@@ -9,11 +9,12 @@
 \usepackage[T1]{fontenc} % Polices d'écriture
 
 % Mise en page
+
 \usepackage{bookmark}
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry} % Dimensions marges
 \usepackage{indentfirst}
 \usepackage{underscore}
-\usepackage{nopageno}
+\usepackage{nopageno} % Supprimer la pagination d'une page
 
 % Paramètres mathématiques
 
@@ -29,50 +30,51 @@
 \usepackage{graphicx} % Inclusion images
 
 \usepackage{palatino}		% choix personnel de police
-\usepackage{lscape}		%si vous voulez des images en paysage
 \usepackage{hyperref}		%pour les liens croisés à travers le fichier .pdf
 \usepackage{fancyhdr}		%pour les marges
 \usepackage{float, caption}	%pour le positionnement et légende des images
-\usepackage{titlesec}		%pour redéfinir le titre des sections
 \usepackage{color}		%pour la couleur dans le code
 \usepackage{listings}		%pour mettre du code, plutôt en Annexe
 \usepackage{lastpage}		%pour les références aux pages
 \usepackage{epic,eepic}		%pour le positionnement de l'image de garde
 \usepackage{wrapfig}		%pour les images sur le coté dans le texte
 \usepackage{calc,ifthen,xspace}	%pour redéfinir les espaces et distances
-\pagestyle{fancy}
+
+% Paramètres hyperliens
 
 \hypersetup{
 dvips,
-backref=true, %permet d'ajouter des liens dans...
-pagebackref=true,%...les bibliographies
-hyperindex=true, %ajoute des liens dans les index.
-colorlinks=true, %colorise les liens
-breaklinks=true, %permet le retour à la ligne dans les liens trop longs
-urlcolor= blue, %couleur des hyperliens
-linkcolor= black, %couleur des liens internes
-bookmarks=blue, %créé des signets pour Acrobat
+backref=true,
+pagebackref=true, % Bibliographies
+hyperindex=true, % Index.
+colorlinks=true, % Couleur hyperliens
+breaklinks=true, % Retour à la ligne dans les hyperliens trop longs
+urlcolor= blue, % Couleur des hyperliens
+linkcolor= black, % Couleur des liens internes
+bookmarks=blue, % Signets pour Acrobat
 bookmarksopen=true} 
 
-\definecolor{hellgelb}{rgb}{1,1,0.8} % couleur pour le code
+% Paramètres couleurs
+
+\definecolor{hellgelb}{rgb}{1,1,0.8} % Codes et
 \definecolor{colKeys}{rgb}{0,0,1}
 \definecolor{colIdentifier}{rgb}{0,0,0}
 \definecolor{colComments}{rgb}{0,0.5,0}
 \definecolor{colString}{rgb}{0.62,0.12,0.94}
-\definecolor{INSA_GM}{cmyk}{0.6,0,0,0} % et la page de garde
+\definecolor{INSA_GM}{cmyk}{0.6,0,0,0} % Page de garde
 \definecolor{INSA_GRIS}{cmyk}{0.7,0.6,0.5,0.3}
 \definecolor{INSA_BLEU}{cmyk}{1,0.9,0.1,0}
 
-%\titleformat{\chapter}[display]%
-%	{}
-%	{}
-%	{0pt}
-%	{\Huge\bfseries \thechapter. \quad}
-%	{}
+%
+
 \newcommand{\insertrefproj}[1]{}
 \newcommand{\refproj}[1]{\renewcommand{\insertrefproj}{\textbf{\color{INSA_GRIS}#1}}}
 
-\fancypagestyle{courant}{%
+% 
+
+\pagestyle{fancy}
+
+\fancypagestyle{courant}{
 	\fancyhf{}
     \setlength{\headheight}{27pt}
     \fancyhead[L]{\raisebox{-2mm}{\includegraphics[width=30mm]{images/insalogo2.png}}}
@@ -98,7 +100,6 @@ bookmarksopen=true}
   \fancyhf{}%
   \pagestyle{courant}
 }
-
 
 \newcommand{\Scilab}{
 	\lstset{
@@ -128,7 +129,7 @@ bookmarksopen=true}
 }
 
 \title{Projet de P6}
-\refproj{STPI/P6/20xx - ****}  % Entrer ici la reference du projet
+\refproj{STPI/P6/2024 - 39}
 \author{Martin ROSALIE}
 \date{}
 

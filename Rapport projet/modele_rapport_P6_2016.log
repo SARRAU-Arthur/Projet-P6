@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  20 APR 2024 15:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  20 APR 2024 15:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -317,8 +317,6 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@width=\dimen173
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/psnfss\palatino.sty
 Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
-) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/graphics\lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip57
@@ -356,17 +354,6 @@ Package caption Info: french babel package is loaded.
 \c@continuedfloat=\count301
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
-) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/titlesec\titlesec.sty
-Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box55
-\beforetitleunit=\skip66
-\aftertitleunit=\skip67
-\ttl@plus=\dimen182
-\ttl@minus=\dimen183
-\ttl@toksa=\toks35
-\titlewidth=\dimen184
-\titlewidthlast=\dimen185
-\titlewidthfirst=\dimen186
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/graphics\color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/graphics-cfg\color.cfg
@@ -375,22 +362,22 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/graphics\mathcolor.ltx)) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/listings\listings.sty
 \lst@mode=\count302
-\lst@gtempboxa=\box56
-\lst@token=\toks36
+\lst@gtempboxa=\box55
+\lst@token=\toks35
 \lst@length=\count303
-\lst@currlwidth=\dimen187
+\lst@currlwidth=\dimen182
 \lst@column=\count304
 \lst@pos=\count305
-\lst@lostspace=\dimen188
-\lst@width=\dimen189
+\lst@lostspace=\dimen183
+\lst@width=\dimen184
 \lst@newlines=\count306
 \lst@lineno=\count307
-\lst@maxwidth=\dimen190
+\lst@maxwidth=\dimen185
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 \c@lstnumber=\count308
 \lst@skipnumbers=\count309
-\lst@framebox=\box57
+\lst@framebox=\box56
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
@@ -407,17 +394,17 @@ Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \@@multicnt=\count311
 \d@lta=\count312
-\@delta=\dimen191
-\@@delta=\dimen192
+\@delta=\dimen186
+\@@delta=\dimen187
 \@gridcnt=\count313
 \@joinkind=\count314
-\@dotgap=\dimen193
-\@ddotgap=\dimen194
+\@dotgap=\dimen188
+\@ddotgap=\dimen189
 \@x@diff=\count315
 \@y@diff=\count316
-\x@diff=\dimen195
-\y@diff=\dimen196
-\@dotbox=\box58
+\x@diff=\dimen190
+\y@diff=\dimen191
+\@dotbox=\box57
 \num@segments=\count317
 \num@segmentsi=\count318
 \@datafile=\read3
@@ -425,28 +412,28 @@ Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
 \@gphlinewidth=\count319
 \@eepictcnt=\count320
-\@tempdimc=\dimen197
-\maxovaldiam=\dimen198
-\@filltype=\box59
+\@tempdimc=\dimen192
+\maxovaldiam=\dimen193
+\@filltype=\box58
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen199
-\WF@size=\dimen256
+\wrapoverhang=\dimen194
+\WF@size=\dimen195
 \c@WF@wrappedlines=\count321
-\WF@box=\box60
-\WF@everypar=\toks37
+\WF@box=\box59
+\WF@everypar=\toks36
 Package: wrapfig 2003/01/31  v 3.6
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/tools\calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count322
 \calc@Bcount=\count323
-\calc@Adimen=\dimen257
-\calc@Bdimen=\dimen258
-\calc@Askip=\skip68
-\calc@Bskip=\skip69
+\calc@Adimen=\dimen196
+\calc@Bdimen=\dimen197
+\calc@Askip=\skip66
+\calc@Bskip=\skip67
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count324
-\calc@Cskip=\skip70
+\calc@Cskip=\skip68
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/tools\xspace.sty
@@ -475,37 +462,37 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 (hyperref)                setting the option has no effect on input line 55.
 
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 55.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 137.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 138.
 (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/psnfss\t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
-\l__pdf_internal_box=\box61
+\l__pdf_internal_box=\box60
 ) (modele_rapport_P6_2016.aux)
 \openout1 = `modele_rapport_P6_2016.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Info: Redefining \degres on input line 137.
-LaTeX Info: Redefining \up on input line 137.
-Package hyperref Info: Link coloring ON on input line 137.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Info: Redefining \degres on input line 138.
+LaTeX Info: Redefining \up on input line 138.
+Package hyperref Info: Link coloring ON on input line 138.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -544,16 +531,16 @@ Package hyperref Info: Link coloring ON on input line 137.
 (C:\Users\sarra\Downloads\Applications\MikTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count326
-\scratchdimen=\dimen259
-\scratchbox=\box62
+\scratchdimen=\dimen198
+\scratchbox=\box61
 \nofMPsegments=\count327
 \nofMParguments=\count328
-\everyMPshowfont=\toks38
+\everyMPshowfont=\toks37
 \MPscratchCnt=\count329
-\MPscratchDim=\dimen260
+\MPscratchDim=\dimen199
 \MPnumerator=\count330
 \makeMPintoPDFobject=\count331
-\everyMPtoPDFconversion=\toks39
+\everyMPtoPDFconversion=\toks38
 ) (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -568,62 +555,62 @@ Package caption Info: End \AtBeginDocument code.
 <images/imageGarde.png, id=3, 513.92pt x 321.2pt>
 File: images/imageGarde.png Graphic file (type png)
 <use images/imageGarde.png>
-Package pdftex.def Info: images/imageGarde.png  used on input line 146.
+Package pdftex.def Info: images/imageGarde.png  used on input line 147.
 (pdftex.def)             Requested size: 513.91873pt x 321.19922pt.
 <images/insalogo2.png, id=5, 656.2116pt x 171.2799pt>
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 148.
+Package pdftex.def Info: images/insalogo2.png  used on input line 149.
 (pdftex.def)             Requested size: 193.47578pt x 50.49838pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 149.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 150.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 149.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 150.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\noms=\box63
+\noms=\box62
  [1
 
 {C:/Users/sarra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/sarra/Downloads/Applications/MikTeX/fonts/enc/dvips/base/8r.enc} <./images/imageGarde.png> <./images/insalogo2.png>] [1]
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 209.
+Package pdftex.def Info: images/insalogo2.png  used on input line 210.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [2] (modele_rapport_P6_2016.toc)
 \tf@toc=\write3
@@ -631,21 +618,21 @@ Package pdftex.def Info: images/insalogo2.png  used on input line 209.
 
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 215.
+Package pdftex.def Info: images/insalogo2.png  used on input line 216.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [3
 
 ]
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 223.
+Package pdftex.def Info: images/insalogo2.png  used on input line 224.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [4
 
 ]
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 232.
+Package pdftex.def Info: images/insalogo2.png  used on input line 233.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [5
 
@@ -653,7 +640,7 @@ Package pdftex.def Info: images/insalogo2.png  used on input line 232.
 Chapitre 1.
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 239.
+Package pdftex.def Info: images/insalogo2.png  used on input line 240.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [6
 
@@ -661,34 +648,34 @@ Package pdftex.def Info: images/insalogo2.png  used on input line 239.
 Chapitre 2.
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 252.
+Package pdftex.def Info: images/insalogo2.png  used on input line 253.
 (pdftex.def)             Requested size: 122.34685pt x 31.93195pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 270.
+Package pdftex.def Info: images/insalogo2.png  used on input line 271.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [7
 
 ]
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 278.
+Package pdftex.def Info: images/insalogo2.png  used on input line 279.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [8
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 294.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 295.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 301.
+Package pdftex.def Info: images/insalogo2.png  used on input line 302.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [9
 
@@ -696,7 +683,7 @@ Package pdftex.def Info: images/insalogo2.png  used on input line 301.
 Annexe A.
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 304.
+Package pdftex.def Info: images/insalogo2.png  used on input line 305.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [10
 
@@ -704,24 +691,12 @@ Package pdftex.def Info: images/insalogo2.png  used on input line 304.
 Annexe B.
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 305.
+Package pdftex.def Info: images/insalogo2.png  used on input line 306.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [11
 
 ]
 Annexe C.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 305.
-
-File: images/insalogo2.png Graphic file (type png)
-<use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 306.
-(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
-[12
-
-]
-Annexe D.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 306.
@@ -730,23 +705,35 @@ File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
 Package pdftex.def Info: images/insalogo2.png  used on input line 307.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
+[12
+
+]
+Annexe D.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 307.
+
+File: images/insalogo2.png Graphic file (type png)
+<use images/insalogo2.png>
+Package pdftex.def Info: images/insalogo2.png  used on input line 308.
+(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [13
 
 ]
 Annexe E.
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 312.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 313.
  (code/code.sce)
 File: images/insalogo2.png Graphic file (type png)
 <use images/insalogo2.png>
-Package pdftex.def Info: images/insalogo2.png  used on input line 314.
+Package pdftex.def Info: images/insalogo2.png  used on input line 315.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [14
 
@@ -759,17 +746,17 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17973 strings out of 474542
- 280045 string characters out of 5744447
+ 17656 strings out of 474542
+ 275483 string characters out of 5744447
  2041978 words of memory out of 5000000
- 39887 multiletter control sequences out of 15000+600000
+ 39575 multiletter control sequences out of 15000+600000
  582704 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,16n,93p,1050b,2327s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on modele_rapport_P6_2016.pdf (15 pages, 403105 bytes).
+Output written on modele_rapport_P6_2016.pdf (15 pages, 403055 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
