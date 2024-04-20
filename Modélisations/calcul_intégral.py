@@ -25,11 +25,16 @@ T = T_0
 
 # Déclarations de fonctions
 
-def intégrande_luminance_corps_noir (x, T):
+def chemin_acces (langue, lettre, extension):
+    """ Raccourci pour aller chercher le fichier au format choisi 
+    dans un dossier potentiellement différent de l'actuel """
+    return f'../{langue}/{lettre}.{extension}'
+
+def intégrande_luminance_corps_noir (lambda_, T):
     """ Renvoie la fonction de luminance d'un corps noir de température T 
-    et en fonction de la longueur d'onde x """
-    term_1 = np.pi * (C_1 * (10 **6) ** 4) / x ** 5
-    term_2 = np.exp(C_2 * (10 ** 6) / (T * x)) - 1
+    et en fonction de la longueur d'onde lambda_ """
+    term_1 = np.pi * (C_1 * (10 **6) ** 4) / lambda_ ** 5
+    term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
     return term_1 / term_2
 
 def intégrande_luminance_corps_noir_discrétisation (longueur_onde, T):
@@ -109,7 +114,7 @@ def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
 system('cls' if name == 'nt' else 'clear')
 
 """ Chargement données et grandeurs """
-longueur_onde, taux_CO2 = chargement_données('CO2 Absorption NIST.csv', ';')
+longueur_onde, taux_CO2 = chargement_données(chemin_acces('Bases de données','CO2 Absorption NIST','csv'), ';')
 lambda_min = min(longueur_onde)
 lambda_max = max(longueur_onde)
 
