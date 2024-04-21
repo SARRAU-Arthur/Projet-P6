@@ -22,7 +22,7 @@ def chargement_données_NIST():
 def chargement_données_HITRAN():
     """ Chargement données de la base donnée en deux tableaux: 
     taux transmission CO2 (en %) et longueur d'onde (en m) """
-    data = np.loadtxt(chemin_acces('Bases de données','CO2 Absorption NIST','csv'), ';')
+    data = np.loadtxt(chemin_acces('Bases de données','CO2 Absorption NIST','csv'), delimiter = ';')
     taux_CO2 = []
     nombre_onde = 1E-2 * data[:-1,0] # Nan dernière ligne, on exclu pour éviter erreurs à l'exécution
     for i in range(0,np.size(data[:,0]) - 1):

@@ -82,8 +82,6 @@ system('cls' if name == 'nt' else 'clear')
 
 """ Chargement données et grandeurs """
 longueur_onde, taux_CO2 = chargement_données_NIST()
-lambda_min = min(longueur_onde)
-lambda_max = max(longueur_onde)
 
 """ Transformation vers fonctions mathématiques continues """
 fonction_taux_CO2_longueur_onde = fonction_interpolation(longueur_onde, taux_CO2)
@@ -102,21 +100,12 @@ print('Flux classique = ', exitance_classique)
 print('Flux théorique = ', C_S * T ** 4)
 print('Flux avec CO2 = ', exitance_taux_CO2)
 
+""" Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
+# M_0 =
+# print(f"M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
+
 """ Affichage spectre CO2 """
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
-""" Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
-# delta_adapté = (lambda_max - lambda_min) / len(longueur_onde)
-# corps_noir = tableau_valeurs_fonction(intégrande_luminance_corps_noir(T), 
-#                                                   lambda_min, lambda_max, 
-#                                                   delta_adapté)
-# M_0 = intégrale_trapèzes(intégrande_luminance_corps_noir(T), lambda_min, lambda_max)
-# print(f"M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
-
 """ Affichage de la luminance spectrale en fonction de la longueur d'onde """
 # spectre_luminance_corps_noir(longueur_onde, luminance_corps_noir_tableau)
-
-""" Test fonctionnement fonction taux absorption CO2 """
-# fonction_taux_CO2 = fonction_taux_transmission_CO2(longueur_onde, taux_CO2)
-# print(fonction_taux_CO2(lambda_min/2))
-
