@@ -21,13 +21,6 @@ def intégrande_luminance_corps_noir (lambda_, T):
     term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
     return term_1 / term_2
 
-def intégrande_luminance_corps_noir_discrétisation (longueur_onde, T):
-    """ Renvoie la fonction de luminance d'un corps noir de température T 
-    et en fonction de la longueur d'onde x """
-    term_1 = np.pi * (C_1 * (10 **6) ** 4) / longueur_onde ** 5
-    term_2 = np.exp(C_2 * (10 ** 6) / (T * longueur_onde)) - 1
-    return term_1 / term_2
-
 def tableau_valeurs_fonction (fonction, x_min, x_max, delta):
     """ Renvoie un tableau de valeurs (discrétisation) d'une fonction sur un 
     intervalle [x_min ; x_max] avec un pas de delta """
@@ -65,7 +58,7 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     plt.title("")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
-    # 'Exitance totale corps noir ((kg.s^-3.K^-4))'
+    # 'Exitance totale corps noir (kg.s^-3.K^-4)'
     plt.grid(True)
     plt.show()
     return ()
@@ -101,7 +94,7 @@ aire_scipy = quad(fonction_taux_CO2_longueur_onde, min(longueur_onde), max(longu
 print(aire_scipy)
 
 """ Calcul flux """
-luminance_corps_noir_tableau = intégrande_luminance_corps_noir_discrétisation(longueur_onde, T)
+luminance_corps_noir_tableau = intégrande_luminance_corps_noir(longueur_onde, T)
 intégrande = taux_CO2 * luminance_corps_noir_tableau
 exitance_classique = intégrale_coefficient_ensemble_discret(0, np.inf, longueur_onde, luminance_corps_noir_tableau)
 exitance_taux_CO2 = intégrale_coefficient_ensemble_discret(0, np.inf, longueur_onde, intégrande)
