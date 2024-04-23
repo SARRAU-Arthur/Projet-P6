@@ -78,10 +78,10 @@ def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
         
 # Programme principal
 
-system('cls' if name == 'nt' else 'clear')
+# system('cls' if name == 'nt' else 'clear')
 
 """ Chargement données et grandeurs """
-longueur_onde, taux_CO2 = chargement_données_NIST()
+longueur_onde, taux_CO2 = chargement_données_HITRAN()
 
 """ Transformation vers fonctions mathématiques continues """
 fonction_taux_CO2_longueur_onde = fonction_interpolation(longueur_onde, taux_CO2)
