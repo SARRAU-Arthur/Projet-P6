@@ -41,6 +41,6 @@ def chargement_données_HITRAN():
     data = np.loadtxt(chemin_acces('Bases de données','CO2 Absorption HITRAN','csv'), delimiter = ';')
     taux_CO2 = []
     nombre_onde = 1E-2 * data[:,0]
-    for i in range(0,np.size(data[:,0]) - 1):
-        taux_CO2.append(data[i,1]) * 100
+    for i in range(0,np.size(data[:,0])):
+        taux_CO2.append(data[i,1] * 100) 
     return 1 / nombre_onde, taux_CO2

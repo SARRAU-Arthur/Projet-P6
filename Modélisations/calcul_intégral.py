@@ -83,6 +83,7 @@ def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
 """ Chargement données et grandeurs """
 longueur_onde, taux_CO2 = chargement_données_HITRAN()
 
+
 """ Transformation vers fonctions mathématiques continues """
 fonction_taux_CO2_longueur_onde = fonction_interpolation(longueur_onde, taux_CO2)
 print(type(fonction_taux_CO2_longueur_onde))
