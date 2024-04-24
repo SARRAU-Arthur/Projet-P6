@@ -1,4 +1,4 @@
-%%% Définition paramètres documents
+%%%%% Définition paramètres documents
 
 \documentclass[a4paper, 12pt]{report} % Initilisation document
 
@@ -141,11 +141,11 @@ bookmarksopen=true}
 \author{}
 \date{}
 
-%%% Début d'édition du document
+%%%%% Début d'édition du document
 
 \begin{document}
 
-% Page de présentation
+%%% Page de présentation
 
 \pagenumbering{Alph} % Numérotation
 \thispagestyle{empty} % Type page
@@ -178,7 +178,7 @@ bookmarksopen=true}
 
 \end{picture}
 
-% Page complètement vierge
+%%% Page complètement vierge
 
 \newpage
 \pagenumbering{arabic}
@@ -186,12 +186,12 @@ bookmarksopen=true}
 \thispagestyle{empty}
 \null
 
-% Page descriptions cractéristiques principales projet
+%%% Page descriptions cractéristiques principales projet
 
 \newpage
 \pagestyle{special}
 
-\textbf{Date de remise du rapport :} XX/XX/2024 \\
+\textbf{Date de remise du rapport :} 13/06/2024 \\
 
 \textbf{Référence du projet:} STPI/P6/2024 – 39 \\
 
@@ -220,33 +220,6 @@ des gaz à effet de serre dans le système atmosphérique. \\
 
 \textbf{Mots-clefs du projet :} Transfert thermique, Corps noir, Effet de serre, Bilan radiatif \\ 
 
-% Remerciements
-
-\vfill
-\textbf{Remerciements :} \\
-	
-	\setlength{\parindent}{30pt}
-	Nous souhaiterions avant tout remercier Samuel PAILLAT, notre
-	coordinateur et enseignant encadrant, qui a su nous aiguiller
-	et nous apporter son aide et ses connaissances tout au longs
-	de ce projet. \\
-
-	\indent Aussi nous aimerions nous porter reconnaissants 
-	envers le physicien médaillé de la médiation scinetifique
-	du CNRS: David Louapre. Ces travaux sur l'effet de serre 
-	ont été une grande source d'inspiration en tant que point 
-	de départ pour notre recherche. \\
-
-	\indent Nous saluons également les divers organismes ayant 
-	mis à disposition des bases de données en open source. Nous
-	en avons extrait des paramètres physiques sans lesqueles 
-	nos modèles auraient manqué de fiabilité. \\
-
-	\indent Enfin, nous aimerions remercier l'organisation de 
-	l'INSA plus génralement pour nous avoir implémenté l'EC de P6
-	qui nous a permis de réaliser notre premier projet
-	scientifique appliqué dans des conditions de collaboration
-	collective proches de celle milieu de l'ingénierie. 
 \vfill
 
 % Coordonnées INSA Rouen par défaut
@@ -257,45 +230,87 @@ des gaz à effet de serre dans le système atmosphérique. \\
 	685 Avenue de l'Université BP 08- 76801 Saint-Etienne-du-Rouvray \\ Tél : 33 2 32 95 66 21 - Fax : 33 2 32 95 66 31
 \end{center}
 
+%%% Remerciements
+
+\newpage
+\chapter*{Remerciements} % Garde la même mise en page qu'un chapitre mais ne le numérote pas
+\addcontentsline{toc}{chapter}{Remerciements} % Ajout dans le sommaire, possiblement renommé comme souhaité
+
+\setlength{\parindent}{30pt}
+Nous souhaiterions avant tout remercier Samuel PAILLAT, notre
+coordinateur et enseignant encadrant, qui a su nous aiguiller
+et nous apporter son aide et ses connaissances tout au longs
+de ce projet. \\
+
+\indent Aussi nous aimerions nous porter reconnaissants 
+envers le physicien médaillé de la médiation scinetifique
+du CNRS: David Louapre. Ces travaux sur l'effet de serre 
+ont été une grande source d'inspiration en tant que point 
+de départ pour notre recherche. \\
+
+\indent Nous saluons également les divers organismes ayant 
+mis à disposition des bases de données en open source. Nous
+en avons extrait des paramètres physiques sans lesqueles 
+nos modèles auraient manqué de fiabilité. \\
+
+\indent Enfin, nous aimerions remercier l'organisation de 
+l'INSA plus génralement pour nous avoir implémenté l'EC de P6
+qui nous a permis de réaliser notre premier projet
+scientifique appliqué dans des conditions de collaboration
+collective proches de celle milieu de l'ingénierie. 
+\vfill
+
+
+%%% Table des matières 
+
 \newpage
 \pagestyle{courant} 
-	\setcounter{tocdepth}{2}
-	\tableofcontents
+	\setcounter{tocdepth}{2} % Règle la profondeur maximale de la table des matières
+	\tableofcontents % Affichage table des matières
 
-  
-	\chapter*{Notations et Acronymes}		% garde la même mise en page qu'un chapitre mais ne le numérote pas
-	\addcontentsline{toc}{chapter}{Notations}	% permet de l'avoir dans le sommaire
-
-\begin{description}
-	\item[Notation à définir :] définition
-	\item[Acronymes à définir :] acronyme
-\end{description}
+%%% Notations et Acronymes
 
 \newpage
-	\chapter*{Introduction}				% garde la même mise en page qu'un chapitre mais ne le numérote pas
-	\addcontentsline{toc}{chapter}{Introduction}	% permet de l'avoir dans le sommaire
-	Ce dernier se base principalement 
-	sur la physique des transferts thermiques, mais fait également
-	appel à des compétences en informatique et mathématiques. 
-	\begin{itemize}
-	\item Contexte du travail
-	\item Objectifs à atteindre pour le projet
-	\end{itemize}
+\chapter*{Notations et Acronymes} 
+\addcontentsline{toc}{chapter}{Notations et Acronymes}
 
-	\chapter{Méthodologie, organisation du travail}
+\begin{description}
+	\item[GES:] Gaz à Effet de Serre
+\end{description}
 
-	\begin{itemize}
-	\item Description de l’organisation adoptée pour le déroulement du travail
-	\item Organigramme des tâches réalisées et des étudiants concernés
-	\end{itemize}
+%%% Introduction
 
-	\chapter{Travail réalisé et résultats}
+\newpage
+\chapter*{Introduction}				
+\addcontentsline{toc}{chapter}{Introduction}
 
-		\section{Section}
+Ce dernier se base principalement 
+sur la physique des transferts thermiques, mais fait également
+appel à des compétences en informatique et mathématiques. 
+\begin{itemize}
+\item Contexte du travail
+	  
+\item Objectifs à atteindre pour le projet
+\end{itemize}
 
-			\subsection{Sous-section}
+%%% Méthodologie, organisation du travail
 
-				\subsubsection{Sous-sous-section}
+\chapter{Méthodologie, organisation du travail}
+
+\begin{itemize}
+\item Description de l’organisation adoptée pour le déroulement du travail
+\item Organigramme des tâches réalisées et des étudiants concernés
+\end{itemize}
+
+%%% Travail réalisé et résultats
+
+\chapter{Travail réalisé et résultats}
+
+	\section{Section}
+
+		\subsection{Sous-section}
+
+			\subsubsection{Sous-sous-section}
 
 
 \begin{figure}[h]
