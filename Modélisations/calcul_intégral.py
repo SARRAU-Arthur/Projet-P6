@@ -50,7 +50,7 @@ def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     plt.ylabel("Taux de transmission du CO2 (en %)")
     plt.grid(True)
     plt.show()
-    return ()
+    return None
 
 def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
@@ -61,13 +61,14 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     # 'Exitance totale corps noir (kg.s^-3.K^-4)'
     plt.grid(True)
     plt.show()
-    return ()
+    return None
 
 def test_fonction_mathématique(abcisses, fonction):
     points = []
     for valeur in abcisses:
         décalage = random()
-        points.append([valeur + décalage, fonction.__call__(valeur)])
+        print(fonction(valeur))
+        points.append([valeur + décalage, fonction(valeur)])
     plt.scatter(points[:][0], points[:][1])
     plt.show()
     return None
@@ -76,6 +77,8 @@ def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
     return interp1d(tableau_abcisses, tableau_ordonnées, kind = 'linear')
         
 # Programme principal
+
+T = T_0
 
 system('cls' if name == 'nt' else 'clear')
 
@@ -103,7 +106,7 @@ print('Flux avec CO2 = ', exitance_taux_CO2)
 # print(f"M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
 
 """ Affichage spectre CO2 """
-# spectre_transmission_CO2(longueur_onde, taux_CO2)
+spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage de la luminance spectrale en fonction de la longueur d'onde """
-# spectre_luminance_corps_noir(longueur_onde, taux_CO2)
+# spectre_luminance_corps_noir()

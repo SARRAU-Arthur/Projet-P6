@@ -1,5 +1,7 @@
 from hapi import *
 
+reportMissingImports = False
+
 import numpy as np
 
 def chemin_acces(langue, lettre, extension):
@@ -31,7 +33,7 @@ def chargement_données_HITRAN_complet():
     with open(nom_fichier, mode = 'w', newline = '') as fichier_csv:
         for lignes in range(0,len(nombre_onde)):
             fichier_csv.write(str(nombre_onde[lignes]) + ' ; ' + str(transmittance[lignes]) + '\n')
-    pass
+    return None
 
 def chargement_données_HITRAN():
     """ Chargement données de la base donnée HITRAN en deux tableaux: 
