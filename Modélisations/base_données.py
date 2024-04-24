@@ -1,8 +1,6 @@
 from hapi import *
 
-import matplotlib.pyplot as plt
 import numpy as np
-import csv
 
 def chemin_acces(langue, lettre, extension):
     """ Raccourci pour aller chercher le fichier au format choisi 

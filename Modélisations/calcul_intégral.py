@@ -44,7 +44,7 @@ def intégrale_coefficient_ensemble_discret(borne_inf, borne_sup, liste_intégra
 
 def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     """ Représentation graphique spectre transmission CO2 en fonction de la longueur d'onde """
-    plt.plot(données_abscisses,données_ordonnées)
+    plt.plot(données_abscisses, données_ordonnées)
     plt.title("Taux de transmission du CO2 en fonction de la longueur d'onde")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel("Taux de transmission du CO2 (en %)")
@@ -54,7 +54,7 @@ def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
 
 def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
-    plt.plot(données_abscisses,données_ordonnées)
+    plt.scatter(données_abscisses, données_ordonnées, marker = '.')
     plt.title("")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
@@ -67,30 +67,27 @@ def test_fonction_mathématique(abcisses, fonction):
     points = []
     for valeur in abcisses:
         décalage = random()
-        points.append([valeur + décalage, fonction(valeur)])
-    print(type(fonction(valeur)))
+        points.append([valeur + décalage, fonction.__call__(valeur)])
     plt.scatter(points[:][0], points[:][1])
     plt.show()
     return None
 
 def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
-    return interp1d(tableau_abcisses, tableau_ordonnées)
+    return interp1d(tableau_abcisses, tableau_ordonnées, kind = 'linear')
         
 # Programme principal
 
-# system('cls' if name == 'nt' else 'clear')
+system('cls' if name == 'nt' else 'clear')
 
-""" Chargement données et grandeurs """
+""" Chargement données selon le modèle choisi """
 longueur_onde, taux_CO2 = chargement_données_HITRAN()
-
 
 """ Transformation vers fonctions mathématiques continues """
 fonction_taux_CO2_longueur_onde = fonction_interpolation(longueur_onde, taux_CO2)
-print(type(fonction_taux_CO2_longueur_onde))
 test_fonction_mathématique(longueur_onde, fonction_taux_CO2_longueur_onde)
-aire_scipy = quad(fonction_taux_CO2_longueur_onde, min(longueur_onde), max(longueur_onde), 
-                  limit = 1000, full_output = 0)[0]
-print(aire_scipy)
+M_0 = quad(fonction_taux_CO2_longueur_onde, min(longueur_onde), max(longueur_onde), 
+            limit = 10 ** 6, full_output = 0)
+print(f"Exitance M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
 
 """ Calcul flux """
 luminance_corps_noir_tableau = intégrande_luminance_corps_noir(longueur_onde, T)
@@ -109,4 +106,4 @@ print('Flux avec CO2 = ', exitance_taux_CO2)
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage de la luminance spectrale en fonction de la longueur d'onde """
-# spectre_luminance_corps_noir(longueur_onde, luminance_corps_noir_tableau)
+# spectre_luminance_corps_noir(longueur_onde, taux_CO2)
