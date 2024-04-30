@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  30 APR 2024 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  30 APR 2024 15:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,34 +573,34 @@ Chapitre 2.
 <Images/schemaflux.png, id=82, 722.7pt x 505.89pt>
 File: Images/schemaflux.png Graphic file (type png)
 <use Images/schemaflux.png>
-Package pdftex.def Info: Images/schemaflux.png  used on input line 329.
+Package pdftex.def Info: Images/schemaflux.png  used on input line 328.
 (pdftex.def)             Requested size: 426.79134pt x 298.75812pt.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 337.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 336.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [8
 
  <./Images/schemaflux.png>]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 345.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 344.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [9]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 353.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 352.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [10
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 369.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 368.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 376.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 375.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [11
 
@@ -608,7 +608,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 376.
 Annexe A.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 379.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 378.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [12
 
@@ -616,7 +616,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 379.
 Annexe B.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 380.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 379.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [13
 
@@ -624,7 +624,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 380.
 Annexe C.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 381.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 380.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [14
 
@@ -632,7 +632,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 381.
 Annexe D.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 382.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 381.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [15
 
@@ -640,7 +640,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 382.
 Annexe E.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 386.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 385.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [16
 
