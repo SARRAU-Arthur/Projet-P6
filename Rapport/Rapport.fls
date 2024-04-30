@@ -184,20 +184,20 @@ INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\images\Image Garde.png
-INPUT .\images\Image Garde.png
-INPUT .\images\Image Garde.png
-INPUT .\images\Image Garde.png
-INPUT .\images\Image Garde.png
-INPUT .\images\Image Garde.png
-INPUT .\images\Image Garde.png
-INPUT .\images\Logo INSA.png
-INPUT .\images\Logo INSA.png
-INPUT .\images\Logo INSA.png
-INPUT .\images\Logo INSA.png
-INPUT .\images\Logo INSA.png
-INPUT .\images\Logo INSA.png
-INPUT .\images\Logo INSA.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Image Garde.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
+INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1728.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx1728.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -236,9 +236,6 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
-INPUT .\Images\Logo INSA.png
-INPUT .\Images\Logo INSA.png
-INPUT .\Images\Logo INSA.png
 INPUT .\Rapport.toc
 INPUT .\Rapport.toc
 INPUT Rapport.toc
@@ -261,6 +258,14 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
+INPUT .\Images\schemaflux.png
+INPUT .\Images\schemaflux.png
+INPUT .\Images\schemaflux.png
+INPUT .\Images\schemaflux.png
+INPUT .\Images\schemaflux.png
+INPUT .\Images\schemaflux.png
+INPUT .\Images\schemaflux.png
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
@@ -307,6 +312,8 @@ INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ect
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
@@ -319,7 +326,5 @@ INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
