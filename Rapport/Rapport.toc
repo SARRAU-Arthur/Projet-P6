@@ -11,6 +11,6 @@
 \contentsline {chapter}{Bibliographie}{11}{chapter*.7}%
 \contentsline {chapter}{\numberline {A}Documentation technique}{12}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Listings des programmes réalisés}{13}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Schémas de montages, \\plans de conception...}{14}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Propositions de sujets de projets \\ (en lien ou pas avec le projet réalisé)}{15}{appendix.D}%
+\contentsline {chapter}{\numberline {C}Schémas de montages, plans de conception...}{14}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Propositions de sujets de projets (en lien ou pas avec le projet réalisé)}{15}{appendix.D}%
 \contentsline {chapter}{\numberline {E}Mettre du code en annexe}{16}{appendix.E}%

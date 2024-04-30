@@ -47,15 +47,15 @@
 % Paramètres hyperliens
 
 \hypersetup{
-dvips,
-backref=true,
-pagebackref=true, % Bibliographies
-hyperindex=true, % Index.
+% dvips,
+% backref=true,
+% pagebackref=true, % Bibliographies
+% hyperindex=true, % Index.
 colorlinks=true, % Couleur hyperliens
 breaklinks=true, % Retour à la ligne dans les hyperliens trop longs
 urlcolor= blue, % Couleur des hyperliens
 linkcolor= black, % Couleur des liens internes
-bookmarks=blue, % Signets pour Acrobat
+% bookmarks=blue, % Signets pour Acrobat
 bookmarksopen=true} 
 
 % Paramètres couleurs
@@ -191,17 +191,17 @@ bookmarksopen=true}
 \newpage
 \pagestyle{special}
 
-\textbf{Date de remise du rapport :} 13/06/2024 \\
+\textbf{Date de remise du rapport :} 13/06/2024 \vspace{\baselineskip}
 
-\textbf{Référence du projet:} STPI/P6/2024 – 39 \\
+\textbf{Référence du projet:} STPI/P6/2024 – 39 \vspace{\baselineskip}
 
-\textbf{Intitulé du projet :} Modélisation de l'impact des gaz à effet de serre \\
+\textbf{Intitulé du projet :} Modélisation de l'impact des gaz à effet de serre \vspace{\baselineskip}
 
-\textbf{Type de projet :} Modélisation numérique \\
+\textbf{Type de projet :} Modélisation numérique \vspace{\baselineskip}
 
-\textbf{Objectifs du projet :} \\ 
+\textbf{Objectifs du projet :} \vspace{\baselineskip} 
 
-Ce projet a pour vocation de développer un modèle numérique 
+Ce projet a pour vocation de développer un modèle numérique
 décrivant les mécanismes de régulation thermique de 
 l'atmosphère terrestre. Premièrement, nous allons réaliser
 une étude à travers quelques calculs en ordre de grandeurs afin
@@ -216,9 +216,9 @@ vulgarisateur scientifique David Louapre. À travers ce projet,
 nous cherchons à reproduire au mieux le 
 phénomène d'équilibre thermique de la Terre en considérant 
 les flux principaux et en quantifiant précisément l'impact
-des gaz à effet de serre dans le système atmosphérique. \\
+des gaz à effet de serre dans le système atmosphérique. \vspace{\baselineskip}
 
-\textbf{Mots-clefs du projet :} Transfert thermique, Corps noir, Effet de serre, Bilan radiatif \\ 
+\textbf{Mots-clefs du projet :} Transfert thermique, Corps noir, Effet de serre, Bilan radiatif \vspace{\baselineskip} 
 
 \vfill
 
@@ -240,18 +240,18 @@ des gaz à effet de serre dans le système atmosphérique. \\
 Nous souhaiterions avant tout remercier Samuel PAILLAT, notre
 coordinateur et enseignant encadrant, qui a su nous aiguiller
 et nous apporter son aide et ses connaissances tout au longs
-de ce projet. \\
+de ce projet. \vspace{\baselineskip}
 
 \indent Aussi nous aimerions nous porter reconnaissants 
 envers le physicien médaillé de la médiation scinetifique
 du CNRS: David Louapre. Ces travaux sur l'effet de serre 
 ont été une grande source d'inspiration en tant que point 
-de départ pour notre recherche. \\
+de départ pour notre recherche. \vspace{\baselineskip}
 
 \indent Nous saluons également les divers organismes ayant 
 mis à disposition des bases de données en open source. Nous
 en avons extrait des paramètres physiques sans lesqueles 
-nos modèles auraient manqué de fiabilité. \\
+nos modèles auraient manqué de fiabilité. \vspace{\baselineskip}
 
 \indent Enfin, nous aimerions remercier l'organisation de 
 l'INSA plus généralement pour nous avoir implémenté l'EC de P6
@@ -276,8 +276,10 @@ collective proches de celle milieu de l'ingénierie.
 
 \begin{description}
 	\item[GES:] Gaz à Effet de Serre
-    \item[CN:] Corps noir
-    \item[$\Phi$:] FLux 
+    \item[CN:] Corps Noir
+    
+    \item[$\Phi$:] Flux, soit le débit surfacique; ici il décrira exclusivement 
+	la puissance rayonnée par unité de surface ($W.m^{-2}$)
 \end{description}
 
 %%% Introduction
@@ -313,8 +315,15 @@ appel à des compétences en informatique et mathématiques.
 		\subsection{Explication du phénomène de l'effet de serre}
 
 
-L’effet de serre est un processus naturel qui se produit avec le rayonnement entre la Terre et le Soleil. Tout d'abord, le soleil émet un rayonnement vers la Terre, l'atmosphère laisse passer une partie de ce rayonnement solaire. Réchauffé, le corps terrestre, étant un corps noir, émet un flux rayonné identique à celui reçu par soleil. Ce flux est alors renvoyé vers l'atmosphère et une partie est absorbée par les gaz présents , appelés gaz à effet de serre . Le reste du flux est soit envoyé dans l'espace, soit renvoyé vers la Terre. 
-De plus, nous avons pu constater que ce phénomène n'existe que lorsque que la température varie dans l'atmosphère en fonction de l'altitude. Ainsi si la température était uniforme dans l'atmosphère ce phénomène n'existerait pas. 
+L’effet de serre est un processus naturel qui se produit avec le rayonnement 
+entre la Terre et le Soleil. Tout d'abord, le soleil émet un rayonnement vers la Terre, 
+l'atmosphère laisse passer une partie de ce rayonnement solaire. Réchauffé, le corps terrestre, 
+étant un corps noir, émet un flux rayonné identique à celui reçu par soleil. Ce flux est 
+alors renvoyé vers l'atmosphère et une partie est absorbée par les gaz présents , appelés 
+gaz à effet de serre . Le reste du flux est soit envoyé dans l'espace, soit renvoyé vers la Terre. 
+De plus, nous avons pu constater que ce phénomène n'existe que lorsque que la température varie 
+dans l'atmosphère en fonction de l'altitude. Ainsi si la température était uniforme dans 
+l'atmosphère ce phénomène n'existerait pas. 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=15cm]{Images/schemaflux.png}
@@ -322,11 +331,16 @@ De plus, nous avons pu constater que ce phénomène n'existe que lorsque que la 
 %\vspace{-2.cm} 
 \end{figure}
 
-C'est l'absorbtion du rayonnement par les GES qui va provoqué un rechauffement terrestre. Ainsi, ce phénomène créé un réchauffement global de la Terre permettant à la température moyenne de s'éléver à 15°C au lieu de -18°C (sans GES).    
+C'est l'absorbtion du rayonnement par les GES qui va provoqué un rechauffement terrestre. 
+Ainsi, ce phénomène créé un réchauffement global de la Terre permettant à la température 
+moyenne de s'éléver à 15°C au lieu de -18°C (sans GES).    
 
-        \subsection{Définition des GES}
-gaz à effet de serre (source gouvernement) : gaz présent dans l’atmosphère qui retient une partie de la chaleur reçue par le solaire dans l’atmosphère. Certains gaz sont d’origine naturelle (vapeur d’eau, par exemple) et/ou issues des activités humaines, en particulier les gaz fluorés.
-présents naturellement dans l’atmosphère (vapeur d’eau, dioxyde de carbone,...), la Terre absorbe une partie de l’énergie qu’elle reçoit du soleil, le reste étant renvoyé vers l’espace. \\
+\subsection{Définition des GES}
+Gaz à effet de serre (source gouvernement) : gaz présent dans l’atmosphère qui retient une 
+partie de la chaleur reçue par le solaire dans l’atmosphère. Certains gaz sont d’origine 
+naturelle (vapeur d’eau, par exemple) et/ou issues des activités humaines, en particulier les gaz fluorés.
+présents naturellement dans l’atmosphère (vapeur d’eau, dioxyde de carbone,...), la Terre absorbe une 
+partie de l’énergie qu’elle reçoit du soleil, le reste étant renvoyé vers l’espace. \vspace{\baselineskip}
 
 \chapter*{Conclusion et perspectives}		% garde la même mise en page qu'un chapitre mais ne le numérote pas
 \addcontentsline{toc}{chapter}{Conclusion et perspectives}% permet de l'avoir dans le sommaire
@@ -363,8 +377,8 @@ présents naturellement dans l’atmosphère (vapeur d’eau, dioxyde de carbone
 
 Les annexes ne sont pas obligatoire, les annexes présentées ici le sont à titre indicatif.
 	\chapter{Listings des programmes réalisés}
-	\chapter{Schémas de montages, \\plans de conception...}
-	\chapter{Propositions de sujets de projets \\ (en lien ou pas avec le projet réalisé)}
+	\chapter{Schémas de montages, plans de conception...}
+	\chapter{Propositions de sujets de projets (en lien ou pas avec le projet réalisé)}
 	\chapter{Mettre du code en annexe}
 
 	Voici comment mettre du code source en annexe. Attention ! Les accents et caractères spéciaux ne sont pas pris en compte pour l'insertion de code.
