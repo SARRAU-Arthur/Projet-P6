@@ -7,8 +7,10 @@ from base_données import *
 
 from scipy.integrate import quad
 from scipy.interpolate import interp1d
+from scipy.optimize import fmin
 from random import random
 from os import system, name
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -31,6 +33,9 @@ def tableau_valeurs_fonction (fonction, x_min, x_max, delta):
         tab_values[i] = fonction(x)
     return tab_values
 
+def intégrale(fonction, borne_inf, borne_sup): 
+    return quad(fonction, borne_inf, borne_sup, limit = 10 ** 7, full_output = 0)
+    
 def intégrale_coefficient_ensemble_discret(borne_inf, borne_sup, liste_intégrande, liste_variable_intégration):
     """ Calcul numérique de l'intégrale de borne_inf à borne_sup de la fonction en entrée 
     grâce à la méthode des trapèzes, utile pour intégrer sur une liste discrète de valeurs"""
@@ -64,17 +69,19 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     return None
 
 def test_fonction_mathématique(abcisses, fonction):
-    points = []
+    x = []
+    y = []
     for valeur in abcisses:
-        décalage = random() / 10 ** -1
+        décalage = random()
         image_valeur = évaluer_fonction_interpolation(fonction, valeur)
-        points.append([valeur + décalage, image_valeur])
-    plt.scatter(points[:][0], points[:][1])
+        x.append(valeur + décalage)
+        y.append(image_valeur)
+    plt.scatter(x, y)
     plt.show()
     return None
 
 def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
-    return interp1d(tableau_abcisses, tableau_ordonnées, kind = 'linear')
+    return interp1d(tableau_abcisses, tableau_ordonnées, kind = 'linear', fill_value = 'extrapolate')
 
 def évaluer_fonction_interpolation(fonction, valeur):
     return (fonction.__call__(valeur)).tolist()
@@ -90,26 +97,22 @@ longueur_onde, taux_CO2 = chargement_données_HITRAN()
 
 """ Transformation vers fonctions mathématiques continues """
 fonction_taux_CO2_longueur_onde = fonction_interpolation(longueur_onde, taux_CO2)
-test_fonction_mathématique(longueur_onde, fonction_taux_CO2_longueur_onde)
-M_0 = quad(fonction_taux_CO2_longueur_onde, min(longueur_onde), max(longueur_onde), 
-            limit = 10 ** 6, full_output = 0)
+
+""" Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
+M_0 = intégrale(fonction_taux_CO2_longueur_onde, 0, np.inf)
 print(f"Exitance M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
 
 """ Calcul flux """
-luminance_corps_noir_tableau = intégrande_luminance_corps_noir(longueur_onde, T)
-intégrande = taux_CO2 * luminance_corps_noir_tableau
-exitance_classique = intégrale_coefficient_ensemble_discret(0, np.inf, longueur_onde, luminance_corps_noir_tableau)
-exitance_taux_CO2 = intégrale_coefficient_ensemble_discret(0, np.inf, longueur_onde, intégrande)
-print('Flux classique = ', exitance_classique)
+luminance_corps_noir = intégrande_luminance_corps_noir(longueur_onde, T)
+intégrande = luminance_corps_noir * évaluer_fonction_interpolation(fonction_taux_CO2_longueur_onde, longueur_onde)
+exitance_classique = intégrale(luminance_corps_noir, 0, np.inf)
+exitance_taux_CO2 = intégrale(intégrande, 0, np.inf)
 print('Flux théorique = ', C_S * T ** 4)
+print('Flux sans CO2 = ', exitance_classique)
 print('Flux avec CO2 = ', exitance_taux_CO2)
 
-""" Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
-# M_0 =
-# print(f"M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
-
 """ Affichage spectre CO2 """
-spectre_transmission_CO2(longueur_onde, taux_CO2)
+# spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage de la luminance spectrale en fonction de la longueur d'onde """
 # spectre_luminance_corps_noir()
