@@ -17,16 +17,11 @@
 \usepackage{nopageno} % Supprimer la pagination d'une page
 \usepackage{float, caption}	% Positionnement et légende des images
 \usepackage{fancyhdr}		% Marges
-\usepackage{calc,ifthen,xspace}	% Redéfinition des espaces et distances
+\usepackage{calc, ifthen, xspace}	% Redéfinition des espaces et distances
 
 % Paramètres mathématiques
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{babel}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{amsmath, amsthm, amssymb, amsfonts} % Polices et symboles mathématiques sophistiqués
 
 % Paramètres graphiques
 
@@ -39,10 +34,11 @@
 \usepackage{hyperref}		% Liens croisés fichier PDF
 \usepackage{color}		% Couleur codes informatiques
 \usepackage{lastpage}		% Références aux pages
+\usepackage{babel} % Bibliographie et références
 
 % Identation automatique
 
-\setlength{\parindent}{0pt} % Supression des alinéas
+\setlength{\parindent}{0pt} % Supression des alinéas automatiques par défaut, plus manipulable
 
 % Paramètres hyperliens
 
@@ -58,18 +54,18 @@ linkcolor= black, % Couleur des liens internes
 % bookmarks=blue, % Signets pour Acrobat
 bookmarksopen=true} 
 
-% Paramètres couleurs
+% Paramètres de différentes couleurs avec {nom_couleur}{type_encodage}{proportions}
 
-\definecolor{hellgelb}{rgb}{1,1,0.8} % Codes et
+\definecolor{hellgelb}{rgb}{1,1,0.8}
 \definecolor{colKeys}{rgb}{0,0,1}
 \definecolor{colIdentifier}{rgb}{0,0,0}
 \definecolor{colComments}{rgb}{0,0.5,0}
 \definecolor{colString}{rgb}{0.62,0.12,0.94}
-\definecolor{INSA_GM}{cmyk}{0.6,0,0,0} % Page de garde
+\definecolor{INSA_GM}{cmyk}{0.6,0,0,0}
 \definecolor{INSA_GRIS}{cmyk}{0.7,0.6,0.5,0.3}
 \definecolor{INSA_BLEU}{cmyk}{1,0.9,0.1,0}
 
-% 
+% Définition de commandes compliquées pour déclarer un nom de projet
 
 \newcommand{\insertrefproj}[1]{}
 \newcommand{\refproj}[1]{\renewcommand{\insertrefproj}{\textbf{\color{INSA_GRIS}#1}}}
@@ -152,7 +148,7 @@ bookmarksopen=true}
 
 \vspace{4cm}
 
-\begin{picture}(0,0) % Hauteur , Largeur
+\begin{picture}(0,0) % Hauteur, Largeur
 	
 \put(80,-465){\includegraphics[scale=1]{Images/Image Garde.png}} % Image de garde centrée horizontalement
 \put(0,-20){\includegraphics[width=0.4\textwidth]{Images/Logo INSA.png}} % Logo INSA haut-gauche
@@ -165,7 +161,7 @@ bookmarksopen=true}
 \newsavebox{\noms}
 \savebox{\noms}(300, 300)[tl]{
 \put(0,98){\color{INSA_GRIS}{\begin{minipage}{6cm} 
-	\textbf{Étudiants :} \end{minipage}}} % Étudiants par ordre alphabétique de prénom
+	\textbf{Étudiants :} \end{minipage}}} % Étudiants par ordre alphabétique de nom
 \put(0,60){\color{INSA_GRIS}{\begin{minipage}{6cm}
 	Romane LANÈRES \\ Anouk PETITGAS \\ Arthur SARRAU \end{minipage}}}
 \put(185,60){\color{INSA_GRIS}{\begin{minipage}{6cm}
@@ -192,6 +188,8 @@ bookmarksopen=true}
 \pagestyle{special}
 
 \textbf{Date de remise du rapport :} 13/06/2024 \vspace{\baselineskip}
+% \vspace{\baselineskip} permet de sauter des lignes dans le code (pour la lisibilité)
+% en évitant tout message d'erreur de la forme "Underfull \hbox (badness 10000)"
 
 \textbf{Référence du projet:} STPI/P6/2024 – 39 \vspace{\baselineskip}
 
