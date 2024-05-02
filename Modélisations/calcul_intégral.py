@@ -105,7 +105,7 @@ def évaluer_fonction_interpolation(fonction, valeur):
         
 # Programme principal
 
-T = T_0
+T = T_0 #
 
 system('cls' if name == 'nt' else 'clear')
 
