@@ -278,6 +278,12 @@ collective proches de celle milieu de l'ingénierie.
     
     \item[$\Phi$:] Flux, soit le débit surfacique; ici il décrira exclusivement 
 	la puissance rayonnée par unité de surface ($W.m^{-2}$)
+    \item[M°:] Emittance totale d'un corps noir, ($W.m^{-2}$)
+    \item[M°$_\lambda,_T$:] Emittance d'un corps noir ($W.m^{-3}$)
+    \item[$\epsilon$:] Emissivité (sans unité)
+    \item[$\sigma$:] Constante de Stefan-Boltzmann ($W.m^{-2}.K^{4}$)
+    \item[$\tau {_C_O_2}$:] Coéfficient de transmission du CO2 (sans unité)
+    
 \end{description}
 
 %%% Introduction
@@ -321,25 +327,39 @@ gaz à effet de serre . Le reste du flux est soit envoyé dans l'espace, soit re
 De plus, nous avons pu constater que ce phénomène n'existe que lorsque que la température varie 
 dans l'atmosphère en fonction de l'altitude. Ainsi si la température était uniforme dans 
 l'atmosphère ce phénomène n'existerait pas. 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=15cm]{Images/schemaflux.png}
-      \caption{Schéma du phénomène de l'effet de serre}   
-%\vspace{-2.cm} 
-\end{figure}
+
+
 
 C'est l'absorbtion du rayonnement par les GES qui va provoqué un rechauffement terrestre. 
 Ainsi, ce phénomène créé un réchauffement global de la Terre permettant à la température 
-moyenne de s'éléver à 15°C au lieu de -18°C (sans GES).    
+moyenne de s'éléver à 15°C au lieu de -18°C (sans GES).  
 
 \subsection{Définition des GES}
-Gaz à effet de serre (source gouvernement) : gaz présent dans l’atmosphère qui retient une 
-partie de la chaleur reçue par le solaire dans l’atmosphère. Certains gaz sont d’origine 
-naturelle (vapeur d’eau, par exemple) et/ou issues des activités humaines, en particulier les gaz fluorés.
-présents naturellement dans l’atmosphère (vapeur d’eau, dioxyde de carbone,...), la Terre absorbe une 
-partie de l’énergie qu’elle reçoit du soleil, le reste étant renvoyé vers l’espace. \vspace{\baselineskip}
+Gaz à effet de serre est gaz présent dans l’atmosphère qui absorbe une partie des rayonnements (rayons infrarouges) reçue par le soleil. Ces gaz sont d’origine naturelle (vapeur d’eau) et/ou anthropique (issues des activités humaines) comme par exemple le dioxyde de carbonne (CO2), le méthane (CH4), le protoxyde d'azote (N2O) et les gaz fluorés. 
+ \vspace{\baselineskip}
 
-\chapter*{Conclusion et perspectives}		% garde la même mise en page qu'un chapitre mais ne le numérote pas
+\section{Bilan radiatif terrestre}
+\subsection{Définitions du corps noir et de l'émittance}
+
+\subsubsection{Corps noir}
+
+Un corps noir est un objet idéal qui permet d’évaluer le flux thermique maximum
+que peut rayonner un corps, en fonction de sa température. Ainsi un corps noir va émettre autant de rayonnement qu'il en absorbe. On peut donc dire que son emmitance $ \epsilon$  est égale à 1.
+
+La luminance d'un corps noir est évalué grace à la loi de Planck (en $W.m^{-3}$): \\
+
+\hfil$M°_\lambda,_T=\pi\times C1/\lambda^5\times[exp(C2/\lambda \times T)-1)^{-1}$\par 
+
+\hfil $C1=1,19 \cdot 10^8 W.m^{-2}.$\mu$m^{-1}$\par 
+ \hfil C2=14400$\mu$ m.K \\
+
+Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$)est obtenue avec la formule suivante:
+
+ \hfil M^{0}=\[ \int_{0}^{\infty} M^{0}_\lambda \,\mathrm{d}\lambda \]=$\sigma$\times$T^{4}$\par
+
+\subsection{Bilan radiatif sans effet de serre} 
+
+\chapter*{Conclusion et perspectives}% garde la même mise en page qu'un chapitre mais ne le numérote pas
 \addcontentsline{toc}{chapter}{Conclusion et perspectives}% permet de l'avoir dans le sommaire
 \begin{itemize}
 \item Conclusions sur le travail réalisé
