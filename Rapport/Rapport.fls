@@ -244,6 +244,7 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\tcbx1200.tfm
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
@@ -258,13 +259,6 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
-INPUT .\Images\schemaflux.png
-INPUT .\Images\schemaflux.png
-INPUT .\Images\schemaflux.png
-INPUT .\Images\schemaflux.png
-INPUT .\Images\schemaflux.png
-INPUT .\Images\schemaflux.png
-INPUT .\Images\schemaflux.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
@@ -316,6 +310,8 @@ INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcr
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1200.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk
@@ -326,11 +322,19 @@ INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb

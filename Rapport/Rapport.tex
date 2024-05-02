@@ -282,8 +282,7 @@ collective proches de celle milieu de l'ingénierie.
     \item[M°$_\lambda,_T$:] Emittance d'un corps noir ($W.m^{-3}$)
     \item[$\epsilon$:] Emissivité (sans unité)
     \item[$\sigma$:] Constante de Stefan-Boltzmann ($W.m^{-2}.K^{4}$)
-    \item[$\tau {_C_O_2}$:] Coéfficient de transmission du CO2 (sans unité)
-    
+    \item[$\tau_{CO_2}$:] Coefficient de transmission du $CO_2$ (sans unité)
 \end{description}
 
 %%% Introduction
@@ -349,17 +348,19 @@ que peut rayonner un corps, en fonction de sa température. Ainsi un corps noir 
 
 \subsubsection{L'emittance} 
 
-La luminance d'un corps noir est évalué grace à la loi de Planck (en $W.m^{-3}$): \\
+La luminance d'un corps noir est évalué grace à la loi de Planck (en $W.m^{-3}$): \vspace{\baselineskip}
 
 \begin{center}
 $M^{0}_\lambda,_T=\pi\times C1/\lambda^5\times[exp(C2/\lambda \times T)-1)^{-1}$ 
 
-C1=1,19 \cdot $10^{8}$ W.$m^{-2}.$\mu$m$^{-1}$\ \\
- C2=14400$\mu$m.K \\
+C1 = 1,19 $\cdot 10^{8}$ $W.m^{-2}.\mu.m^{-1}$\ \\
+C2 = 14400 $\mu.m.K$ \\
 \end{center}
 Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$) est obtenue avec la formule suivante:
 
- \hfil M^{0}=\[ \int_{0}^{\infty} M^{0}_\lambda \,\mathrm{d}\lambda \]=$\sigma$\times$T^{4}$\par
+\hfil $M^{0}$ = $\int_{0}^{\infty} M^{0}_\lambda d\lambda$ = $\sigma T^{4}$ 
+
+\par
 
 \subsection{Bilan radiatif sans effet de serre} 
 \subsection{Bilan radiatif avec effet de serre}
@@ -370,15 +371,18 @@ Le Soleil émet des rayonnements dans le domaine visible et dans le domaine infr
 
 % mettre image du spectre du soleil
 
-On peut alors calculer ce qu’il émet en rayonnant de 2 manières : \\
+On peut alors calculer ce qu'il émet en rayonnant de 2 manières : \\
 1. Avec le flux radiatif
 \begin{center}
-$\Phi_{ray}$=\int$\epsilon $\times $\sigma$ \times$ T^{4} dS $    
+$\Phi_{ray}$ = $\int \epsilon \sigma T^{4} dS$    
 \end{center}
-2. Numériquement\\
-En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Figure  "mettre nombre figure" et inserer le code pour faire l'intégrale sous la courbe) \\
+2. Numériquement \\
+En effet évaluer le flux émit revient à calculer l'aire sous la courbe 
+de son spectre d'émission. (voir Figure  "mettre nombre figure" et inserer 
+le code pour faire l'intégrale sous la courbe) \vspace{\baselineskip}
 
-Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil est de 174 PW  soit $174.10^{15} W$
+Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil 
+est de 174 PW  soit $174.10^{15} W$
 
 
 
