@@ -4,8 +4,8 @@
 
 % Paramètres texte
 
-\usepackage[utf8]{inputenc} 	% Français avec caractères spéciaux
-\usepackage[french]{babel}	% Français pour la biographie
+\usepackage[utf8]{inputenc} % Français avec caractères spéciaux
+\usepackage[french]{babel} % Français pour la biographie
 \usepackage[T1]{fontenc} % Polices d'écriture
 
 % Mise en page
@@ -16,8 +16,8 @@
 \usepackage{underscore}
 \usepackage{nopageno} % Supprimer la pagination d'une page
 \usepackage{float, caption}	% Positionnement et légende des images
-\usepackage{fancyhdr}		% Marges
-\usepackage{calc, ifthen, xspace}	% Redéfinition des espaces et distances
+\usepackage{fancyhdr} % Marges
+\usepackage{calc, ifthen, xspace} % Redéfinition des espaces et distances
 
 % Paramètres mathématiques
 
@@ -26,15 +26,16 @@
 % Paramètres graphiques
 
 \usepackage{graphicx} % Inclusion images
-\usepackage{epic,eepic}		% Positionnement image de garde
-\usepackage{wrapfig}		% Images sur le coté dans le texte
+\usepackage{epic,eepic}	% Positionnement image de garde
+\usepackage{wrapfig} % Images sur le coté dans le texte
 
 % Autres
 
-\usepackage{hyperref}		% Liens croisés fichier PDF
-\usepackage{color}		% Couleur codes informatiques
-\usepackage{lastpage}		% Références aux pages
+\usepackage{hyperref} % Liens croisés fichier PDF
+\usepackage{color} % Couleur codes informatiques
+\usepackage{lastpage} % Références aux pages
 \usepackage{babel} % Bibliographie et références
+\usepackage{enotez} % Notes de fin
 
 % Identation automatique
 
@@ -47,12 +48,16 @@
 % backref=true,
 % pagebackref=true, % Bibliographies
 % hyperindex=true, % Index.
-colorlinks=true, % Couleur hyperliens
-breaklinks=true, % Retour à la ligne dans les hyperliens trop longs
-urlcolor= blue, % Couleur des hyperliens
-linkcolor= black, % Couleur des liens internes
+colorlinks = true, % Couleur hyperliens
+breaklinks = true, % Retour à la ligne dans les hyperliens trop longs
+urlcolor = blue, % Couleur des hyperliens
+linkcolor = black, % Couleur des liens internes
 % bookmarks=blue, % Signets pour Acrobat
-bookmarksopen=true} 
+bookmarksopen = true}
+
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\do\-\do\.}
+\makeatother
 
 % Paramètres de différentes couleurs avec {nom_couleur}{type_encodage}{proportions}
 
@@ -143,8 +148,8 @@ bookmarksopen=true}
 
 %%% Page de présentation
 
-\pagenumbering{Alph} % Numérotation
-\thispagestyle{empty} % Type page
+\pagenumbering{Alph} % Numérotation avec lettre majuscule
+\thispagestyle{empty} % Type page vide intiallement
 
 \vspace{4cm}
 
@@ -219,7 +224,8 @@ phénomène d'équilibre thermique de la Terre en considérant
 les flux principaux et en quantifiant précisément l'impact
 des gaz à effet de serre dans le système atmosphérique. \vspace{\baselineskip}
 
-\textbf{Mots-clefs du projet :} Transfert thermique, Corps noir, Effet de serre, Bilan radiatif \vspace{\baselineskip} 
+\textbf{Mots-clefs du projet :} Transfert thermique, Corps noir, Effet de serre, Bilan radiatif 
+\vspace{\baselineskip} 
 
 \vfill
 
@@ -244,10 +250,12 @@ et nous apporter son aide et ses connaissances tout au longs
 de ce projet.
 
 	Aussi nous aimerions nous porter reconnaissants 
-envers le physicien médaillé de la médiation scinetifique
+envers le physicien médaillé de la médiation scientifique
 du CNRS: David Louapre. Ces travaux sur l'effet de serre 
 ont été une grande source d'inspiration en tant que point
-de départ pour notre recherche. \vspace{\baselineskip}
+de départ pour notre recherche \endnote[[]]{Vidéo, DAVID LOUAPRE, 06/10/2023: 
+\url{https://www.youtube.com/watch?v=ewc8FBtEKPs&t=1336s&ab_channel=VikingRise}}. 
+\vspace{\baselineskip}
 
 \indent Nous saluons également les divers organismes ayant 
 mis à disposition des bases de données en open source. Nous
@@ -352,7 +360,9 @@ reçue par le soleil. Ces gaz sont d'origine naturelle
 (vapeur d'eau) et/ou anthropique 
 (issues des activités humaines) comme par exemple le dioxyde 
 de carbonne ($CO_2$), le méthane ($CH_4$), le protoxyde d'azote
-($N_2O$) et les gaz fluorés (HFC) . \vspace{\baselineskip}
+($N_2O$) et les gaz fluorés (HFC) \endnote{Article, JEAN-MARC JANCOVICI, 01/08/2007:
+\url{https://jancovici.com/changement-climatique/gaz-a-effet-de-serre-et-cycle-du-carbone/quels
+-sont-les-gaz-a-effet-de-serre-quels-sont-leurs-contribution-a-leffet-de-serre/}}. \vspace{\baselineskip}
 
 % mettre schema flux radiatif 
 
@@ -365,13 +375,13 @@ que peut rayonner un corps, en fonction de sa température. Ainsi un corps noir
 va émettre autant de rayonnement qu'il en absorbe. On peut donc dire que son 
 emmitance $ \epsilon$  est égale à 1. 
 
-\subsubsection{L'emittance} 
+\subsubsection{L'émittance} 
 
 La luminance d'un corps noir est évalué grace à la loi de Planck 
 (en $W.m^{-3}$): \vspace{\baselineskip}
 
 \begin{center}
-$M^{0}_\lambda,_T=\pi\times C1/\lambda^5\times[exp(C2/\lambda \times T)-1)^{-1}$ 
+$M^{0}_\lambda,_T= \frac{\pi C_1}{\lambda^5} \biggl(\exp(\frac{C_2}{\lambda T}) - 1\biggr)^{-1}$ 
 
 $C_1$ = 1,19 $\cdot 10^{8}$ $W.m^{-2}.\mu.m^{-1}$\
 $C_2$ = 14400 $\mu.m.K$ \\
@@ -383,8 +393,9 @@ Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$) est obtenue avec la f
 \par
 
 \subsection{Bilan radiatif sans effet de serre} 
-\subsection{Bilan radiatif avec effet de serre}
-\subsubsection{A température constante}
+
+\subsubsection{température constante}
+
 \subsubsection{A température variable en fonction de l'altitude}
 
 Le Soleil émet des rayonnements dans le domaine visible et 
@@ -420,8 +431,10 @@ est de 174 PW  soit $174.10^{15} W$
 
 %%% Bibliographie
 
-\begin{thebibliography}{99} % Nombre entre parenthèses = Nombre de références
-\addcontentsline{toc}{chapter}{Bibliographie}	% permet de l'avoir dans le sommaire
+\begin{thebibliography}{99} % Nombre entre parenthèses = Nombre de références maximum
+\addcontentsline{toc}{chapter}{Bibliographie}
+
+\printendnotes
 
 \bibitem{Livre 01}
 \textsc{Nom}, Prénom
