@@ -15,13 +15,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Déclarations de fonctions
+    
+def fonction_mathématique_corps_noir():
+    
+    def valeur_luminance_corps_noir (lambda_, T = T_0):
+        """ Renvoie la fonction de luminance d'un corps noir de température T 
+        et en fonction de la longueur d'onde lambda_ """
+        term_1 = np.pi * (C_1 * (10 **6) ** 4) / lambda_ ** 5
+        term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
+        return term_1 / term_2
+    
+    return valeur_luminance_corps_noir
 
-def intégrande_luminance_corps_noir (lambda_, T):
-    """ Renvoie la fonction de luminance d'un corps noir de température T 
-    et en fonction de la longueur d'onde lambda_ """
-    term_1 = np.pi * (C_1 * (10 **6) ** 4) / lambda_ ** 5
-    term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
-    return term_1 / term_2
+def produit_de_fonctions(fonction1, fonction2):
+    
+    def fonction_produit(x):
+        return fonction1(x) * fonction2(x)
+    
+    return fonction_produit
 
 def tableau_valeurs_fonction (fonction, x_min, x_max, delta):
     """ Renvoie un tableau de valeurs (discrétisation) d'une fonction sur un 
@@ -80,8 +91,17 @@ def test_fonction_mathématique(abcisses, fonction):
     plt.show()
     return None
 
-def fonction_interpolation(tableau_abcisses, tableau_ordonnées):
-    return interp1d(tableau_abcisses, tableau_ordonnées, kind = 'linear', fill_value = 'extrapolate')
+def fonction_mathématique_interpolation():
+    
+    def valeur_interpolation():
+        
+        def chargement_données():
+            longueur_onde, taux_CO2 = chargement_données()
+            return longueur_onde, taux_CO2
+        
+        return interp1d(longueur_onde, taux_CO2, kind = 'linear', fill_value = 'extrapolate')
+    
+    return valeur_interpolation
 
 def évaluer_fonction_interpolation(fonction, valeur):
     return (fonction.__call__(valeur)).tolist()
@@ -93,20 +113,22 @@ T = T_0
 system('cls' if name == 'nt' else 'clear')
 
 """ Chargement données selon le modèle choisi """
-longueur_onde, taux_CO2 = chargement_données_HITRAN()
+longueur_onde, taux_CO2 = chargement_données
 
 """ Transformation vers fonctions mathématiques continues """
-fonction_taux_CO2_longueur_onde = fonction_interpolation(longueur_onde, taux_CO2)
+fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation
 
 """ Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
-M_0 = intégrale(fonction_taux_CO2_longueur_onde, 0, np.inf)
+M_0 = intégrale(fonction_mathématique_taux_CO2_longueur_onde, 0, np.inf)
 print(f"Exitance M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
 
-""" Calcul flux """
-luminance_corps_noir = intégrande_luminance_corps_noir(longueur_onde, T)
-intégrande = luminance_corps_noir * évaluer_fonction_interpolation(fonction_taux_CO2_longueur_onde, longueur_onde)
-exitance_classique = intégrale(luminance_corps_noir, 0, np.inf)
-exitance_taux_CO2 = intégrale(intégrande, 0, np.inf)
+""" Calculs flux """
+intégrande_sans_taux_CO2 = fonction_mathématique_corps_noir()
+intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, 
+                                  évaluer_fonction_interpolation(fonction_mathématique_taux_CO2_longueur_onde, 
+                                                                 longueur_onde))
+exitance_classique = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
+exitance_taux_CO2 = intégrale(intégrande_avec_taux_C02, 0, np.inf)
 print('Flux théorique = ', C_S * T ** 4)
 print('Flux sans CO2 = ', exitance_classique)
 print('Flux avec CO2 = ', exitance_taux_CO2)

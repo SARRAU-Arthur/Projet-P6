@@ -44,3 +44,6 @@ def chargement_données_HITRAN():
     for i in range(0,np.size(data[:,0])):
         taux_CO2.append(data[i,1] * 100) 
     return 1 / nombre_onde, taux_CO2
+
+def chargement_données():
+    return chargement_données_HITRAN
