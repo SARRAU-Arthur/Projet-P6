@@ -248,14 +248,13 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ectt1200.tfm
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
+INPUT .\Rapport.toc
+INPUT .\Rapport.toc
+INPUT Rapport.toc
 OUTPUT Rapport.toc
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
@@ -289,11 +288,25 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\tex\latex\base\t1cmtt.fd
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ectt1000.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ectt1200.tfm
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
@@ -319,18 +332,22 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT Rapport.aux
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1200.pk
-INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
-INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
-INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
-INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk
