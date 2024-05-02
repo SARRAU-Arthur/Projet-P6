@@ -337,27 +337,50 @@ moyenne de s'éléver à 15°C au lieu de -18°C (sans GES).
 \subsection{Définition des GES}
 Gaz à effet de serre est gaz présent dans l’atmosphère qui absorbe une partie des rayonnements (rayons infrarouges) reçue par le soleil. Ces gaz sont d’origine naturelle (vapeur d’eau) et/ou anthropique (issues des activités humaines) comme par exemple le dioxyde de carbonne (CO2), le méthane (CH4), le protoxyde d'azote (N2O) et les gaz fluorés. 
  \vspace{\baselineskip}
+% mettre schema flux radiatif 
 
 \section{Bilan radiatif terrestre}
 \subsection{Définitions du corps noir et de l'émittance}
 
-\subsubsection{Corps noir}
-
+\subsubsection{Le corps noir}
 Un corps noir est un objet idéal qui permet d’évaluer le flux thermique maximum
 que peut rayonner un corps, en fonction de sa température. Ainsi un corps noir va émettre autant de rayonnement qu'il en absorbe. On peut donc dire que son emmitance $ \epsilon$  est égale à 1.
 
+
+\subsubsection{L'emittance} 
+
 La luminance d'un corps noir est évalué grace à la loi de Planck (en $W.m^{-3}$): \\
 
-\hfil$M°_\lambda,_T=\pi\times C1/\lambda^5\times[exp(C2/\lambda \times T)-1)^{-1}$\par 
+\begin{center}
+$M^{0}_\lambda,_T=\pi\times C1/\lambda^5\times[exp(C2/\lambda \times T)-1)^{-1}$ 
 
-\hfil $C1=1,19 \cdot 10^8 W.m^{-2}.$\mu$m^{-1}$\par 
- \hfil C2=14400$\mu$ m.K \\
-
-Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$)est obtenue avec la formule suivante:
+C1=1,19 \cdot $10^{8}$ W.$m^{-2}.$\mu$m$^{-1}$\ \\
+ C2=14400$\mu$m.K \\
+\end{center}
+Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$) est obtenue avec la formule suivante:
 
  \hfil M^{0}=\[ \int_{0}^{\infty} M^{0}_\lambda \,\mathrm{d}\lambda \]=$\sigma$\times$T^{4}$\par
 
 \subsection{Bilan radiatif sans effet de serre} 
+\subsection{Bilan radiatif avec effet de serre}
+\subsubsection{A température constante}
+\subsubsection{A température variable en fonction de l'altitude}
+
+Le Soleil émet des rayonnements dans le domaine visible et dans le domaine infrarouge. C’est un corps noir, c’est à dire qu’il absorbe tout le rayonnement qu’il reçoit et le réémet parfaitement. De plus , on peut dire que son émissivité est égale à 1 d’après les hypothèses du corps noir. Il suit donc la loi de Planck et son spectre d’émission en fonction de la longueur d’onde est le suivant :
+
+% mettre image du spectre du soleil
+
+On peut alors calculer ce qu’il émet en rayonnant de 2 manières : \\
+1. Avec le flux radiatif
+\begin{center}
+$\Phi_{ray}$=\int$\epsilon $\times $\sigma$ \times$ T^{4} dS $    
+\end{center}
+2. Numériquement\\
+En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Figure  "mettre nombre figure" et inserer le code pour faire l'intégrale sous la courbe) \\
+
+Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil est de 174 PW  soit $174.10^{15} W$
+
+
 
 \chapter*{Conclusion et perspectives}% garde la même mise en page qu'un chapitre mais ne le numérote pas
 \addcontentsline{toc}{chapter}{Conclusion et perspectives}% permet de l'avoir dans le sommaire
