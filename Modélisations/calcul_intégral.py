@@ -95,10 +95,7 @@ def fonction_mathématique_interpolation():
     
     def valeur_interpolation():
         
-        def chargement_données():
-            longueur_onde, taux_CO2 = chargement_données()
-            return longueur_onde, taux_CO2
-        
+        longueur_onde, taux_CO2 = chargement_données()
         return interp1d(longueur_onde, taux_CO2, kind = 'linear', fill_value = 'extrapolate')
     
     return valeur_interpolation
@@ -113,10 +110,10 @@ T = T_0
 system('cls' if name == 'nt' else 'clear')
 
 """ Chargement données selon le modèle choisi """
-longueur_onde, taux_CO2 = chargement_données
+# longueur_onde, taux_CO2 = chargement_données()
 
 """ Transformation vers fonctions mathématiques continues """
-fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation
+fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation()
 
 """ Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
 M_0 = intégrale(fonction_mathématique_taux_CO2_longueur_onde, 0, np.inf)
