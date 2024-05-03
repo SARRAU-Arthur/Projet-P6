@@ -64,7 +64,6 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     plt.title("")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
-    # 'Exitance totale corps noir (kg.s^-3.K^-4)'
     plt.grid(True)
     plt.show()
     return None
@@ -84,7 +83,8 @@ def test_fonction_mathématique(abcisses, fonction):
 def fonction_mathématique_interpolation(longueur_onde, taux_CO2):
     
     def valeur_interpolation(longueur_onde, taux_CO2):
-        return interp1d(longueur_onde, taux_CO2, kind = 'linear', fill_value = 'extrapolate')
+        return interp1d(longueur_onde, taux_CO2, kind = 'linear', 
+                        bounds_error = False, fill_value = (100, 100))
     
     return valeur_interpolation(longueur_onde, taux_CO2)
 
@@ -97,28 +97,29 @@ def affichage_physique(paramètre, M_0, T):
         
 # Programme principal
 
-T = T_0
-
 system('cls' if name == 'nt' else 'clear')
+warnings.filterwarnings('ignore')
+
+""" Température corps noir """
+T = T_0
 
 """ Chargement données selon le modèle choisi """
 longueur_onde, taux_CO2 = chargement_données()
 
 """ Transformation vers fonctions mathématiques continues """
-fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation(longueur_onde, taux_CO2)
+fonction_mathématique_taux_CO2_lambda = fonction_mathématique_interpolation(longueur_onde, taux_CO2)
 
-""" Calculs différents flux selon les cas """
+""" Flux théorique """
+M_0_théorique_sans_CO2_corps_noir = (C_S * T ** 4, 0.00)
+affichage_physique('théorique', M_0_théorique_sans_CO2_corps_noir, T)
 
-warnings.filterwarnings('ignore') # Supprimer les warnings
-
-M_0_théorique_sans_CO2_corps_noir = C_S * T ** 4
-print(f'Exitance théorique sans CO2 à {T} K = {M_0_théorique_sans_CO2_corps_noir} W.m^-2 = kg.s^-3.K^-4')
-
+""" Flux sans CO2 """
 intégrande_sans_taux_CO2 = fonction_mathématique_corps_noir()
 M_0_sans_CO2 = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
 affichage_physique('sans CO2', M_0_sans_CO2, T)
 
-intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_longueur_onde)
+""" Flux avec CO2 """
+intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_lambda)
 M_0_avec_CO2 = intégrale(intégrande_avec_taux_C02, 0, np.inf)
 affichage_physique('avec CO2', M_0_avec_CO2, T)
 
