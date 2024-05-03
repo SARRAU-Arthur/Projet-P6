@@ -7,12 +7,12 @@ from base_données import *
 
 from scipy.integrate import quad
 from scipy.interpolate import interp1d
-from scipy.optimize import fmin
 from random import random
 from os import system, name
 
 import numpy as np
 import matplotlib.pyplot as plt
+import warnings 
 
 # Déclarations de fonctions
     
@@ -34,29 +34,19 @@ def produit_de_fonctions(fonction1, fonction2):
     
     return fonction_produit
 
-def tableau_valeurs_fonction (fonction, x_min, x_max, delta):
+def tableau_valeurs_fonction (fonction, x_min, x_max, nb_points):
     """ Renvoie un tableau de valeurs (discrétisation) d'une fonction sur un 
     intervalle [x_min ; x_max] avec un pas de delta """
-    tab_values = [None] * int(np.abs((x_max - x_min)) / delta)
+    tab_values = []
+    delta = (x_max - x_min) / nb_points
     x = x_min
-    for i in range (0,(np.size(tab_values))):
+    for _ in range(nb_points):
         x += delta
-        tab_values[i] = fonction(x)
+        tab_values.append(fonction(x))
     return tab_values
 
 def intégrale(fonction, borne_inf, borne_sup): 
-    return quad(fonction, borne_inf, borne_sup, limit = 10 ** 7, full_output = 0)
-    
-def intégrale_coefficient_ensemble_discret(borne_inf, borne_sup, liste_intégrande, liste_variable_intégration):
-    """ Calcul numérique de l'intégrale de borne_inf à borne_sup de la fonction en entrée 
-    grâce à la méthode des trapèzes, utile pour intégrer sur une liste discrète de valeurs"""
-    aire_trapèzes = liste_intégrande[0] * (liste_variable_intégration[0] - liste_variable_intégration[1]) 
-    for i in range(1, len(liste_intégrande) - 1):
-        aire_trapèzes += np.dot(liste_intégrande[i] - liste_intégrande[i - 1], 
-                           liste_variable_intégration[i + 1] - liste_variable_intégration[i])
-    luminance_corps_noir_fonction = lambda x: intégrande_luminance_corps_noir(x, T)
-    aire_scipy = quad(luminance_corps_noir_fonction, borne_inf, borne_sup, full_output = 0)[0]
-    return aire_trapèzes / 2 + aire_scipy
+    return quad(fonction, borne_inf, borne_sup, limit = 10 ** 7, full_output = 1)
 
 def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     """ Représentation graphique spectre transmission CO2 en fonction de la longueur d'onde """
@@ -101,9 +91,9 @@ def fonction_mathématique_interpolation(longueur_onde, taux_CO2):
 def évaluer_fonction_interpolation(fonction, valeur):
     return (fonction.__call__(valeur)).tolist()
 
-def affichage_physique(paramètre, M_0):
+def affichage_physique(paramètre, M_0, T):
     """ Affichage de résultat avec valeur, unité et incertitude associées """
-    print(f"Exitance M_0 {paramètre} = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
+    print(f"Exitance {paramètre}: M_0({T} K) = {M_0[0]} ± {M_0[1]} W.m^-2 = kg.s^-3.K^-4")
         
 # Programme principal
 
@@ -118,19 +108,25 @@ longueur_onde, taux_CO2 = chargement_données()
 fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation(longueur_onde, taux_CO2)
 
 """ Calculs différents flux selon les cas """
+
+warnings.filterwarnings('ignore') # Supprimer les warnings
+
 M_0_théorique_sans_CO2_corps_noir = C_S * T ** 4
-print(f'Exitance théorique corps noir sans CO2 = {M_0_théorique_sans_CO2_corps_noir}')
+print(f'Exitance théorique sans CO2 à {T} K = {M_0_théorique_sans_CO2_corps_noir} W.m^-2 = kg.s^-3.K^-4')
 
 intégrande_sans_taux_CO2 = fonction_mathématique_corps_noir()
 M_0_sans_CO2 = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
-affichage_physique('sans CO2', M_0_sans_CO2)
+affichage_physique('sans CO2', M_0_sans_CO2, T)
 
 intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_longueur_onde)
 M_0_avec_CO2 = intégrale(intégrande_avec_taux_C02, 0, np.inf)
-affichage_physique('avec CO2', M_0_avec_CO2)
+affichage_physique('avec CO2', M_0_avec_CO2, T)
 
 """ Affichage spectre tranmission CO2 """
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage spectre luminance spectrale corps noir """
-# spectre_luminance_corps_noir()
+lumiance_corps_noir_tableau = tableau_valeurs_fonction(intégrande_sans_taux_CO2, 
+                                                       min(longueur_onde), max(longueur_onde),
+                                                       len(longueur_onde))
+# spectre_luminance_corps_noir(longueur_onde, lumiance_corps_noir_tableau)
