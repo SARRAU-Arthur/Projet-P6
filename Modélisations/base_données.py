@@ -46,4 +46,4 @@ def chargement_données_HITRAN():
     return 1 / nombre_onde, taux_CO2
 
 def chargement_données():
-    return chargement_données_HITRAN
+    return chargement_données_HITRAN()

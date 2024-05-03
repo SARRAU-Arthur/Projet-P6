@@ -91,47 +91,46 @@ def test_fonction_mathématique(abcisses, fonction):
     plt.show()
     return None
 
-def fonction_mathématique_interpolation():
+def fonction_mathématique_interpolation(longueur_onde, taux_CO2):
     
-    def valeur_interpolation():
-        
-        longueur_onde, taux_CO2 = chargement_données()
+    def valeur_interpolation(longueur_onde, taux_CO2):
         return interp1d(longueur_onde, taux_CO2, kind = 'linear', fill_value = 'extrapolate')
     
-    return valeur_interpolation
+    return valeur_interpolation(longueur_onde, taux_CO2)
 
 def évaluer_fonction_interpolation(fonction, valeur):
     return (fonction.__call__(valeur)).tolist()
+
+def affichage_physique(paramètre, M_0):
+    """ Affichage de résultat avec valeur, unité et incertitude associées """
+    print(f"Exitance M_0 {paramètre} = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
         
 # Programme principal
 
-T = T_0 #
+T = T_0
 
 system('cls' if name == 'nt' else 'clear')
 
 """ Chargement données selon le modèle choisi """
-# longueur_onde, taux_CO2 = chargement_données()
+longueur_onde, taux_CO2 = chargement_données()
 
 """ Transformation vers fonctions mathématiques continues """
-fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation()
+fonction_mathématique_taux_CO2_longueur_onde = fonction_mathématique_interpolation(longueur_onde, taux_CO2)
 
-""" Calcul intégral de la valeur avec incertitude de l'exitance totale du corps noir """
-M_0 = intégrale(fonction_mathématique_taux_CO2_longueur_onde, 0, np.inf)
-print(f"Exitance M_0 = {M_0[0]} ± {M_0[1]} kg.s^-3.K^-4")
+""" Calculs différents flux selon les cas """
+M_0_théorique_sans_CO2_corps_noir = C_S * T ** 4
+print(f'Exitance théorique corps noir sans CO2 = {M_0_théorique_sans_CO2_corps_noir}')
 
-""" Calculs flux """
 intégrande_sans_taux_CO2 = fonction_mathématique_corps_noir()
-intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, 
-                                  évaluer_fonction_interpolation(fonction_mathématique_taux_CO2_longueur_onde, 
-                                                                 longueur_onde))
-exitance_classique = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
-exitance_taux_CO2 = intégrale(intégrande_avec_taux_C02, 0, np.inf)
-print('Flux théorique = ', C_S * T ** 4)
-print('Flux sans CO2 = ', exitance_classique)
-print('Flux avec CO2 = ', exitance_taux_CO2)
+M_0_sans_CO2 = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
+affichage_physique('sans CO2', M_0_sans_CO2)
 
-""" Affichage spectre CO2 """
+intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_longueur_onde)
+M_0_avec_CO2 = intégrale(intégrande_avec_taux_C02, 0, np.inf)
+affichage_physique('avec CO2', M_0_avec_CO2)
+
+""" Affichage spectre tranmission CO2 """
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
-""" Affichage de la luminance spectrale en fonction de la longueur d'onde """
+""" Affichage spectre luminance spectrale corps noir """
 # spectre_luminance_corps_noir()
