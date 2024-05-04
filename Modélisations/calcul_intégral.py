@@ -166,3 +166,14 @@ print(f'> Système Atmosphère: T = {T} K \n')
 
 M_0_atmosphère = M_0_absorbance_Terre / 2
 affichage_physique('transmittance & absorbance', M_0_atmosphère) # Flèches 5, 6
+
+""" Bilan thermique """
+tolérance = 10
+
+émis = M_0_transmittance_Soleil
+affichage_physique('Émis', émis)
+
+absorbé = M_0_transmittance_Soleil + M_0_atmosphère
+affichage_physique('Absorbé', absorbé)
+
+print(f'Conclusion modèle: {np.abs(émis - absorbé) < tolérance}')
