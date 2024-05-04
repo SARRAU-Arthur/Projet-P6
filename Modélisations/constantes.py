@@ -11,3 +11,4 @@ C_2 = (h * c_0) / (n * k_B) # Constante de Plank 2 (m.K)
 C_S = 5.67E-8 # Constante de Stephan (kg.s^-3.K^-4)
 T_S = 5.772E3 # Température soleil (K)
 T_0 = 2.8815E2 # Température 15 degrés Celcius (K)
+ALBEDO_TERRE = 0.7 # Albedo terrestre moyen
