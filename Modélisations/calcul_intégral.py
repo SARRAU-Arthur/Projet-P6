@@ -7,7 +7,6 @@ from base_données import *
 
 from scipy.integrate import quad
 from scipy.interpolate import interp1d
-from random import random
 from os import system, name
 
 import numpy as np
@@ -37,17 +36,6 @@ def produit_de_fonctions(fonction1, fonction2):
         return fonction1(x) * fonction2(x)
     
     return fonction_produit
-
-# def tableau_valeurs_fonction (fonction, x_min, x_max, nb_points):
-#     """ Renvoie un tableau de valeurs (discrétisation) d'une fonction sur un 
-#     intervalle [x_min ; x_max] avec un pas de delta """
-#     tab_values = []
-#     delta = (x_max - x_min) / nb_points
-#     x = x_min
-#     for _ in range(nb_points):
-#         x += delta
-#         tab_values.append(fonction(x))
-#     return tab_values
 
 def intégrale(fonction, borne_inf, borne_sup): 
     return quad(fonction, borne_inf, borne_sup, limit = 10 ** 7, full_output = 1)
