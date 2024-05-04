@@ -88,7 +88,7 @@ def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
     
     transmittance = lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
                     if min(longueur_onde) <= x <= max(longueur_onde) \
-                    else 1.0
+                    else 1
     absorbance = fonction_transmittance_vers_absorbance(transmittance)
     return transmittance, absorbance
 
@@ -129,22 +129,6 @@ CO2_absorbance = fonction_mathématique_interpolation_absorbance(longueur_onde, 
 # spectre_luminance_corps_noir(longueur_onde, fonction_mathématique_corps_noir())
 
 """ Calculs différents flux par système sous hypothèse de corps noirs """
-# Système Soleil
-T = T_S
-print(f'> Système Soleil: T = {T} K \n')
-luminance_corps_noir_Soleil = fonction_mathématique_corps_noir()
-
-flux_émis_corps_noir_Soleil = (C_S * T ** 4, 0.00)
-affichage_physique('théorique', flux_émis_corps_noir_Soleil)
-
-intégrande_absorbance_Soleil = produit_de_fonctions(CO2_absorbance, luminance_corps_noir_Soleil)
-M_0_absorbance_Soleil = intégrale(intégrande_absorbance_Soleil, 0, np.inf)
-affichage_physique('absorbance', M_0_absorbance_Soleil) # Flèche 1
-
-intégrande_transmittance_Soleil = produit_de_fonctions(CO2_transmittance, luminance_corps_noir_Soleil)
-M_0_transmittance_Soleil = intégrale(intégrande_transmittance_Soleil, 0, np.inf) * ALBEDO_TERRE
-affichage_physique('transmittance', M_0_transmittance_Soleil) # Flèche 2
-
 # Système Terre
 T = T_0
 print(f'> Système Terre: T = {T} K \n')
@@ -161,19 +145,35 @@ intégrande_transmittance_Terre = produit_de_fonctions(CO2_transmittance, lumina
 M_0_transmittance_Terre = intégrale(intégrande_transmittance_Terre, 0, np.inf)
 affichage_physique('transmittance', M_0_transmittance_Terre) # Flèche 4
 
+# Système Soleil
+T = T_S
+print(f'> Système Soleil: T = {T} K \n')
+luminance_corps_noir_Soleil = fonction_mathématique_corps_noir()
+
+flux_émis_corps_noir_Soleil = (C_S * T ** 4, 0.00)
+affichage_physique('théorique', flux_émis_corps_noir_Soleil)
+
+intégrande_absorbance_Soleil = produit_de_fonctions(CO2_absorbance, luminance_corps_noir_Soleil)
+M_0_absorbance_Soleil = intégrale(intégrande_absorbance_Soleil, 0, np.inf)
+affichage_physique('absorbance', M_0_absorbance_Soleil) # Flèche 1
+
+intégrande_transmittance_Soleil = produit_de_fonctions(CO2_transmittance, luminance_corps_noir_Soleil)
+M_0_transmittance_Soleil = intégrale(intégrande_transmittance_Soleil, 0, np.inf) * ALBEDO_TERRE
+affichage_physique('transmittance', M_0_transmittance_Soleil) # Flèche 2
+
 # Système Atmosphère
 print(f'> Système Atmosphère: T = {T} K \n')
 
-M_0_atmosphère = M_0_absorbance_Terre / 2
+M_0_atmosphère = M_0_absorbance_Terre[0] / 2
 affichage_physique('transmittance & absorbance', M_0_atmosphère) # Flèches 5, 6
 
 """ Bilan thermique """
 tolérance = 10
 
-émis = M_0_transmittance_Soleil
+émis = flux_émis_corps_noir_Soleil
 affichage_physique('Émis', émis)
 
-absorbé = M_0_transmittance_Soleil + M_0_atmosphère
+absorbé = M_0_transmittance_Terre[0] + M_0_transmittance_Soleil[0]
 affichage_physique('Absorbé', absorbé)
 
 print(f'Conclusion modèle: {np.abs(émis - absorbé) < tolérance}')
