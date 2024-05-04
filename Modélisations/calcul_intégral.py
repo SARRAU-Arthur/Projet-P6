@@ -158,7 +158,7 @@ M_0_absorbance_Soleil = intégrale(intégrande_absorbance_Soleil, 0, np.inf)
 affichage_physique('absorbance', M_0_absorbance_Soleil) # Flèche 1
 
 intégrande_transmittance_Soleil = produit_de_fonctions(CO2_transmittance, luminance_corps_noir_Soleil)
-M_0_transmittance_Soleil = intégrale(intégrande_transmittance_Soleil, 0, np.inf) * ALBEDO_TERRE
+M_0_transmittance_Soleil = intégrale(intégrande_transmittance_Soleil, 0, np.inf) * (1 - a_T)
 affichage_physique('transmittance', M_0_transmittance_Soleil) # Flèche 2
 
 # Système Atmosphère

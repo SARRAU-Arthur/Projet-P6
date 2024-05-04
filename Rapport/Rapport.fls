@@ -248,6 +248,7 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
+INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\public\cm\cmbx6.tfm
@@ -284,7 +285,6 @@ INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
 INPUT .\Images\Logo INSA.png
-INPUT C:\Users\sarra\Downloads\Applications\MikTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
 INPUT .\Rapport.ent
 INPUT .\Rapport.ent
 INPUT Rapport.ent
@@ -330,12 +330,12 @@ INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ect
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
-INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
-INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
+INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\sarra\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
