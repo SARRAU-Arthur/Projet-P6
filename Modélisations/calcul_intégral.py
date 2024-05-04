@@ -37,6 +37,15 @@ def produit_de_fonctions(fonction1, fonction2):
     
     return fonction_produit
 
+def fonction_transmittance_vers_absorbance(transmittance):
+    """ Réalise une fonction abssorbance retourne un objet de type <function> """
+    
+    def absorbance(x):
+        """ Réalise l'opération 1 - transmittance(x) """
+        return 1 - transmittance(x)
+    
+    return absorbance
+
 def intégrale(fonction, borne_inf, borne_sup): 
     return quad(fonction, borne_inf, borne_sup, limit = 10 ** 7, full_output = 1)
 
@@ -65,19 +74,34 @@ def affichage_fonction_continue (tableau_absicces, fonction):
     x = np.logspace(min(tableau_absicces), max(tableau_absicces))
     plt.plot(x, évaluer_fonction_interpolation(fonction, x))
     return None
-
+        
 def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
-    """ Retourne un objet de classe <function> qui est mathématiquement continue """
+    """ Retourne l'absorbance et la transmittance du CO2 en fonction de 
+    la longueur d'onde (en m) sous forme d'un objet de classe <function> 
+    qui est mathématiquement continue """
     
     def valeur_interpolation (longueur_onde, taux_CO2):
-        """ Retourne un objet de classe <interp1D> """
+        """ Retourne la transmittance du CO2 à une longueur d'onde donnée, 
+        sous la forme d'un objet de classe <interp1D> """
         return interp1d(longueur_onde, taux_CO2, kind = 'linear', 
                         bounds_error = False, fill_value = (100, 100))
     
-    return lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
-                    if min(longueur_onde) <= x <= max(longueur_onde) \
+    transmittance = lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
+                    if min(longueur_onde) <= x.any() <= max(longueur_onde) \
                     else 1.0
+    absorbance = fonction_transmittance_vers_absorbance(transmittance)
+    return transmittance, absorbance
 
+def fonction_mathématique_interpolation_transmittance (longueur_onde, taux_CO2):
+    """ Retourne la transmittance du CO2 en fonction de la longueur d'onde (en m)
+    sous forme d'un objet de classe <function> qui est mathématiquement continue """
+    return fonction_mathématique_interpolation (longueur_onde, taux_CO2)[0]
+
+def fonction_mathématique_interpolation_absorbance (longueur_onde, taux_CO2):
+    """ Retourne l'absorbance du CO2 en fonction de la longueur d'onde (en m)
+    sous forme d'un objet de classe <function> qui est mathématiquement continue """
+    return fonction_mathématique_interpolation (longueur_onde, taux_CO2)[1]
+                    
 def évaluer_fonction_interpolation (fonction, valeur):
     """ Obtenir l'image d'une valeur à travers une fonction de classe <interp1D> """
     return (fonction.__call__(valeur)).tolist()
@@ -98,7 +122,9 @@ T = T_0
 longueur_onde, taux_CO2 = chargement_données()
 
 """ Transformation vers fonctions mathématiques continues """
-fonction_mathématique_taux_CO2_lambda = fonction_mathématique_interpolation(longueur_onde, taux_CO2)
+fonction_mathématique_taux_CO2_lambda = fonction_mathématique_interpolation_transmittance(longueur_onde, taux_CO2)
+
+affichage_fonction_continue(longueur_onde, fonction_mathématique_taux_CO2_lambda)
 
 """ Flux théorique """
 M_0_théorique_sans_CO2_corps_noir = (C_S * T ** 4, 0.00)
