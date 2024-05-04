@@ -13,20 +13,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 import warnings 
 
-# Déclarations de fonctions
+# Signatures et implémentation de fonctions
     
 def fonction_mathématique_corps_noir():
     """ Renvoie la fonction de luminance d'un corps noir de température T 
         et en fonction de la longueur d'onde lambda_ """
     
-    def valeur_luminance_corps_noir (lambda_, T = T_0):
+    def valeur_luminance_corps_noir (lambda_, T = T):
         """ Renvoie l'image d'une valeur lamba_ donnée à travers la fonction de luminance 
         d'un corps noir de température T """
-        term_1 = np.pi * (C_1 * (10 **6) ** 4) / lambda_ ** 5
+        term_1 = np.pi * (C_1 * (10 ** 6) ** 4) / lambda_ ** 5
         term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
         return term_1 / term_2
     
-    return valeur_luminance_corps_noir
+    return valeur_luminance_corps_noir()
 
 def produit_de_fonctions(fonction1, fonction2):
     """ Réalise un produit de fonctions et retourne un objet de type <function> """
@@ -70,9 +70,9 @@ def spectre_luminance_corps_noir (abscisses, fonction):
     return None
 
 def affichage_fonction_continue (tableau_absicces, fonction):
-    """ Affiche une fonction parfaitement continue """
+    """ Affiche le graphique d'une fonction parfaitement continue """
     x = np.logspace(min(tableau_absicces), max(tableau_absicces))
-    plt.plot(x, évaluer_fonction_interpolation(fonction, x))
+    plt.plot(x, fonction(x))
     return None
         
 def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
@@ -87,7 +87,7 @@ def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
                         bounds_error = False, fill_value = (100, 100))
     
     transmittance = lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
-                    if min(longueur_onde) <= x.any() <= max(longueur_onde) \
+                    if min(longueur_onde) <= x <= max(longueur_onde) \
                     else 1.0
     absorbance = fonction_transmittance_vers_absorbance(transmittance)
     return transmittance, absorbance
@@ -108,27 +108,35 @@ def évaluer_fonction_interpolation (fonction, valeur):
 
 def affichage_physique (paramètre, M_0, T):
     """ Affichage de résultat avec valeur, unité et incertitude associées """
-    print(f"Exitance {paramètre}: M_0({T} K) = {M_0[0]} ± {M_0[1]} W.m^-2 = kg.s^-3.K^-4")
+    print(f"Exitance totale {paramètre}: M_0({T} K) = {M_0[0]} ± {M_0[1]} W.m^-2 = kg.s^-3.K^-4")
         
 # Programme principal
 
 system('cls' if name == 'nt' else 'clear')
 warnings.filterwarnings('ignore')
 
-""" Température corps noir """
-T = T_0
-
 """ Chargement données selon le modèle choisi """
 longueur_onde, taux_CO2 = chargement_données()
 
 """ Transformation vers fonctions mathématiques continues """
-fonction_mathématique_taux_CO2_lambda = fonction_mathématique_interpolation_transmittance(longueur_onde, taux_CO2)
+CO2_transmittance = fonction_mathématique_interpolation_transmittance(longueur_onde, taux_CO2)
+CO2_absorbance = fonction_mathématique_interpolation_absorbance(longueur_onde, taux_CO2)
 
-affichage_fonction_continue(longueur_onde, fonction_mathématique_taux_CO2_lambda)
+""" Système Terre"""
+T = T_0
 
-""" Flux théorique """
-M_0_théorique_sans_CO2_corps_noir = (C_S * T ** 4, 0.00)
-affichage_physique('théorique', M_0_théorique_sans_CO2_corps_noir, T)
+flux_émis_corps_noir_Terre = (C_S * T ** 4, 0.00)
+affichage_physique('théorique', flux_émis_corps_noir_Terre, T)
+
+luminance_corps_noir_Soleil = fonction_mathématique_corps_noir()
+intégrande_absorbance_Soleil = produit_de_fonctions(CO2_absorbance, luminance_corps_noir_Soleil)
+M_0_sans_CO2 = intégrale(intégrande_absorbance_Soleil, 0, np.inf)
+affichage_physique('Soleil', flux_émis_corps_noir_Terre, T)
+
+""" Système Soleil"""
+T = T_S
+flux_émis_corps_noir_Soleil = (C_S * T ** 4, 0.00)
+affichage_physique('théorique', flux_émis_corps_noir_Soleil, T)
 
 """ Flux sans CO2 """
 intégrande_sans_taux_CO2 = fonction_mathématique_corps_noir()
@@ -136,7 +144,7 @@ M_0_sans_CO2 = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
 affichage_physique('sans CO2', M_0_sans_CO2, T)
 
 """ Flux avec CO2 """
-intégrande_avec_taux_CO2 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_lambda)
+intégrande_avec_taux_CO2 = produit_de_fonctions(intégrande_sans_taux_CO2, CO2_transmittance)
 M_0_avec_CO2 = intégrale(intégrande_avec_taux_CO2, 0, np.inf)
 affichage_physique('avec CO2', M_0_avec_CO2, T)
 
