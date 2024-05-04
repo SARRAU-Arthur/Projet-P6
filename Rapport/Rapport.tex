@@ -34,7 +34,6 @@
 \usepackage{hyperref} % Liens croisés fichier PDF
 \usepackage{color} % Couleur codes informatiques
 \usepackage{lastpage} % Références aux pages
-\usepackage{babel} % Bibliographie et références
 \usepackage{endnotes} % Notes de fin
 
 % Identation automatique
@@ -253,8 +252,9 @@ de ce projet.
 envers le physicien médaillé de la médiation scientifique
 du CNRS: David Louapre. Ces travaux sur l'effet de serre 
 ont été une grande source d'inspiration en tant que point
-de départ pour notre recherche \endnote{Vidéo, DAVID LOUAPRE, 06/10/2023: 
-\url{https://www.youtube.com/watch?v=ewc8FBtEKPs&t=1336s&ab_channel=VikingRise}}. 
+de départ pour notre recherche \endnote{DAVID LOUAPRE, Article et vidéo,
+\textit{"La saturation de l’effet de serre (ou pas)"}, 06/10/2023:
+\\ \url{https://scienceetonnante.com/2023/10/06/la-saturation-de-leffet-de-serre/}}. 
 \vspace{\baselineskip}
 
 \indent Nous saluons également les divers organismes ayant 
@@ -360,7 +360,8 @@ reçue par le soleil. Ces gaz sont d'origine naturelle
 (vapeur d'eau) et/ou anthropique 
 (issues des activités humaines) comme par exemple le dioxyde 
 de carbonne ($CO_2$), le méthane ($CH_4$), le protoxyde d'azote
-($N_2O$) et les gaz fluorés (HFC) \endnote{Article, JEAN-MARC JANCOVICI, 01/08/2007:
+($N_2O$) et les gaz fluorés (HFC) \endnote{JEAN-MARC JANCOVICI, Article, 
+\textit{"Quels sont les gaz à effet de serre ?"}, 01/08/2007:
 \url{https://jancovici.com/changement-climatique/gaz-a-effet-de-serre-et-cycle-du-carbone/quels
 -sont-les-gaz-a-effet-de-serre-quels-sont-leurs-contribution-a-leffet-de-serre/}}. \vspace{\baselineskip}
 
@@ -443,12 +444,11 @@ est de 174 PW  soit $1,74.10^{17}$ W
 % 							\hspace{1em} % Laisse un petit espace entre l'indice et la note
 % 							\newline} % Sauter une ligne entre chaque note 
 \makeatletter
-\renewcommand{\enoteheading}{\par\vspace{1em}}
-\renewcommand{\theenmark}{\makebox[0.5em][r]{\@theenmark}}
-\renewcommand{\enoteformat}{\parindent=2em
-  							\leftskip=1em
-  							[\theenmark]\enspace\ignorespaces}
-							
+\renewcommand{\enoteheading}{\par\vspace{1 em}}
+\renewcommand{\theenmark}{\makebox[0.5 em][r]{\@theenmark}}
+\renewcommand{\enoteformat}{\parindent = 2 em
+  							\leftskip = 0.5 em
+  							[\theenmark]\enspace\ignorespaces}							
 \makeatother
 \theendnotes
 
