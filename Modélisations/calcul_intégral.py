@@ -17,10 +17,12 @@ import warnings
 # Déclarations de fonctions
     
 def fonction_mathématique_corps_noir():
+    """ Renvoie la fonction de luminance d'un corps noir de température T 
+        et en fonction de la longueur d'onde lambda_ """
     
     def valeur_luminance_corps_noir (lambda_, T = T_0):
-        """ Renvoie la fonction de luminance d'un corps noir de température T 
-        et en fonction de la longueur d'onde lambda_ """
+        """ Renvoie l'image d'une valeur lamba_ donnée à travers la fonction de luminance 
+        d'un corps noir de température T """
         term_1 = np.pi * (C_1 * (10 **6) ** 4) / lambda_ ** 5
         term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
         return term_1 / term_2
@@ -28,8 +30,10 @@ def fonction_mathématique_corps_noir():
     return valeur_luminance_corps_noir
 
 def produit_de_fonctions(fonction1, fonction2):
+    """ Réalise un produit de fonctions et retourne un objet de type <function> """
     
     def fonction_produit(x):
+        """ Réalise un produit de deux images d'une valeur x à travers deux fonctions """
         return fonction1(x) * fonction2(x)
     
     return fonction_produit
@@ -69,20 +73,24 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     return None
 
 def test_fonction_mathématique(tableau_absicces, fonction):
+    """ Affiche une fonction parfaitement continue """
     x = np.linspace(min(tableau_absicces), max(tableau_absicces))
     plt.plot(x, évaluer_fonction_interpolation(fonction, x))
     plt.show()
     return None
 
 def fonction_mathématique_interpolation(longueur_onde, taux_CO2):
+    """ Retourne un objet de classe <function> qui est mathématiquement continue """
     
     def valeur_interpolation(longueur_onde, taux_CO2):
+        """ Retourne un objet de classe <interp1D> """
         return interp1d(longueur_onde, taux_CO2, kind = 'linear', 
                         bounds_error = False, fill_value = (100, 100))
     
     return valeur_interpolation(longueur_onde, taux_CO2)
 
 def évaluer_fonction_interpolation(fonction, valeur):
+    """ Obtenir l'image d'une valeur à travers une fonction de classe <interp1D> """
     return (fonction.__call__(valeur)).tolist()
 
 def affichage_physique(paramètre, M_0, T):
