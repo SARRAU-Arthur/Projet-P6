@@ -38,16 +38,16 @@ def produit_de_fonctions(fonction1, fonction2):
     
     return fonction_produit
 
-def tableau_valeurs_fonction (fonction, x_min, x_max, nb_points):
-    """ Renvoie un tableau de valeurs (discrétisation) d'une fonction sur un 
-    intervalle [x_min ; x_max] avec un pas de delta """
-    tab_values = []
-    delta = (x_max - x_min) / nb_points
-    x = x_min
-    for _ in range(nb_points):
-        x += delta
-        tab_values.append(fonction(x))
-    return tab_values
+# def tableau_valeurs_fonction (fonction, x_min, x_max, nb_points):
+#     """ Renvoie un tableau de valeurs (discrétisation) d'une fonction sur un 
+#     intervalle [x_min ; x_max] avec un pas de delta """
+#     tab_values = []
+#     delta = (x_max - x_min) / nb_points
+#     x = x_min
+#     for _ in range(nb_points):
+#         x += delta
+#         tab_values.append(fonction(x))
+#     return tab_values
 
 def intégrale(fonction, borne_inf, borne_sup): 
     return quad(fonction, borne_inf, borne_sup, limit = 10 ** 7, full_output = 1)
@@ -62,9 +62,9 @@ def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     plt.show()
     return None
 
-def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
+def spectre_luminance_corps_noir (abscisses, fonction):
     """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
-    plt.scatter(données_abscisses, données_ordonnées, marker = '.')
+    affichage_fonction_continue(abscisses, fonction)
     plt.title("")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
@@ -72,28 +72,29 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     plt.show()
     return None
 
-def test_fonction_mathématique(tableau_absicces, fonction):
+def affichage_fonction_continue (tableau_absicces, fonction):
     """ Affiche une fonction parfaitement continue """
-    x = np.linspace(min(tableau_absicces), max(tableau_absicces))
+    x = np.logspace(min(tableau_absicces), max(tableau_absicces))
     plt.plot(x, évaluer_fonction_interpolation(fonction, x))
-    plt.show()
     return None
 
-def fonction_mathématique_interpolation(longueur_onde, taux_CO2):
+def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
     """ Retourne un objet de classe <function> qui est mathématiquement continue """
     
-    def valeur_interpolation(longueur_onde, taux_CO2):
+    def valeur_interpolation (longueur_onde, taux_CO2):
         """ Retourne un objet de classe <interp1D> """
         return interp1d(longueur_onde, taux_CO2, kind = 'linear', 
                         bounds_error = False, fill_value = (100, 100))
     
-    return valeur_interpolation(longueur_onde, taux_CO2)
+    return lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
+                    if min(longueur_onde) <= x <= max(longueur_onde) \
+                    else 1.0
 
-def évaluer_fonction_interpolation(fonction, valeur):
+def évaluer_fonction_interpolation (fonction, valeur):
     """ Obtenir l'image d'une valeur à travers une fonction de classe <interp1D> """
     return (fonction.__call__(valeur)).tolist()
 
-def affichage_physique(paramètre, M_0, T):
+def affichage_physique (paramètre, M_0, T):
     """ Affichage de résultat avec valeur, unité et incertitude associées """
     print(f"Exitance {paramètre}: M_0({T} K) = {M_0[0]} ± {M_0[1]} W.m^-2 = kg.s^-3.K^-4")
         
@@ -121,15 +122,12 @@ M_0_sans_CO2 = intégrale(intégrande_sans_taux_CO2, 0, np.inf)
 affichage_physique('sans CO2', M_0_sans_CO2, T)
 
 """ Flux avec CO2 """
-intégrande_avec_taux_C02 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_lambda)
-M_0_avec_CO2 = intégrale(intégrande_avec_taux_C02, 0, np.inf)
+intégrande_avec_taux_CO2 = produit_de_fonctions(intégrande_sans_taux_CO2, fonction_mathématique_taux_CO2_lambda)
+M_0_avec_CO2 = intégrale(intégrande_avec_taux_CO2, 0, np.inf)
 affichage_physique('avec CO2', M_0_avec_CO2, T)
 
 """ Affichage spectre tranmission CO2 """
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage spectre luminance spectrale corps noir """
-lumiance_corps_noir_tableau = tableau_valeurs_fonction(intégrande_sans_taux_CO2, 
-                                                       min(longueur_onde), max(longueur_onde),
-                                                       len(longueur_onde))
-# spectre_luminance_corps_noir(longueur_onde, lumiance_corps_noir_tableau)
+# spectre_luminance_corps_noir(longueur_onde, fonction_mathématique_corps_noir())
