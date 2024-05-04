@@ -35,7 +35,7 @@
 \usepackage{color} % Couleur codes informatiques
 \usepackage{lastpage} % Références aux pages
 \usepackage{babel} % Bibliographie et références
-\usepackage{enotez} % Notes de fin
+\usepackage{endnotes} % Notes de fin
 
 % Identation automatique
 
@@ -253,7 +253,7 @@ de ce projet.
 envers le physicien médaillé de la médiation scientifique
 du CNRS: David Louapre. Ces travaux sur l'effet de serre 
 ont été une grande source d'inspiration en tant que point
-de départ pour notre recherche \endnote[]{Vidéo, DAVID LOUAPRE, 06/10/2023: 
+de départ pour notre recherche \endnote{Vidéo, DAVID LOUAPRE, 06/10/2023: 
 \url{https://www.youtube.com/watch?v=ewc8FBtEKPs&t=1336s&ab_channel=VikingRise}}. 
 \vspace{\baselineskip}
 
@@ -427,32 +427,30 @@ est de 174 PW  soit $1,74.10^{17}$ W
 \addcontentsline{toc}{chapter}{Conclusion et perspectives}
 \begin{itemize}
 \item Conclusions sur le travail réalisé
-\item Conclusions sur l'apport personnel de cte E.C. projet
+\item Conclusions sur l'apport personnel de cet E.C. projet
 \item Perspectives pour la poursuite de ce projet
 \end{itemize}
 
 %%% Bibliographie
-\printendnotes
-\begin{thebibliography}{99} % Nombre entre parenthèses = Nombre de références maximum
+
+\newpage
+
+\renewcommand{\notesname}{} % Laisse vide le titre de la section
+\chapter*{Bibliographie}
 \addcontentsline{toc}{chapter}{Bibliographie}
-
-\bibitem{Livre 01}
-\textsc{Nom}, Prénom
-\textit{Titredu livre },
-Editeur, Année.
-
-\bibitem{Article 01}
-\textsc{Nom des Auteurs},
-"\textit{Titre de l'article}",
-Titre du journal,
-Volume, pages, année.
-
-\bibitem{Lien Internet 01}
-\textsc{lien Internet},
-\url{http://www.\#\#\#\#}
-(Valide à la date du \#\#/\#\#/201\#)
-
-\end{thebibliography}
+% \renewcommand{\theendnote}{[\arabic{endnote}]} % Redéfinition de l'affichage des numéros de notes de fin
+% \renewcommand{\enoteformat}{[\arabic{endnote}]
+% 							\hspace{1em} % Laisse un petit espace entre l'indice et la note
+% 							\newline} % Sauter une ligne entre chaque note 
+\makeatletter
+\renewcommand{\enoteheading}{\par\vspace{1em}}
+\renewcommand{\theenmark}{\makebox[0.5em][r]{\@theenmark}}
+\renewcommand{\enoteformat}{\parindent=2em
+  							\leftskip=1em
+  							[\theenmark]\enspace\ignorespaces}
+							
+\makeatother
+\theendnotes
 
 %%% Annexes
 
