@@ -243,10 +243,11 @@ des gaz à effet de serre dans le système atmosphérique. \vspace{\baselineskip
 \addcontentsline{toc}{chapter}{Remerciements}
 
 \setlength{\parindent}{30pt}
-Nous souhaiterions avant tout remercier Samuel PAILLAT, notre
+
+\indent Nous souhaiterions avant tout remercier Samuel PAILLAT, notre
 coordinateur et enseignant encadrant, qui a su nous aiguiller
 et nous apporter son aide et ses connaissances tout au longs
-de ce projet.
+de ce projet. \vspace{\baselineskip}
 
 	Aussi nous aimerions nous porter reconnaissants 
 envers le physicien médaillé de la médiation scientifique
@@ -292,13 +293,13 @@ enrichissant pour tout le groupe.
 	\item[GES:] Gaz à Effet de Serre
     \item[CN:] Corps Noir
     
-    \item[$\Phi$:] Flux, soit le débit surfacique; ici il décrira exclusivement 
+    \item[\boldmath{$\Phi$}:] Flux, soit le débit surfacique; ici il décrira exclusivement 
 	la puissance rayonnée par unité de surface ($W.m^{-2}$)
-    \item[M°:] Emittance totale d'un corps noir, ($W.m^{-2}$)
-    \item[M°$_\lambda,_T$:] Emittance d'un corps noir ($W.m^{-3}$)
-    \item[$\epsilon$:] Emissivité (sans unité)
-    \item[$\sigma$:] Constante de Stefan-Boltzmann ($W.m^{-2}.K^{4}$)
-    \item[$\tau_{CO_2}$:] Coefficient de transmission du $CO_2$ (sans unité)
+    \item[\boldmath{$M^{0}$}:] Emittance totale d'un corps noir, ($W.m^{-2}$)
+    \item[\boldmath{$M^{0}_{\lambda,T}$}:] Emittance d'un corps noir ($W.m^{-3}$)
+    \item[\boldmath{$\epsilon$}:] Emissivité (sans unité)
+    \item[\boldmath{$\sigma$}:] Constante de Stefan-Boltzmann ($W.m^{-2}.K^{4}$)
+    \item[\boldmath{$\tau_{CO_2}$}:] Coefficient de transmission du $CO_2$ (sans unité)
 \end{description}
 
 %%% Introduction
@@ -307,9 +308,34 @@ enrichissant pour tout le groupe.
 \chapter*{Introduction}				
 \addcontentsline{toc}{chapter}{Introduction}
 
-Dans l'ensemble, ce projet se base sur la physique des transferts thermiques, 
+\indent Le réchauffement climatique est sans aucun doute la plus grande problématique 
+scientifique du siècle actuel. Elle regroupe une multitude d'enjeux mêlant environnement,
+climat, industries et sociétés humaines. Cependant s'il y a un point en particulier qui 
+fait parler de lui, il s'agit bien de l'effet de serre. \vspace{\baselineskip}
+
+\indent Cependant, il semblerait que ce phénomène physique, vraisemblablement assez simple 
+en apparence, s'avère bien plus complexe en réalité. Si l'on se penche dans un premier temps sur 
+l'éthymologie de ce terme, inventé par le scientifique français Joseph Fourier
+\endnote{JOSEPH FOURIER, Article, 
+\textit{"Mémoire sur les températures du globe terrestre et des espaces planétaires}, 
+Mémoires de l'Académie royale des sciences de l'Institut de France, vol.7,  p.569-604, 1827},
+on recontre déjà une première confusion notable. En effet l'effet de serre 
+tel qu'il opère dans les couches atmosphériques est majoritairement lié au jeu d'absorption, d'émission 
+et de transmission de rayonnements. Tandis que les serres misent plutôt sur l'utilisation d'une enceinte 
+fermée hermétique qui supprime l'effet de convection de l'air, ce qui a pour conséquence une élévation 
+de température. En bref, il faut garder en tête que cette analogie comporte des limites. \vspace{\baselineskip}
+
+\indent Et c'est dans ce cadre que s'inscrit notre projet, qui a pour but de quantifier et d'étudier
+l'impact des gaz à effet de serre avec des outils de deuxième année de cursus ingénieur. \vspace{\baselineskip}
+
+\indent Dans l'ensemble, ce projet se base sur la physique des transferts thermiques, 
 mais fait également appel à des compétences en informatique et mathématiques.
-En effet 
+En effet notre modèle se fonde sur plusieurs paramètres qu'il sera nécessaire
+d'ajuster selon nos besoins, ce qui requiert d'implémanter tous ces calculs
+numériquement. \vspace{\baselineskip}
+
+\indent 
+
 \begin{itemize}
 \item Contexte du travail
 	  
@@ -362,7 +388,7 @@ reçue par le soleil. Ces gaz sont d'origine naturelle
 de carbonne ($CO_2$), le méthane ($CH_4$), le protoxyde d'azote
 ($N_2O$) et les gaz fluorés (HFC) \endnote{JEAN-MARC JANCOVICI, Article, 
 \textit{"Quels sont les gaz à effet de serre ?"}, 01/08/2007:
-\url{https://jancovici.com/changement-climatique/gaz-a-effet-de-serre-et-cycle-du-carbone/quels
+\\ \url{https://jancovici.com/changement-climatique/gaz-a-effet-de-serre-et-cycle-du-carbone/quels
 -sont-les-gaz-a-effet-de-serre-quels-sont-leurs-contribution-a-leffet-de-serre/}}. \vspace{\baselineskip}
 
 % mettre schema flux radiatif 
