@@ -68,15 +68,9 @@ def spectre_luminance_corps_noir (données_abscisses, données_ordonnées):
     plt.show()
     return None
 
-def test_fonction_mathématique(abcisses, fonction):
-    x = []
-    y = []
-    for valeur in abcisses:
-        décalage = random()
-        image_valeur = évaluer_fonction_interpolation(fonction, valeur)
-        x.append(valeur + décalage)
-        y.append(image_valeur)
-    plt.scatter(x, y)
+def test_fonction_mathématique(tableau_absicces, fonction):
+    x = np.linspace(min(tableau_absicces), max(tableau_absicces))
+    plt.plot(x, évaluer_fonction_interpolation(fonction, x))
     plt.show()
     return None
 
