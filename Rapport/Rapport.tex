@@ -455,11 +455,14 @@ dans le domaine infrarouge. C'est un corps noir, c'est à dire
 qu'il absorbe tout le rayonnement qu'il reçoit et le réémet 
 parfaitement. De plus , on peut dire que son émissivité est 
 égale à 1 d'après les hypothèses du corps noir vues précédemment. Il suit donc la loi de Planck et son spectre d'émission en fonction de 
-la longueur d'onde est le suivant :
+la longueur d'onde est le suivant : 
+\begin{center}
+    \includegraphics[scale=0.85]{Images/Spectre Soleil.png}
+    
+    Spectre du soleil, intensité du rayonnement solaire en fonction de la longueur d’onde (Brilliant.org)  
+\end{center} \vspace{\baselineskip}
 
-% mettre image du spectre du soleil
-
-On peut alors calculer ce qu'il émet en rayonnant de 2 manières: \vspace{\baselineskip}
+\noindent On peut alors calculer ce qu'il émet en rayonnant de 2 manières: \vspace{\baselineskip}
 
 1. Avec l'expression du flux radiatif :
 \begin{center}
@@ -470,23 +473,23 @@ $\Phi_{ray}$ = $\epsilon \sigma T^{4} S$
 \end{center}
 avec T=5772 K la température du Soleil \\
 et sa surface $S=4 \pi R^{2}$, sachant que $R= 6,96*10^{8}$ m 
-\newline
-\newline
-On trouve :
+\vspace{\baselineskip}
+
+\noindent On trouve :
 $\Phi_{ray}$ = $3,83*10^{26}$ W  \\
 
-2. Numériquement : \\
+2. Numériquement : \vspace{\baselineskip}
 
 En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Figure  "mettre nombre figure" et inserer 
 le code pour faire l'intégrale sous la courbe, on doit retrouver le meme phi ray) \vspace{\baselineskip}
 \newline On trouve :
-$\Phi_{ray}$ = $3,83*10^{26}$ W \\
+$\Phi_{ray}$ = $3,83*10^{26}$ W \vspace{\baselineskip}
 
-	Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil au niveau de son sol
-est de 174 PW  soit $1,74.10^{17}$ W
-\newline
-\newline
-\newline
+Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil au niveau de son sol
+est de 174 PW  soit $1,74.10^{17}$ W \vspace{\baselineskip}
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
 
 Cependant, comme le Soleil rayonne dans toutes les directions de l’espace, seul une petite partie de ce rayonnement arrive jusqu’à la surface de la Terre. 
 Tout d’abord, la distance qui nous sépare du soleil joue un rôle primordial dans cette réduction. 
@@ -511,6 +514,58 @@ $\Phi_{abs,Terre}$ = $\frac {121 \times 10^{15}}{4 \pi R_T^{2}}$
 = 235 $W.m^{-2}$
 \end{center}
 
+\par 
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+Retrouvons maintenant la température à sa surface.
+On réalise un bilan thermique sur le système suivant : 
+la Terre, sans son atmosphère
+\begin{center}
+    Production = Échanges + Stockage 
+\end{center} \vspace{\baselineskip}
+
+Tout d'abord, la Terre produit de la chaleur grâce au processus de géothermie. En effet, l’activité radioactive au centre de la Terre qui correspond à la désintégration naturelle des atomes présents crée de la chaleur. 
+Cependant, cette production thermique est négligeable par rapport à la chaleur apportée par le Soleil. 
+
+\noindent On considère donc que le terme de production thermique dans notre bilan est nul. \vspace{\baselineskip}
+
+De plus, à l’équilibre thermique, l’état est stationnaire, ce qui signifie que la température ne varie plus dans le temps et donc que notre système ne stocke pas d’énergie thermique. Le terme de stockage est nul.
+
+\noindent On obtient alors :
+\begin{center}
+    Echanges = 0
+\end{center}
+
+\begin{center}
+    $\Leftrightarrow \Phi_{emis} - \Phi_{absorbe}  = 0$
+\end{center}
+
+\begin{center}
+    $\Leftrightarrow \Phi_{emis} = \Phi_{absorbe}$
+\end{center} \vspace{\baselineskip}
+
+On retrouve que la Terre sans son atmosphère est un corps noir, d’émissivité 1. En effet, tout le rayonnement qu’elle absorbe est réémis. On a donc d'après la loi de Plank :
+\begin{center}
+$\Phi_{emis,Terre}$ = $\sigma T^{4}$
+\end{center} \vspace{\baselineskip}
+
+De plus, nous avons vu précedemment que
+\begin{center}
+$\Phi_{emis,Terre}$ = $\Phi_{abs,Terre}$  = 235 $W.m^{-2}$
+\end{center} \vspace{\baselineskip}
+
+On peut ainsi retrouver la température de la Terre :
+\begin{center}
+T = $(\frac{235}{\sigma})^{\frac{1}{4}}$ = $235$ K = -19 °C
+\end{center} \vspace{\baselineskip}
+
+On comprend ici que sans atmosphère, la température terrestre
+serait de -19°C. Nous pouvons en conclure que négliger l'atmosphère et les phénomènes qui s'y produisent
+conduit à des aberrations, puisque la température réelle
+sur Terre est bien supérieure à -19°C.
+
+Nous allons dans la partie suivante prendre en compte l'atmosphère terrestre et l'effet de serre qui s'y produit. Nous commencerons par une étude dans le cas du modèle le plus simple, c'est à dire une température constante quelle que soit l'altitude, afin de pouvoir comprendre simplement le phénomène d'effet de serre.
 
 
 \subsection{Bilan radiatif avec effet de serre pour une température constante dans l'atmosphère}
