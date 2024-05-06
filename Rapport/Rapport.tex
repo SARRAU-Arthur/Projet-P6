@@ -568,8 +568,30 @@ sur Terre est bien supérieure à -19°C.
 Nous allons dans la partie suivante prendre en compte l'atmosphère terrestre et l'effet de serre qui s'y produit. Nous commencerons par une étude dans le cas du modèle le plus simple, c'est à dire une température constante quelle que soit l'altitude, afin de pouvoir comprendre simplement le phénomène d'effet de serre.
 
 
-\subsection{Bilan radiatif avec effet de serre pour une température constante dans l'atmosphère}
-\subsection{Bilan radiatif avec effet de serre pour une température de l'atmosphère variable en fonction de l'altitude}
+\subsection{Bilan radiatif avec effet de serre}
+
+Désormais, considérons que l’atmosphère et les gaz qui la composent impactent les flux. En réalité, il s’agit de comprendre que lorsque le flux arrive sur les différentes molécules de CO2, il peut lui arriver 2 destins : soit le flux est transmis, c’est-à-dire qu’il passe à travers les molécules, soit il est absorbé. Dans la plupart des cas, un flux est exposé aux 2 cas, c’est-à-dire que pour un flux, une partie de celui-ci est transmis, et l’autre est absorbé.
+
+On a :  absorption + transmission = 1
+
+Ces coefficients d'absorption et de transmission sont propres à chaque molécules et dépendent de la longueur d’onde. Le fait que les coefficients dépendent des longueurs d’onde complexifient le problème. 
+
+Il faut utiliser la notion d'émitance pour calculer le flux.  
+
+phi = intégrale (émittance) dlambda 
+
+Nous pouvons désormais calculer un flux en prenant en compte les intéractions avec les molécules de l’atmosphère.
+
+Nous pouvons présenter ce schéma, que présente les différents flux qui se déroulent entre la terre, le soleil et l'atmosphère. 
+
+L’objectif est de quantifier les différentes les flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gazs de l’atmosphère
+
+Comme nous avons dit ci-dessus, le coefficient d'absorption dépend de la longueur d’onde. 
+
+On a : (1-tauxCO2) = INTEGRALE ((kabs*nCo2(z))dz))
+
+Exprimons nCO2 en fonction de l’altiude, pour cela il nous faut des profils de température qui dépendent de l’altitude : 
+
 
 \chapter*{Conclusion et perspectives}
 \addcontentsline{toc}{chapter}{Conclusion et perspectives}
