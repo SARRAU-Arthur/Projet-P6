@@ -317,9 +317,10 @@ enrichissant pour tout le groupe.
    	\item[\boldmath{$c_0$}:] Célérité de la lumière = $2,99^8$ $m.s^{-1}$
     \item[\boldmath{$C_1$}:] Constante de Planck 1 = $1,19.10^{-16}$ $kg.s^{-3}.m^{-4}$
     \item[\boldmath{$C_2$}:] Constante de Planck 2 = $1,44.10^{-2}$ $m.K$
-    \item[\boldmath{$T_s$}:] Température moyenne du Soleil = $5,772.10^3$ $K$
+    \item[\boldmath{$T_s$}:] Température moyenne du Soleil = $5 772$ $K$
     \item[\boldmath{$T_T$}:] Température moyenne de la Terre = $288,15$ $K$
 	\item[\boldmath{$\bar{a_T}$}:] Albédo terrestre moyen = $0,31$
+    \item[\boldmath{$R_T$}:] Rayon de la Terre = $6 371$ $km$
 \end{description}
 
 %%% Introduction
@@ -408,7 +409,7 @@ température moyenne de s'éléver à 15°C au lieu de -18°C
 (sans GES). 
 
 \subsection{Définition des GES}
-Gaz à effet de serre est gaz présent dans l'atmosphère qui 
+Un gaz à effet de serre est un gaz présent dans l'atmosphère qui 
 absorbe une partie des rayonnements (rayons infrarouges) 
 reçue par le soleil. Ces gaz sont d'origine naturelle 
 (vapeur d'eau) et/ou anthropique 
@@ -449,34 +450,71 @@ Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$) est obtenue avec la f
 
 \subsection{Bilan radiatif sans effet de serre} 
 
-\subsubsection{A température constante}
-
-\subsubsection{A température variable en fonction de l'altitude}
-
 Le Soleil émet des rayonnements dans le domaine visible et 
 dans le domaine infrarouge. C'est un corps noir, c'est à dire
 qu'il absorbe tout le rayonnement qu'il reçoit et le réémet 
 parfaitement. De plus , on peut dire que son émissivité est 
-égale à 1 d'après les hypothèses du corps noir. Il suit donc
-la loi de Planck et son spectre d'émission en fonction de 
+égale à 1 d'après les hypothèses du corps noir vues précédemment. Il suit donc la loi de Planck et son spectre d'émission en fonction de 
 la longueur d'onde est le suivant :
 
 % mettre image du spectre du soleil
 
 On peut alors calculer ce qu'il émet en rayonnant de 2 manières: \vspace{\baselineskip}
 
-1. Avec le flux radiatif
+1. Avec l'expression du flux radiatif :
 \begin{center}
 $\Phi_{ray}$ = $\int \epsilon \sigma T^{4} dS$    
 \end{center}
+\begin{center}
+$\Phi_{ray}$ = $\epsilon \sigma T^{4} S$    
+\end{center}
+avec T=5772 K la température du Soleil \\
+et sa surface $S=4 \pi R^{2}$, sachant que $R= 6,96*10^{8}$ m 
+\newline
+\newline
+On trouve :
+$\Phi_{ray}$ = $3,83*10^{26}$ W  \\
 
-2. Numériquement
-	En effet évaluer le flux émit revient à calculer l'aire sous la courbe 
-de son spectre d'émission. (voir Figure  "mettre nombre figure" et inserer 
-le code pour faire l'intégrale sous la courbe) \vspace{\baselineskip}
+2. Numériquement : \\
 
-	Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil 
+En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Figure  "mettre nombre figure" et inserer 
+le code pour faire l'intégrale sous la courbe, on doit retrouver le meme phi ray) \vspace{\baselineskip}
+\newline On trouve :
+$\Phi_{ray}$ = $3,83*10^{26}$ W \\
+
+	Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil au niveau de son sol
 est de 174 PW  soit $1,74.10^{17}$ W
+\newline
+\newline
+\newline
+
+Cependant, comme le Soleil rayonne dans toutes les directions de l’espace, seul une petite partie de ce rayonnement arrive jusqu’à la surface de la Terre. 
+Tout d’abord, la distance qui nous sépare du soleil joue un rôle primordial dans cette réduction. 
+\newline Elle se calcul comme suit :
+\begin{center}
+$Distance$ = $\frac{\pi R_T^{2}}{4 \pi D_{(S-T)}^{2}}$    
+\end{center}
+
+Le second facteur de diminution s’explique par le phénomène d’albédo : en effet, 30\% du rayonnement qui parvient jusqu’à la Terre est réfléchis par notre planète, donc seulement 70\% du rayonnement est absorbé. 
+\newline On peut alors calculer le flux absorbé par la Terre : 
+\begin{center}
+$\Phi_{abs,Terre}$ = $0,7 \times \Phi_{ray} \times Distance$    
+\end{center}
+\begin{center}
+$\Phi_{abs,Terre}$ = $121$ PW    
+\end{center}
+
+En divisant par la surface de la Terre, 
+on obtient le flux surfacique absorbé par la Terre pour 1m² :
+\begin{center}
+$\Phi_{abs,Terre}$ = $\frac {121 \times 10^{15}}{4 \pi R_T^{2}}$
+= 235 $W.m^{-2}$
+\end{center}
+
+
+
+\subsection{Bilan radiatif avec effet de serre pour une température constante dans l'atmosphère}
+\subsection{Bilan radiatif avec effet de serre pour une température de l'atmosphère variable en fonction de l'altitude}
 
 \chapter*{Conclusion et perspectives}
 \addcontentsline{toc}{chapter}{Conclusion et perspectives}
