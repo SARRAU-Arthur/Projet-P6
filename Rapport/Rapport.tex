@@ -574,11 +574,11 @@ Nous allons dans la partie suivante prendre en compte l'atmosphère terrestre et
 
 Désormais, considérons que l’atmosphère et les gaz qui la composent impactent les flux. En réalité, il s’agit de comprendre que lorsque le flux arrive sur les différentes molécules de CO2, il peut lui arriver 2 destins : soit le flux est transmis, c’est-à-dire qu’il passe à travers les molécules, soit il est absorbé. Dans la plupart des cas, un flux est exposé aux 2 cas, c’est-à-dire que pour un flux, une partie de celui-ci est transmis, et l’autre est absorbé.
 
-On a :  absorption + transmission = 1
+On a :  $\alpha$+$\tau$=1
 
-Ces coefficients d'absorption et de transmission sont propres à chaque molécules et dépendent de la longueur d’onde. Le fait que les coefficients dépendent des longueurs d’onde complexifient le problème. 
+Ces coefficients d'absorption et de transmission sont propres à chaque molécule et dépendent de la longueur d’onde. Le fait que les coefficients dépendent des longueurs d’onde complexifie le problème. 
 
-Il faut utiliser la notion d'émitance pour calculer le flux.  
+Il faut utiliser la notion d'émitance pour calculer le flux que l'on associera à ces coefficients.  
 
 \begin{center}\\
 	$\Phi$ =\[ \int M^0_{\lambda,T} \, \mathrm{d}\lambda \]
@@ -586,13 +586,13 @@ Il faut utiliser la notion d'émitance pour calculer le flux.
 
 Nous pouvons désormais calculer un flux en prenant en compte les intéractions avec les molécules de l’atmosphère.
 
-Nous pouvons présenter ces schémas, que présente les différents flux qui se déroulent entre la terre, le soleil et l'atmosphère. 
+Nous pouvons présenter ces schémas, que présente les différents flux qui se déroulent entre la Terre, le Soleil et l'atmosphère. 
 
 \put(150,150){\includegraphics[width=0.3\textwidth]{Images/schemaflux.png}} 
 
 \put(150,150){\includegraphics[width=0.3\textwidth]{Images/schemafluxformules.png}} 
 
-L’objectif est de quantifier les différentes les flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gaz de l’atmosphère
+L’objectif est de quantifier les différentes les flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gaz de l’atmosphère.
 
 Comme nous avons dit ci-dessus, le coefficient d'absorption dépend de la longueur d’onde. 
 
@@ -602,8 +602,9 @@ On a :
 \end{center} 
 
 Nous allons étudier deux cas différents. Dans un premier temps avec une température uniforme dans l'ensemble de l'atmosphère. Puis, avec une témperature qui dépend de l'altitude. 
+
 On commence par exprimer la quantité de matière de CO2 en fonction de l'altitude.
-D'après la loi des Gaz Parfaits, en utlisant le principe fondamentale de la statique des fluides on a: 
+D'après la loi des Gaz Parfaits, en utilisant le principe fondamental de la statique des fluides on a: 
 
 \begin{center}
     PV=nRT\\
@@ -685,7 +686,7 @@ T(z)=$T_o$-az
 \end{center}
 avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initale et $T_f$ = Température de l'atmosphère finale \\
 
-On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondemantale de la statique des fluides. 
+On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondemantal de la statique des fluides. 
 \begin{center}
      $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ \\
 \end{center}
