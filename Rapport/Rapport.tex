@@ -167,7 +167,7 @@ bookmarksopen = true}
 \put(0,98){\color{INSA_GRIS}{\begin{minipage}{6cm} 
 	\textbf{Étudiants :} \end{minipage}}} % Étudiants par ordre alphabétique de nom
 \put(0,60){\color{INSA_GRIS}{\begin{minipage}{6cm}
-	Romane LANÈRES \\ Anouk PETITGAS \\ Arthur SARRAU \end{minipage}}}
+	Romane LANERES \\ Anouk PETITGAS \\ Arthur SARRAU \end{minipage}}}
 \put(185,60){\color{INSA_GRIS}{\begin{minipage}{6cm}
 	Clara MÉLINE \\ Tom PHILIPPE \\ Nina ZEDDOUN \end{minipage}}}
 
@@ -301,7 +301,7 @@ enrichissant pour tout le groupe.
     \item[\boldmath{$M^{0}_{\lambda,T}$}:] Émittance d'un corps noir ($W.m^{-3}$)
     \item[\boldmath{$\epsilon$}:] Émissivité (sans unité)
     \item[\boldmath{$\tau_{CO_2}$}:] Coefficient de transmission du $CO_2$ (sans unité)
-	\item[\boldmath{$k_{abs}$}:]: coefficient d'absorbition obtenue avec la base de donnée HITRAN ($m^2.molec^{-1}$)
+	\item[\boldmath{$k_{abs}$}:]: coefficient d'absorption obtenue avec la base de donnée HITRAN ($m^2.molec^{-1}$)
      \item[\boldmath{$n_{CO2}(z)$}:] Quantité de matière de CO2 en fonction de l'altitude ($molec.m^{-3}$)
     \item[\boldmath{$\lambda$}:] longueur d'onde ($m$)
     \item[\boldmath{$P$}:] Pression ($Pa$)
@@ -338,7 +338,7 @@ fait parler de lui, il s'agit bien de l'effet de serre. \vspace{\baselineskip}
 
 \indent Cependant, il semblerait que ce phénomène physique, vraisemblablement assez simple 
 en apparence, s'avère bien plus complexe en réalité. Si l'on se penche dans un premier temps sur 
-l'éthymologie de ce terme, inventé par le scientifique français Joseph Fourier
+l'étymologie de ce terme, inventé par le scientifique français Joseph Fourier
 \endnote{JOSEPH FOURIER, Article, 
 \textit{"Mémoire sur les températures du globe terrestre et des espaces planétaires}, 
 Mémoires de l'Académie royale des sciences de l'Institut de France, vol.7,  p.569-604, 1827:
@@ -352,9 +352,9 @@ de température. En bref, il faut garder en tête que cette analogie comporte de
 \indent De ce fait, c'est dans ce cadre que s'inscrit notre projet, qui a pour but de quantifier et d'étudier
 l'impact des gaz à effet de serre avec des outils de deuxième année de cursus ingénieur. L'objectif est 
 de construire petit à petit un modèle, avec de plus en plus de paramètres, et qui tende à se rapprocher
-d'une descritpion fidèle de l'impact des gaz à effet de serre. \vspace{\baselineskip}
+d'une description fidèle de l'impact des gaz à effet de serre. \vspace{\baselineskip}
 
-\indent Tout d'abord nous réaliserons quelques calculs intiaux de flux sans aucun GES.
+\indent Tout d'abord nous réaliserons quelques calculs initiaux de flux sans aucun GES.
 Ensuite nous introduirons le dioxyde de carbone $CO_2$ et étudierons son impact avec une température de
 système uniforme. Puis nous tenterons de considérer d'autres GES et de faire évoluer leur caractéristiques
 en fonction de modèles atmosphériques de température, altitude et pression. \vspace{\baselineskip}
@@ -362,11 +362,11 @@ en fonction de modèles atmosphériques de température, altitude et pression. \
 \indent Dans l'ensemble, ce projet se base sur la physique des transferts thermiques, 
 mais fait également appel à des compétences en informatique et mathématiques.
 En effet notre modèle se fonde sur plusieurs paramètres qu'il sera nécessaire
-d'ajuster selon nos besoins, ce qui requiert d'implémanter tous ces calculs
+d'ajuster selon nos besoins, ce qui requiert d'implémenter tous ces calculs
 numériquement. \vspace{\baselineskip}
 
 \indent Pour ce qui est des outils, nous avons codé l'ensemble de nos algorithmes en Python 3.12 et avons misé
-la popularité de ce language pour utiliser des bibliothèques de physique et de mathématiques libres d'accès
+la popularité de ce langage pour utiliser des bibliothèques de physique et de mathématiques libres d'accès
 permettant d'avoir accès à des outils absolument fondamentaux: calcul intégral numérique, 
 base de donnée de taux d'absorptions de gaz à effet de serre, graphiques... Sinon, nous avons utilisé du \LaTeX
 pour la rédaction de ce rapport, qui est un logiciel parfaitement adapté aux études dans le milieu scientifique.
@@ -444,10 +444,10 @@ que lorsque que la température varie dans l'atmosphère en
 fonction de l'altitude. Ainsi si la température était uniforme 
 dans l'atmosphère ce phénomène n'existerait pas. \vspace{\baselineskip}
 
-	C'est l'absorbtion du rayonnement par les GES qui va 
-provoqué un rechauffement terrestre. Ainsi, ce phénomène 
+	C'est l'absorption du rayonnement par les GES qui va 
+provoqué un réchauffement terrestre. Ainsi, ce phénomène 
 créé un réchauffement global de la Terre permettant à la 
-température moyenne de s'éléver à 15°C au lieu de -18°C 
+température moyenne de s'élever à 15°C au lieu de -18°C 
 (sans GES). 
 
 \subsection{Définition des GES}
@@ -456,7 +456,7 @@ absorbe une partie des rayonnements (rayons infrarouges)
 reçue par le soleil. Ces gaz sont d'origine naturelle 
 (vapeur d'eau) et/ou anthropique 
 (issues des activités humaines) comme par exemple le dioxyde 
-de carbonne ($CO_2$), le méthane ($CH_4$), le protoxyde d'azote
+de carbone ($CO_2$), le méthane ($CH_4$), le protoxyde d'azote
 ($N_2O$) et les gaz fluorés (HFC) \endnote{JEAN-MARC JANCOVICI, Article, 
 \textit{"Quels sont les gaz à effet de serre ?"}, 01/08/2007:
 \\ \url{https://jancovici.com/changement-climatique/gaz-a-effet-de-serre-et-cycle-du-carbone/quels
@@ -475,7 +475,7 @@ emmitance $ \epsilon$  est égale à 1.
 
 \subsubsection{L'émittance} 
 
-La luminance d'un corps noir est évalué grace à la loi de Planck 
+La luminance d'un corps noir est évalué grâce à la loi de Planck 
 (en $W.m^{-3}$): \vspace{\baselineskip}
 
 \begin{center}
@@ -484,7 +484,7 @@ $M^{0}_\lambda,_T= \frac{\pi C_1}{\lambda^5} \biggl(\exp(\frac{C_2}{\lambda T}) 
 $C_1$ = 1,19 $\cdot 10^{8}$ $W.m^{-2}.\mu.m^{-1}$\
 $C_2$ = 14400 $\mu.m.K$ \\
 \end{center}
-Et ainsi l'exitance totale d'un coprs noir (en $W.m^{-2}$) est obtenue avec la formule suivante:
+Et ainsi l'exitance totale d'un corps noir (en $W.m^{-2}$) est obtenue avec la formule suivante:
 
 \hfil $M^{0}$ = $\int_{0}^{\infty} M^{0}_\lambda d\lambda$ = $\sigma T^{4}$ 
 
@@ -522,8 +522,8 @@ $\Phi_{ray}$ = $3,83*10^{26}$ W  \\
 
 2. Numériquement : \vspace{\baselineskip}
 
-En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Spectre du soleil et inserer 
-le code pour faire l'intégrale sous la courbe, on doit retrouver le meme phi ray) \vspace{\baselineskip}
+En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Spectre du soleil et insérer 
+le code pour faire l'intégrale sous la courbe, on doit retrouver le même phi ray) \vspace{\baselineskip}
 \newline On trouve :
 $\Phi_{ray}$ = $3,83*10^{26}$ W \vspace{\baselineskip}
 
@@ -592,7 +592,7 @@ On retrouve que la Terre sans son atmosphère est un corps noir, d’émissivit�
 $\Phi_{emis,Terre}$ = $\sigma T^{4}$
 \end{center} \vspace{\baselineskip}
 
-De plus, nous avons vu précedemment que
+De plus, nous avons vu précédemment que
 \begin{center}
 $\Phi_{emis,Terre}$ = $\Phi_{abs,Terre}$  = 235 $W.m^{-2}$
 \end{center} \vspace{\baselineskip}
@@ -624,13 +624,13 @@ Il faut utiliser la notion d'émitance pour calculer le flux que l'on associera 
 	$\Phi$ =\[ \int M^0_{\lambda,T} \, \mathrm{d}\lambda \]
    \end{center}\\
 
-Nous pouvons désormais calculer un flux en prenant en compte les intéractions avec les molécules de l’atmosphère.
+Nous pouvons désormais calculer un flux en prenant en compte les interactions avec les molécules de l’atmosphère.
 
 Nous pouvons présenter ces schémas, que présente les différents flux qui se déroulent entre la Terre, le Soleil et l'atmosphère. 
 
-\put(150,150){\includegraphics[width=0.3\textwidth]{Images/schemaflux.png}} 
+\put(125,150){\includegraphics[width=0.5\textwidth]{Images/schemaflux.png}} 
 
-\put(150,150){\includegraphics[width=0.3\textwidth]{Images/schemafluxformules.png}} 
+\put(125,150){\includegraphics[width=0.5\textwidth]{Images/schemafluxformules.png}} 
 
 L’objectif est de quantifier les différentes les flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gaz de l’atmosphère.
 
@@ -641,7 +641,7 @@ On a :
     (1-$\tau_{CO2}$)=\[ \int k_{abs}.n_{CO2}(z) \, \mathrm{d}z \]
 \end{center} 
 
-Nous allons étudier deux cas différents. Dans un premier temps avec une température uniforme dans l'ensemble de l'atmosphère. Puis, avec une témperature qui dépend de l'altitude. 
+Nous allons étudier deux cas différents. Dans un premier temps avec une température uniforme dans l'ensemble de l'atmosphère. Puis, avec une température qui dépend de l'altitude. 
 
 On commence par exprimer la quantité de matière de CO2 en fonction de l'altitude.
 D'après la loi des Gaz Parfaits, en utilisant le principe fondamental de la statique des fluides on a: 
@@ -724,9 +724,9 @@ Pour trouver la pression, on utilise une formule plus générale:\\
 \begin{center}
 T(z)=$T_o$-az      
 \end{center}
-avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initale et $T_f$ = Température de l'atmosphère finale \\
+avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initiale et $T_f$ = Température de l'atmosphère finale \\
 
-On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondemantal de la statique des fluides. 
+On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondamental de la statique des fluides. 
 \begin{center}
      $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ \\
 \end{center}
@@ -745,7 +745,7 @@ On peut à présent calculer la pression en fonction de l'altitude, en utilisant
 
 avec $e^{k}$ = C\\
 
- On determine C :
+ On détermine C :
 \begin{center}
 $P(0)= P_o = (T_o)^{\frac{Mg}{Ra}} \times C$\\
 \end{center}\\
