@@ -603,7 +603,7 @@ On a :
 
 Nous allons étudier deux cas différents. Dans un premier temps avec une température uniforme dans l'ensemble de l'atmosphère. Puis, avec une témperature qui dépend de l'altitude. 
 On commence par exprimer la quantité de matière de CO2 en fonction de l'altitude.
-D'après la loi des Gaz Parfaits, on a: 
+D'après la loi des Gaz Parfaits, en utlisant le principe fondamentale de la statique des fluides on a: 
 
 \begin{center}
     PV=nRT\\
@@ -672,13 +672,20 @@ De 19 à 32 km \\
     $T(z)=1300z-26500$
 \end{center}\\
 
+De 32 à 47 km \\
+\begin{center}
+    $T_o$=229K\\
+    $T_f$=273k\\
+    $T(z)=341z-46068$
+\end{center}\\
+
 Pour trouver la pression, on utilise une formule plus générale:\\
 \begin{center}
-T=$T_o$-az      
+T(z)=$T_o$-az      
 \end{center}
-avec a= coefficient directeur \\
+avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initale et $T_f$ = Température de l'atmosphère finale \\
 
-On peut à présent calculer la pression en fonction de l'altitude. 
+On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondemantale de la statique des fluides. 
 \begin{center}
      $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ \\
 \end{center}
