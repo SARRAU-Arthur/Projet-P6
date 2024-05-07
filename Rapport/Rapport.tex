@@ -640,6 +640,52 @@ donc \\
 
 Pour le deuxième cas, il nous faut des profils de température selon l'altitude.
 
+On utilise donc :\\
+\begin{center}
+T=$T_o$-az      
+\end{center}
+avec a= coefficient directeur \\
+
+On peut à présent calculer la pression en fonction de l'altitude. 
+\begin{center}
+     $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ \\
+\end{center}
+
+\begin{center}
+     $\Leftrightarrowight\frac{dP}{P}$ = $\frac{dz }{(T_o-az)} \times \frac{-\rho Mg}{R}$\\
+\end{center}
+
+\begin{center}
+     $\Rightarrow \ln(P)=\frac{Mg}{Ra} ln(T_o-az)+K$\\
+\end{center}
+
+\begin{align*}
+     \Rightarrow P(z) = e^{\frac{Mg}{Ra}ln(T_o-az)} \times e^k =(T_o -az)^{\frac{Mg}{Ra}} \times C
+\end{align*}
+
+avec $e^{k}$ = C\\
+
+ On determine C :
+\begin{center}
+$P(0)= P_o = (T_o)^{\frac{Mg}{Ra}} \times C$\\
+\end{center}\\
+
+\begin{center}
+$\Rightarrow C= \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
+\end{center}
+
+\begin{center}
+$P(z) = (T_o -az)^{\frac{Mg}{Ra}} \times \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
+\end{center}\\
+
+\begin{center}
+$\Leftrightarrow P(z)= P_o (1-\frac{az}{T_o})^{\frac{Mg}{Ra}}$
+\end{center}\\
+
+On a donc :
+\begin{center}
+   $n(z)=\frac{P(z)}{kT}= \frac{ P_o (1-\frac{az}{T_o})^{\frac{Mg}{Ra}}}{kT}$
+\end{center}\\
 On peut ainsi à l'aide du programme Python, calculer l'intégralité des flèches.
 
 \chapter*{Conclusion et perspectives}
