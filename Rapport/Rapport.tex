@@ -41,6 +41,11 @@
 
 \setlength{\parindent}{0pt} % Supression des alinéas automatiques par défaut, plus manipulable
 
+% Réduire les espacements des titres de chapitre, trop importants par défaut
+
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename \ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-25pt}{15pt} % {alinéa}{au dessus}{en dessous}
+
 % Paramètres hyperliens
 
 \hypersetup{
