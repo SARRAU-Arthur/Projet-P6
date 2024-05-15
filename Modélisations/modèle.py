@@ -112,6 +112,7 @@ def affichage_physique (paramètre, M_0):
         
 # Programme principal
 
+""" Affichage """
 system('cls' if name == 'nt' else 'clear')
 warnings.filterwarnings('ignore')
 
@@ -130,7 +131,7 @@ CO2_absorbance = fonction_mathématique_interpolation_absorbance(longueur_onde, 
 
 """ Calculs différents flux par système sous hypothèse de corps noirs """
 # Système Terre
-T = T_0
+T = T_T
 print(f'> Système Terre: T = {T} K \n')
 luminance_corps_noir_Terre = fonction_mathématique_corps_noir()
 

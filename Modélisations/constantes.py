@@ -10,5 +10,6 @@ C_1 = 2 * h * (c_0 / n) ** 2 # Constante de Plank 1 (kg.s^−3.m^-4)
 C_2 = (h * c_0) / (n * k_B) # Constante de Plank 2 (m.K)
 C_S = 5.67E-8 # Constante de Stephan (kg.s^-3.K^-4)
 T_S = 5.772E3 # Température soleil (K)
-T_0 = 2.8815E2 # Température 15 degrés Celcius (K)
+T_T = 2.8815E2 # Température 15 degrés Celcius (K)
 a_T = 0.31 # Albedo terrestre moyen
+P_0 = 1E5 # Pression atmorpshérique au niveau de la mer ()
