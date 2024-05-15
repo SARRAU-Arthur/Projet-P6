@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  15 MAY 2024 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.3)  15 MAY 2024 22:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -431,9 +431,9 @@ Package: endnotes 2020-01-02 endnotes package
 \endnotesep=\dimen199
 \@enotes=\write3
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 61.
-Package hyperref Info: Option `breaklinks' set `true' on input line 61.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 61.
+Package hyperref Info: Option `colorlinks' set `true' on input line 62.
+Package hyperref Info: Option `breaklinks' set `true' on input line 62.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 62.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
@@ -441,27 +441,27 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (Rapport.aux)
 \openout1 = `Rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Info: Redefining \degres on input line 152.
-LaTeX Info: Redefining \up on input line 152.
-Package hyperref Info: Link coloring ON on input line 152.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Info: Redefining \degres on input line 153.
+LaTeX Info: Redefining \up on input line 153.
+Package hyperref Info: Link coloring ON on input line 153.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -522,18 +522,18 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <Images/Image Garde.png, id=3, 301.125pt x 155.07938pt>
 File: Images/Image Garde.png Graphic file (type png)
 <use Images/Image Garde.png>
-Package pdftex.def Info: Images/Image Garde.png  used on input line 163.
+Package pdftex.def Info: Images/Image Garde.png  used on input line 164.
 (pdftex.def)             Requested size: 301.12425pt x 155.07898pt.
 <Images/Logo INSA.png, id=5, 656.2116pt x 171.2799pt>
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 164.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 165.
 (pdftex.def)             Requested size: 193.47578pt x 50.49838pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 167.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 168.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 167.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 168.
  (C:\Users\sarra\Downloads\Applications\MikTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -543,7 +543,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/sarra/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Images/Image Garde.png> <./Images/Logo INSA.png>] [1]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 247.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 248.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [2
 
@@ -552,7 +552,7 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 247.
 
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 287.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 288.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [3
 
@@ -562,21 +562,21 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 287.
 
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 294.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 295.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [4
 
 ]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 333.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 337.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [5
 
 ]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 381.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 384.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [6
 
@@ -584,29 +584,69 @@ Package pdftex.def Info: Images/Logo INSA.png  used on input line 381.
 Chapitre 1.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 390.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 393.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [7
 
 ]
 Chapitre 2.
+<Images/schemaflux.png, id=105, 722.7pt x 505.89pt>
+File: Images/schemaflux.png Graphic file (type png)
+<use Images/schemaflux.png>
+Package pdftex.def Info: Images/schemaflux.png  used on input line 408.
+(pdftex.def)             Requested size: 252.94878pt x 177.06415pt.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 452.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 445.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
 [8
 
-]
+ <./Images/schemaflux.png>]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 487.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 509.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
  [9]
+<Images/Spectre Soleil.png, id=121, 489.32813pt x 305.64188pt>
+File: Images/Spectre Soleil.png Graphic file (type png)
+<use Images/Spectre Soleil.png>
+Package pdftex.def Info: Images/Spectre Soleil.png  used on input line 510.
+(pdftex.def)             Requested size: 415.93086pt x 259.7968pt.
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 497.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 548.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [10
+ [10 <./Images/Spectre Soleil.png>]
+File: Images/Logo INSA.png Graphic file (type png)
+<use Images/Logo INSA.png>
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 618.
+(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
+ [11]
+<Images/schemafluxformules.png, id=133, 722.7pt x 505.89pt>
+File: Images/schemafluxformules.png Graphic file (type png)
+<use Images/schemafluxformules.png>
+Package pdftex.def Info: Images/schemafluxformules.png  used on input line 641.
+(pdftex.def)             Requested size: 252.94878pt x 177.06415pt.
+File: Images/Logo INSA.png Graphic file (type png)
+<use Images/Logo INSA.png>
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 648.
+(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
+ [12 <./Images/schemafluxformules.png>]
+File: Images/Logo INSA.png Graphic file (type png)
+<use Images/Logo INSA.png>
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 737.
+(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
+ [13]
+File: Images/Logo INSA.png Graphic file (type png)
+<use Images/Logo INSA.png>
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 793.
+(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
+ [14]
+File: Images/Logo INSA.png Graphic file (type png)
+<use Images/Logo INSA.png>
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 806.
+(pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
+ [15
 
 ] (Rapport.ent
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 19.
@@ -620,48 +660,48 @@ Overfull \hbox (3.93527pt too wide) in paragraph at lines 55--73
 )
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 517.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 826.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [11
+ [16
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{section.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.523 \section{Documentation technique}
+l.832 \section{Documentation technique}
                                        
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 524.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 833.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [12
+ [17
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{section.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.526 \section{Listings des programmes réalisés}
+l.835 \section{Listings des programmes réalisés}
                                                   
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 527.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 836.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [13]
+ [18]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 530.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 839.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [14]
+ [19]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 533.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 842.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [15]
+ [20]
 File: Images/Logo INSA.png Graphic file (type png)
 <use Images/Logo INSA.png>
-Package pdftex.def Info: Images/Logo INSA.png  used on input line 537.
+Package pdftex.def Info: Images/Logo INSA.png  used on input line 846.
 (pdftex.def)             Requested size: 85.35826pt x 22.27762pt.
- [16] 
+ [21] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Rapport.aux)
  ***********
@@ -670,17 +710,17 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15106 strings out of 474542
- 242810 string characters out of 5744447
- 1935978 words of memory out of 5000000
- 37046 multiletter control sequences out of 15000+600000
+ 15138 strings out of 474542
+ 243627 string characters out of 5744447
+ 1937978 words of memory out of 5000000
+ 37072 multiletter control sequences out of 15000+600000
  576894 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,17n,93p,1012b,463s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Rapport.pdf (17 pages, 552009 bytes).
+ 89i,17n,93p,1012b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\sarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/sarra/Downloads/Applications/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Rapport.pdf (22 pages, 769886 bytes).
 PDF statistics:
- 741 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 171 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 790 PDF objects out of 1000 (max. 8388607)
+ 46 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
