@@ -1,3 +1,4 @@
+
 %%%%% Définition paramètres documents
 
 \documentclass[a4paper, 12pt]{report} % Initilisation document
@@ -295,8 +296,8 @@ enrichissant pour tout le groupe.
     \item[CN:] Corps Noir
     
 	\subsubsection*{Grandeurs \footnote{En unités usuelles}}
-    \item[\boldmath{$\Phi$}:] Flux ou débit \footnote{Dans ce rapport 
-	il décrira exclusivement la puissance rayonnée par unité de surface} ($W.m^{-2}$)
+    \item[\boldmath{$\Phi$}:] Flux  ($W$)
+    \item[\boldmath{$\phi$}:] Densité de flux \footnote{Dans ce rapport il décrira exclusivement la puissance rayonnée par unité de surface} ($W.m^{-2}$)
     \item[\boldmath{$M^{0}$}:] Émittance totale d'un corps noir, ($W.m^{-2}$)
     \item[\boldmath{$M^{0}_{\lambda,T}$}:] Émittance d'un corps noir ($W.m^{-3}$)
     \item[\boldmath{$\epsilon$}:] Émissivité (sans unité)
@@ -331,10 +332,9 @@ enrichissant pour tout le groupe.
 \chapter*{Introduction}				
 \addcontentsline{toc}{chapter}{Introduction}
 
-\indent Le réchauffement climatique est sans aucun doute la plus grande problématique 
+\indent Le réchauffement climatique, dû à l'effet de serre, est sans aucun doute la plus grande problématique 
 scientifique du siècle actuel. Elle regroupe une multitude d'enjeux mêlant environnement,
-climat, industries et sociétés humaines. Cependant s'il y a un point en particulier qui 
-fait parler de lui, il s'agit bien de l'effet de serre. \vspace{\baselineskip}
+climat, industries et sociétés humaines. \vspace{\baselineskip}
 
 \indent Cependant, il semblerait que ce phénomène physique, vraisemblablement assez simple 
 en apparence, s'avère bien plus complexe en réalité. Si l'on se penche dans un premier temps sur 
@@ -356,7 +356,7 @@ d'une description fidèle de l'impact des gaz à effet de serre. \vspace{\baseli
 
 \indent Tout d'abord nous réaliserons quelques calculs initiaux de flux sans aucun GES.
 Ensuite nous introduirons le dioxyde de carbone $CO_2$ et étudierons son impact avec une température de
-système uniforme. Puis nous tenterons de considérer d'autres GES et de faire évoluer leur caractéristiques
+système uniforme. Puis, si le temps nous le permet, on considérera d'autres GES et on ferra évoluer leur caractéristiques
 en fonction de modèles atmosphériques de température, altitude et pression. \vspace{\baselineskip}
 
 \indent Dans l'ensemble, ce projet se base sur la physique des transferts thermiques, 
@@ -393,13 +393,16 @@ La prise en main s'est faite progressivement pour chaque membre du groupe, mais 
 	L'effet de serre est un processus naturel qui se produit 
 avec le rayonnement entre la Terre et le Soleil. Tout d'abord, 
 le Soleil émet un rayonnement vers la Terre, l'atmosphère 
-laisse passer une partie de ce rayonnement solaire. Réchauffé, 
-le corps terrestre, étant un corps noir, émet un flux rayonné 
-identique à celui reçu par soleil. Ce flux est alors renvoyé 
-vers l'atmosphère et une partie est absorbée par les gaz 
-présents, appelés gaz à effet de serre. Le reste du flux 
-est soit envoyé dans l'espace, soit renvoyé vers la Terre.
-\vspace{\baselineskip}
+laisse passer une partie de ce rayonnement solaire. 
+Réchauffé, le corps terrestre, étant un corps noir, émet un rayonnement infrarouge. 
+Ce flux est alors renvoyé vers l'atmosphère et une partie est absorbée par les gaz présents, appelés gaz à effet de serre. 
+Le reste du flux est envoyé dans l'espace.
+
+\begin{center}
+    \includegraphics[scale=0.35]{Images/schemaflux.png} 
+    
+    Figure 1 : Bilan radiatif terrestre
+\end{center} 
 
 Dans le but de comprendre ce phénomène plus en détails, nous allons maintenant expliciter 
 différentes hypothèses. Premièrement nous allons considérer que les différents systèmes impliqués 
@@ -454,7 +457,7 @@ température moyenne de s'élever à 15°C au lieu de -18°C
 Un gaz à effet de serre est un gaz présent dans l'atmosphère qui 
 absorbe une partie des rayonnements (rayons infrarouges) 
 reçue par le soleil. Ces gaz sont d'origine naturelle 
-(vapeur d'eau) et/ou anthropique 
+(vapeur d'eau, ozone...) et/ou anthropique 
 (issues des activités humaines) comme par exemple le dioxyde 
 de carbone ($CO_2$), le méthane ($CH_4$), le protoxyde d'azote
 ($N_2O$) et les gaz fluorés (HFC) \endnote{JEAN-MARC JANCOVICI, Article, 
@@ -474,15 +477,14 @@ va émettre autant de rayonnement qu'il en absorbe. On peut donc dire que son
 emmitance $ \epsilon$  est égale à 1. 
 
 \subsubsection{L'émittance} 
-
-La luminance d'un corps noir est évalué grâce à la loi de Planck 
-(en $W.m^{-3}$): \vspace{\baselineskip}
+\noindent L'émittance spéctrique d'un corps noir est évalué grâce à la loi de Planck 
+(en $W.m^{-2}$): \vspace{\baselineskip}
 
 \begin{center}
 $M^{0}_\lambda,_T= \frac{\pi C_1}{\lambda^5} \biggl(\exp(\frac{C_2}{\lambda T}) - 1\biggr)^{-1}$ 
 
-$C_1$ = 1,19 $\cdot 10^{8}$ $W.m^{-2}.\mu.m^{-1}$\
-$C_2$ = 14400 $\mu.m.K$ \\
+$C_1$ = 1,19 $\cdot 10^{8}$ $W.m^{-2}.\mu m^{-1}$\
+$C_2$ = 14400 $\mu m.K$ \\
 \end{center}
 Et ainsi l'exitance totale d'un corps noir (en $W.m^{-2}$) est obtenue avec la formule suivante:
 
@@ -501,31 +503,32 @@ la longueur d'onde est le suivant :
 \begin{center}
     \includegraphics[scale=0.85]{Images/Spectre Soleil.png}
     
-    Spectre du soleil, intensité du rayonnement solaire en fonction de la longueur d’onde (Brilliant.org)  
+    Figure 2 : Spectre du soleil, intensité du rayonnement solaire en fonction de la longueur d’onde (Brilliant.org)  
 \end{center} \vspace{\baselineskip}
 
 \noindent On peut alors calculer ce qu'il émet en rayonnant de 2 manières: \vspace{\baselineskip}
 
 1. Avec l'expression du flux radiatif :
 \begin{center}
-$\Phi_{ray}$ = $\int \epsilon \sigma T^{4} dS$    
+$\Phi_{ray}$ = $\int_S \epsilon \sigma T^{4} dS$    
 \end{center}
 \begin{center}
 $\Phi_{ray}$ = $\epsilon \sigma T^{4} S$    
 \end{center}
-avec T=5772 K la température du Soleil \\
-et sa surface $S=4 \pi R^{2}$, sachant que $R= 6,96*10^{8}$ m 
+avec T=5772 K la température du Soleil, l'émissivité 
+$\epsilon = 1$ 
+et sa surface $S=4 \pi R^{2}$, sachant que $R= 6,96 \times 10^{8}$ m 
 \vspace{\baselineskip}
 
-\noindent On trouve :
-$\Phi_{ray}$ = $3,83*10^{26}$ W  \\
+\noindent On trouve : \vspace{\baselineskip}
+$\Phi_{ray}$ = $3,83 \times 10^{26}$ W 
 
 2. Numériquement : \vspace{\baselineskip}
 
 En effet évaluer le flux émit revient à calculer l'aire sous la courbe de son spectre d'émission. (voir Spectre du soleil et insérer 
 le code pour faire l'intégrale sous la courbe, on doit retrouver le même phi ray) \vspace{\baselineskip}
 \newline On trouve :
-$\Phi_{ray}$ = $3,83*10^{26}$ W \vspace{\baselineskip}
+$\Phi_{ray}$ = $3,83 \times 10^{26}$ W \vspace{\baselineskip}
 
 Ainsi avec ces deux méthodes, on trouve que le rayonnement émis par le Soleil au niveau de son sol
 est de 174 PW  soit $1,74.10^{17}$ W \vspace{\baselineskip}
@@ -552,7 +555,7 @@ $\Phi_{abs,Terre}$ = $121$ PW
 En divisant par la surface de la Terre, 
 on obtient le flux surfacique absorbé par la Terre pour 1m² :
 \begin{center}
-$\Phi_{abs,Terre}$ = $\frac {121 \times 10^{15}}{4 \pi R_T^{2}}$
+$\phi_{abs,Terre}$ = $\frac {121 \times 10^{15}}{4 \pi R_T^{2}}$
 = 235 $W.m^{-2}$
 \end{center}
 
@@ -587,19 +590,19 @@ De plus, à l’équilibre thermique, l’état est stationnaire, ce qui signifi
     $\Leftrightarrow \Phi_{emis} = \Phi_{absorbe}$
 \end{center} \vspace{\baselineskip}
 
-On retrouve que la Terre sans son atmosphère est un corps noir, d’émissivité 1. En effet, tout le rayonnement qu’elle absorbe est réémis. On a donc d'après la loi de Plank :
+On retrouve que la Terre sans son atmosphère est un corps noir, d’émissivité 1. En effet, tout le rayonnement qu’elle absorbe est réémis. On a donc d'après la loi de Planck :
 \begin{center}
-$\Phi_{emis,Terre}$ = $\sigma T^{4}$
+$\Phi_{emis,Terre}$ = $4 \pi R_T^{2} \sigma T^{4}$
 \end{center} \vspace{\baselineskip}
 
 De plus, nous avons vu précédemment que
 \begin{center}
-$\Phi_{emis,Terre}$ = $\Phi_{abs,Terre}$  = 235 $W.m^{-2}$
+$\Phi_{emis,Terre}$ = $\Phi_{abs,Terre}$  = 121 $PW$
 \end{center} \vspace{\baselineskip}
 
 On peut ainsi retrouver la température de la Terre :
 \begin{center}
-T = $(\frac{235}{\sigma})^{\frac{1}{4}}$ = $235$ K = -19 °C
+T = $(\frac{121 \times 10^{15}}{4 \pi R_T^{2} \sigma})^{\frac{1}{4}}$ = $235$ K = -19 °C
 \end{center} \vspace{\baselineskip}
 
 On comprend ici que sans atmosphère, la température terrestre
@@ -612,34 +615,41 @@ Nous allons dans la partie suivante prendre en compte l'atmosphère terrestre et
 
 \subsection{Bilan radiatif avec effet de serre}
 
-Désormais, considérons que l’atmosphère et les gaz qui la composent impactent les flux. En réalité, il s’agit de comprendre que lorsque le flux arrive sur les différentes molécules de CO2, il peut lui arriver 2 destins : soit le flux est transmis, c’est-à-dire qu’il passe à travers les molécules, soit il est absorbé. Dans la plupart des cas, un flux est exposé aux 2 cas, c’est-à-dire que pour un flux, une partie de celui-ci est transmis, et l’autre est absorbé.
+Désormais, considérons que l’atmosphère et un des gaz qui la compose, le CO2, impactent les flux. En réalité, il s’agit de comprendre que lorsque le flux arrive sur les différentes molécules de CO2, il peut lui arriver 3 destins : soit le flux est transmis, c’est-à-dire qu’il passe à travers les molécules, soit il est absorbé, soit il est réfléchis. Dans notre cas, on néglige la réflexion car elle est très petite devant les 2 autres. Une partie d'un flux est alors transmis, et l’autre est absorbé.
 
 On a :  $\alpha$+$\tau$=1
 
 Ces coefficients d'absorption et de transmission sont propres à chaque molécule et dépendent de la longueur d’onde. Le fait que les coefficients dépendent des longueurs d’onde complexifie le problème. 
 
-Il faut utiliser la notion d'émitance pour calculer le flux que l'on associera à ces coefficients.  
+Il faut utiliser la notion d'émittance pour calculer le flux que l'on associera à ces coefficients.  
 
-\begin{center}\\
-	$\Phi$ =\[ \int M^0_{\lambda,T} \, \mathrm{d}\lambda \]
-   \end{center}\\
+\begin{center}
+$\phi$ =$\int M^0_{\lambda,T} \, \mathrm{d}\lambda$
+\end{center}
 
 Nous pouvons désormais calculer un flux en prenant en compte les interactions avec les molécules de l’atmosphère.
 
-Nous pouvons présenter ces schémas, que présente les différents flux qui se déroulent entre la Terre, le Soleil et l'atmosphère. 
+Nous pouvons présenter ces schémas, que présente les différents flux qui se déroulent entre la Terre, le Soleil et l'atmosphère (pour le bilan radiatif terrestre, voir Figure 1, p8).\vspace{\baselineskip}  
 
-\put(125,150){\includegraphics[width=0.5\textwidth]{Images/schemaflux.png}} 
-
-\put(125,150){\includegraphics[width=0.5\textwidth]{Images/schemafluxformules.png}} 
-
-L’objectif est de quantifier les différentes les flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gaz de l’atmosphère.
-
-Comme nous avons dit ci-dessus, le coefficient d'absorption dépend de la longueur d’onde. 
-
-On a : 
 \begin{center}
-    (1-$\tau_{CO2}$)=\[ \int k_{abs}.n_{CO2}(z) \, \mathrm{d}z \]
-\end{center} 
+    \includegraphics[scale=0.35]{Images/schemafluxformules.png}
+
+    Figure 3 : Quantification des flux
+\end{center} \vspace{\baselineskip}
+
+\noindent $E_\lambda$ l'émittance spectrique du Soleil
+
+\noindent $M^{0}_\lambda (T)$ l'émittance spectrique du corps noir à la température T \vspace{\baselineskip}
+
+
+L’objectif est de quantifier les différentes flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gaz de l’atmosphère.
+
+\noindent Comme nous avons dit ci-dessus, le coefficient d'absorption dépend de la longueur d’onde. 
+
+\noindent On a : 
+\begin{center}
+    $(1-\tau_{CO2})$ = $\int k_{abs} \times n_{CO2}(z) \, \mathrm{d}z$
+\end{center}
 
 Nous allons étudier deux cas différents. Dans un premier temps avec une température uniforme dans l'ensemble de l'atmosphère. Puis, avec une température qui dépend de l'altitude. 
 
@@ -647,39 +657,42 @@ On commence par exprimer la quantité de matière de CO2 en fonction de l'altitu
 D'après la loi des Gaz Parfaits, en utilisant le principe fondamental de la statique des fluides on a: 
 
 \begin{center}
-    PV=nRT\\
+    PV=nRT
 \end{center}
 
 \begin{center}
-    $\Rightarrow n= \frac{PV}{RT}=\frac{N}{Na}$\\
+    $\Rightarrow n= \frac{PV}{RT}=\frac{N}{Na}$
 \end{center}
 
 \begin{center}
-    $\Rightarrow\frac{N}{V}= \frac{PNa}{RT}$\\ 
+    $\Rightarrow\frac{N}{V}= \frac{PNa}{RT}$
 \end{center}
+
 \begin{center}
-    $\Rightarrow n(z)= \frac{P(z)}{kT} $\\  
+    $\Rightarrow n(z)= \frac{P(z)}{kT} $ 
 \end{center}   
 
-avec $k_B$=$\frac{Na}{R}$= constante de Boltzmann\\
+avec $k_B$=$\frac{Na}{R}$= constante de Boltzmann \vspace{\baselineskip}
 
 Pour le cas de la température uniforme, on a:
 
 \begin{center}
     $\frac{dP}{dz}$ =$-\rho$g
-\end{center}\\
-D'après la loi des Gaz Parfaits: \\
+\end{center}
+
+D'après la loi des Gaz Parfaits: 
 \begin{center}
     $\rho$= $\frac{PM}{RT}$
-\end{center}\\
-donc \\
+\end{center}
+
+donc 
 \begin{center}
     $\frac{dP}{dz}$= $-\frac{PM}{RT}$ g
-\end{center}\\
+\end{center}
 
 \begin{center}
     $\Rightarrow\frac{dP}{P}$= $-\frac{gM}{RT}$ dz
-\end{center}\\
+\end{center}
 
 \begin{center}
     $\Rightarrow P(z)= P_o e^{-\frac{gM}{RT} z }$
@@ -688,51 +701,53 @@ donc \\
 On a donc 
 \begin{center}
 	$n(z)=\frac{P(z)}{kT}= \frac{ P_o e^{-\frac{gM}{RT} z }}{kT}$
- \end{center}\\
+ \end{center}
 
 Pour le deuxième cas, il nous faut des profils de température selon l'altitude.
-Ainsi on a les profils suivant:\\
-De 0 à 10 km \\
+Ainsi on a les profils suivant:
+
+De 0 à 10 km 
 \begin{center}
     $T_o$=288K\\
     $T_f$=219k\\
     $T(z)=-144.53z+41739.13$
-\end{center}\\
+\end{center}
 
-De 10 à 19 km \\
+De 10 à 19 km 
 \begin{center}
     $T_o$=219K\\
     $T_f$=219k\\
     $T(z)=219$
-\end{center}\\
+\end{center}
 
-De 19 à 32 km \\
+De 19 à 32 km 
 \begin{center}
     $T_o$=219K\\
     $T_f$=229k\\
     $T(z)=1300z-26500$
-\end{center}\\
+\end{center}
 
-De 32 à 47 km \\
+De 32 à 47 km 
 \begin{center}
     $T_o$=229K\\
     $T_f$=273k\\
     $T(z)=341z-46068$
-\end{center}\\
+\end{center}
 
-Pour trouver la pression, on utilise une formule plus générale:\\
+\noindent Pour trouver la pression, on utilise une formule plus générale:
 \begin{center}
 T(z)=$T_o$-az      
 \end{center}
-avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initiale et $T_f$ = Température de l'atmosphère finale \\
+
+\noindent avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initiale et $T_f$ = Température de l'atmosphère finale \vspace{\baselineskip}
 
 On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondamental de la statique des fluides. 
 \begin{center}
-     $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ \\
+     $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ 
 \end{center}
 
 \begin{center}
-     $\Leftrightarrowight\frac{dP}{P}$ = $\frac{dz }{(T_o-az)} \times \frac{-\rho Mg}{R}$\\
+$\Leftrightarrow \frac{dP}{P}$ = $\frac{dz}{(T_o-az)} \times \frac{-\rho Mg}{R}$
 \end{center}
 
 \begin{center}
@@ -743,12 +758,12 @@ On peut à présent calculer la pression en fonction de l'altitude, en utilisant
      \Rightarrow P(z) = e^{\frac{Mg}{Ra}ln(T_o-az)} \times e^k =(T_o -az)^{\frac{Mg}{Ra}} \times C
 \end{align*}
 
-avec $e^{k}$ = C\\
+avec $e^{k}$ = C \vspace{\baselineskip}
 
- On détermine C :
+On détermine C :
 \begin{center}
-$P(0)= P_o = (T_o)^{\frac{Mg}{Ra}} \times C$\\
-\end{center}\\
+$P(0)= P_o = (T_o)^{\frac{Mg}{Ra}} \times C$
+\end{center}
 
 \begin{center}
 $\Rightarrow C= \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
@@ -756,16 +771,17 @@ $\Rightarrow C= \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
 
 \begin{center}
 $P(z) = (T_o -az)^{\frac{Mg}{Ra}} \times \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
-\end{center}\\
+\end{center}
 
 \begin{center}
 $\Leftrightarrow P(z)= P_o (1-\frac{az}{T_o})^{\frac{Mg}{Ra}}$
-\end{center}\\
+\end{center}
 
 On a donc :
 \begin{center}
-   $n(z)=\frac{P(z)}{kT}= \frac{ P_o (1-\frac{az}{T_o})^{\frac{Mg}{Ra}}}{kT}$
-\end{center}\\
+   $n(z)=\frac{P(z)}{kT(z)}= \frac{ P_o (1-\frac{az}{T_o})^{\frac{Mg}{Ra}}}{kT(z)}$
+\end{center}
+
 On peut ainsi à l'aide du programme Python calculer (1-$\tau_{CO2}$), et ainsi calculer l'intégralité des flèches.
 
 \chapter*{Conclusion et perspectives}
@@ -775,6 +791,9 @@ On peut ainsi à l'aide du programme Python calculer (1-$\tau_{CO2}$), et ainsi 
 \item Conclusions sur l'apport personnel de cet E.C. projet
 \item Perspectives pour la poursuite de ce projet
 \end{itemize}
+
+\vspace{\baselineskip}
+pas le temps d'ajouter d'autres gazs et complexifier le modèle
 
 %%% Bibliographie
 
