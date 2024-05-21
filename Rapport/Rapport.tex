@@ -304,9 +304,8 @@ enrichissant pour tout le groupe.
 	\subsubsection*{Grandeurs \footnote{En unités usuelles}}
     \item[\boldmath{$\Phi$}:] Flux  ($W$)
     \item[\boldmath{$\phi$}:] Densité de flux \footnote{Dans ce rapport il décrira exclusivement la puissance rayonnée par unité de surface} ($W.m^{-2}$)
-    \item[\boldmath{$M^{0}$}:] Émittance totale d'un corps noir, ($W.m^{-2}$)
+    \item[\boldmath{$M^{0}$}:] Émittance totale d'un corps noir ($W.m^{-2}$)
     \item[\boldmath{$M^{0}_{\lambda,T}$}:] Émittance d'un corps noir ($W.m^{-3}$)
-    \item[\boldmath{$E_\lambda$}] Émittance spectrique du Soleil ($W.m^{-3}$)
     \item[\boldmath{$\epsilon$}:] Émissivité ($sans$ $unit\acute e$)
     \item[\boldmath{$\tau_{CO_2}$}:] Coefficient de transmission du $CO_2$ ($sans$ $unit\acute e$)
 	\item[\boldmath{$k_{abs}$}:]: coefficient d'absorption obtenue avec la base de donnée HITRAN ($m^2.molec^{-1}$)
@@ -331,6 +330,7 @@ enrichissant pour tout le groupe.
     \item[\boldmath{$T_T$}:] Température moyenne de la Terre = $288,15$ $K$
 	\item[\boldmath{$\bar{a_T}$}:] Albédo terrestre moyen = $0,31$
     \item[\boldmath{$R_T$}:] Rayon de la Terre = $6 371$ $km$
+
 \end{description}
 
 %%% Introduction
@@ -641,12 +641,11 @@ Nous pouvons présenter ces schémas, que présente les différents flux qui se 
 
 \begin{center}
     \includegraphics[scale=0.35]{Images/schemafluxformules.png}
-
     Figure 3 : Quantification des flux
 \end{center} \vspace{\baselineskip}
 
-$\sigma T^4$ = $\frac{1}{2} \int_{\lambda}^{} (1-\tau_{CO_2})M^{0}_\lambda (T) \, \mathrm{d}z 
-                + \bar{a_T} \int_{\lambda}^{} \tau_{CO_2}E_\lambda (T) \, \mathrm{d}z$ \vspace{\baselineskip}
+$\sigma T_T^4$ = $\frac{1}{2} \int_{\lambda}^{} (1-\tau_{CO_2})M^{0}_{\lambda,T} \, \mathrm{d}\lambda 
+                + \bar{a_T} \int_{\lambda}^{} \tau_{CO_2}E^{0}_{\lambda,T} \, \mathrm{d}\lambda$ \vspace{\baselineskip}
 
 L’objectif est de quantifier les différentes flèches, afin d’utiliser le bilan thermique et de déterminer la température de la Terre en considérant les effets des gaz de l’atmosphère.
 
