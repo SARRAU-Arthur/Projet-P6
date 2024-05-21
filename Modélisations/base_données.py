@@ -85,8 +85,9 @@ def fonction_mathématique_quantité_matière_altitude():
         T = fonction_mathématique_température_altitude()
         a, b = fonction_mathématiques_coefficients()
         constante = (M * g) / (R * a(z))
+        print(z, a(z))
         k = np.log(P_0) - constante * np.log(T_T)
-        term_1 = P_0 * (1 - a(z) * z / T_T) ** constante # T_T à vérifier, pas si sûr de la constante au dénominateur
+        term_1 = P_0 * (1 - a(z) * z / T_T) ** constante # Constante dénominateur à vérifier
         term_2 = k * T(z)
         return term_1 / term_2
     
@@ -117,8 +118,9 @@ def chargement_données_HITRAN_complet_fonction_z():
     return None
 
 def chargement_données_HITRAN(nom_fichier):
-    """ Chargement données de la base donnée HITRAN en deux tableaux: 
-    taux transmission CO2 (pas en %) et longueur d'onde (en m) """
+    """ Chargement données de la base donnée HITRAN en un tableau à 2 colonnes: 
+    taux transmission CO2 (pas en %) et longueur d'onde (en m). Préciser dans <nom_fichier>
+    si l'on souhaite utiliser les données avec z constant ou en fonction de z """
     data = np.loadtxt(chemin_acces('Bases de données', nom_fichier, 'csv'), delimiter = ';')
     taux_CO2 = []
     nombre_onde = 1E-2 * data[:,0]
@@ -129,5 +131,6 @@ def chargement_données_HITRAN(nom_fichier):
 def chargement_données():
     return chargement_données_HITRAN('CO2 Absorption fonction z HITRAN')
 
-print(quad(fonction_mathématique_quantité_matière_altitude(), 0, h_max, limit = 10 ** 7, full_output = 1))
+print(fonction_mathématique_quantité_matière_altitude()(20))
+# print(quad(fonction_mathématique_quantité_matière_altitude(), 0, h_max, limit = 10 ** 7, full_output = 1))
 # chargement_données_HITRAN_complet_fonction_z()
