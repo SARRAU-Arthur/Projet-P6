@@ -42,24 +42,24 @@ def chargement_données_HITRAN_complet_z_constant():
 def fonction_mathématiques_coefficients():
     
     def coefficient_a(z):
-        a = (-1.4452E2, 2.19E2, 1.300E3, 3.41E2)
+        a = [-6.5E-3, 0, 1E-3, 2.8E-3]
         return np.piecewise(z,
                 [z < z_trop,
+                    (z_trop <= z) & (z < z_strat1),
                     (z_strat1 <= z) & (z < z_strat2),
-                    (z_strat2 <= z) & (z < z_meso),
-                    z_meso <= z],
+                    (z_strat2 <= z) & (z < z_meso),],
                 [a[0],
                     a[1],
                     a[2],
                     a[3]])
     
     def coefficient_b(z):
-        b = (4.173913E4, 0, -2.65E4, -4.6068E4)
+        b = [288.15, 216.5, 196.5, 138.9]
         return np.piecewise(z,
                 [z < z_trop,
+                    (z_trop <= z) & (z < z_strat1),
                     (z_strat1 <= z) & (z < z_strat2),
-                    (z_strat2 <= z) & (z < z_meso),
-                    z_meso <= z],
+                    (z_strat2 <= z) & (z < z_meso),],
                 [b[0],
                     b[1],
                     b[2],
@@ -84,12 +84,10 @@ def fonction_mathématique_quantité_matière_altitude():
         d'un corps noir de température T """
         T = fonction_mathématique_température_altitude()
         a, b = fonction_mathématiques_coefficients()
-        constante = (M * g) / (R * a(z))
-        print(z, a(z))
-        k = np.log(P_0) - constante * np.log(T_T)
-        term_1 = P_0 * (1 - a(z) * z / T_T) ** constante # Constante dénominateur à vérifier
-        term_2 = k * T(z)
-        return term_1 / term_2
+        term_1 = lambda z: P_0 * np.exp((-g * M) / (R * T(z))) if (z_trop <= z) & (z < z_strat1) \
+                              else P_0 * (1 - a(z) * z / b(z)) ** (M * g) / (R * a(z))
+        term_2 = k_B * T(z)
+        return term_1(z) / term_2
     
     return quantité_matière_altitude
 
@@ -131,6 +129,10 @@ def chargement_données_HITRAN(nom_fichier):
 def chargement_données():
     return chargement_données_HITRAN('CO2 Absorption fonction z HITRAN')
 
-print(fonction_mathématique_quantité_matière_altitude()(20))
-# print(quad(fonction_mathématique_quantité_matière_altitude(), 0, h_max, limit = 10 ** 7, full_output = 1))
+x = np.linspace(0, h_max -1 )
+T = fonction_mathématique_température_altitude()
+plt.plot(T(x), x)
+plt.show()
+
+print(quad(fonction_mathématique_quantité_matière_altitude(), 0, z_trop + 1, limit = 10 ** 7, full_output = 1))
 # chargement_données_HITRAN_complet_fonction_z()

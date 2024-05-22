@@ -118,6 +118,7 @@ warnings.filterwarnings('ignore')
 
 """ Chargement données selon le modèle choisi """
 longueur_onde, taux_CO2 = chargement_données()
+spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Transformation vers fonctions mathématiques continues """
 CO2_transmittance = fonction_mathématique_interpolation_transmittance(longueur_onde, taux_CO2)
