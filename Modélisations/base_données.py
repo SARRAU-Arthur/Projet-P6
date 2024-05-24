@@ -84,19 +84,13 @@ def fonction_mathématique_quantité_matière_altitude():
         d'un corps noir de température T """
         T = fonction_mathématique_température_altitude()
         a, b = fonction_mathématiques_coefficients()
-        term_1 = lambda z: P_0 * np.exp((-g * M) / (R * T(z))) if (z_trop <= z) & (z < z_strat1) \
-                              else P_0 * (1 - a(z) * z / b(z)) ** (M * g) / (R * a(z))
+        term_1 = lambda z: np.where((z_trop <= z) & (z < z_strat1),
+                            P_0 * np.exp((-g * M * z) / (R * T(z))),
+                            P_0 * (1 - a(z) * z / b(z)) ** (M * g / (R * a(z))))
         term_2 = k_B * T(z)
         return term_1(z) / term_2
     
     return quantité_matière_altitude
-
-def graphique_quantité_matière_fonction_altitude():
-    x = np.linspace(1, 1E4)
-    y = fonction_mathématique_quantité_matière_altitude()
-    plt.plot(x, y(x))
-    plt.show()
-    return None
 
 def chargement_données_HITRAN_complet_fonction_z():
     """ Chargement données de la base donnée depuis le site HITRAN.org
@@ -108,7 +102,7 @@ def chargement_données_HITRAN_complet_fonction_z():
                                          Diluent = {'air': 1.0},
                                          HITRAN_units = False)
     transmittance = k_abs * quad(fonction_mathématique_quantité_matière_altitude(), 0, h_max, \
-                                 limit = 10 ** 7, full_output = 1)
+                                 limit = 10 ** 7, full_output = 1)[0]
     nom_fichier = chemin_acces('Bases de données', 'CO2 Absorption fonction z HITRAN', 'csv')
     with open(nom_fichier, mode = 'w', newline = '') as fichier_csv:
         for lignes in range(0,len(nombre_onde)):
@@ -129,10 +123,5 @@ def chargement_données_HITRAN(nom_fichier):
 def chargement_données():
     return chargement_données_HITRAN('CO2 Absorption fonction z HITRAN')
 
-x = np.linspace(0, h_max -1 )
-T = fonction_mathématique_température_altitude()
-plt.plot(T(x), x)
-plt.show()
-
-print(quad(fonction_mathématique_quantité_matière_altitude(), 0, z_trop + 1, limit = 10 ** 7, full_output = 1))
-# chargement_données_HITRAN_complet_fonction_z()
+# print(quad(fonction_mathématique_quantité_matière_altitude(), 0, z_trop, limit = 10 ** 7, full_output = 1)[0])
+chargement_données_HITRAN_complet_fonction_z()

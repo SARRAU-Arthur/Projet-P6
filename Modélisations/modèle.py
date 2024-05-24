@@ -62,9 +62,28 @@ def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
 def spectre_luminance_corps_noir (abscisses, fonction):
     """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
     affichage_fonction_continue(abscisses, fonction)
-    plt.title("")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
+    plt.grid(True)
+    plt.show()
+    return None
+
+def profile_température_altitude():
+    x = np.linspace(0, h_max -1 )
+    T = fonction_mathématique_température_altitude()
+    plt.xlabel("Altitude atmosphérique (en m)")
+    plt.ylabel("Température (en K)")
+    plt.plot(x, T(x))
+    plt.grid(True)
+    plt.show()
+    return None
+
+def profile_quantité_matière_CO2_altitude():
+    x = np.linspace(0, h_max -1 )
+    n = fonction_mathématique_quantité_matière_altitude()
+    plt.xlabel("Altitude atmosphérique (en m)")
+    plt.ylabel("Quantité de matière (en mol)")
+    plt.plot(x, n(x))
     plt.grid(True)
     plt.show()
     return None
