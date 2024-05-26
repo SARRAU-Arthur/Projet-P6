@@ -722,84 +722,79 @@ On a donc
 	$n(z)=\frac{P(z)}{kT}= \frac{ P_o e^{-\frac{gM}{RT} z }}{kT}$
  \end{center}
 
-Pour le deuxième cas, il nous faut des profils de température selon l'altitude.
+Pour le deuxième cas, il nous faut des profils de température selon l'altitude. Pour déterminer ces différents profils, on prendra le modèle atmosphère standard dite "ISA" (International Standard Atmosphere)
 Ainsi on a les profils suivant:
 
 De 0 à 10 km 
 \begin{center}
-    $T_o$=288K\\
-    $T_f$=219k\\
-    $T(z)=-144.53z+41739.13$
+    $T(z)=-6.5z+288$
 \end{center}
 
 De 10 à 19 km 
 \begin{center}
-    $T_o$=219K\\
-    $T_f$=219k\\
     $T(z)=219$
 \end{center}
 
 De 19 à 32 km 
 \begin{center}
-    $T_o$=219K\\
-    $T_f$=229k\\
-    $T(z)=1300z-26500$
+    $T(z)=z+196,5$
 \end{center}
 
 De 32 à 47 km 
 \begin{center}
-    $T_o$=229K\\
-    $T_f$=273k\\
-    $T(z)=341z-46068$
+    $T(z)=2,8z+138,5$
 \end{center}
 
 \noindent Pour trouver la pression, on utilise une formule plus générale:
 \begin{center}
-T(z)=$T_o$-az      
+T(z)=az+b      
 \end{center}
-
-\noindent avec a= coefficient directeur, $T_o$ = Température de l'atmosphère initiale et $T_f$ = Température de l'atmosphère finale \vspace{\baselineskip}
 
 On peut à présent calculer la pression en fonction de l'altitude, en utilisant le principe fondamental de la statique des fluides. 
 \begin{center}
-     $\frac{dP}{dz}$ = $\frac{-\rho Mg}{R(T_o-az)}$ 
+     $\frac{dP}{dz}$ = $\frac{-{P} Mg}{R(az+b)}$ 
 \end{center}
 
 \begin{center}
-$\Leftrightarrow \frac{dP}{P}$ = $\frac{dz}{(T_o-az)} \times \frac{-\rho Mg}{R}$
+$\Leftrightarrow \frac{dP}{P}$ = $\frac{dz}{(az+b)} \times \frac{- Mg}{R}$
 \end{center}
 
 \begin{center}
-     $\Rightarrow \ln(P)=\frac{Mg}{Ra} ln(T_o-az)+K$\\
+     $\Rightarrow \ln(P)=\frac{-Mg}{Ra} ln(az+b)+K$\\
 \end{center}
 
 \begin{align*}
-     \Rightarrow P(z) = e^{\frac{Mg}{Ra}ln(T_o-az)} \times e^k =(T_o -az)^{\frac{Mg}{Ra}} \times C
+     \Rightarrow P(z) = e^{\frac{-Mg}{Ra}ln(az+b)} \times e^k =(az+b)^{\frac{-Mg}{Ra}} \times C
 \end{align*}
 
-avec $e^{k}$ = C \vspace{\baselineskip}
+avec $e^{K}$ = C \vspace{\baselineskip}
 
 On détermine C :
 \begin{center}
-$P(0)= P_o = (T_o)^{\frac{Mg}{Ra}} \times C$
+$P(0)= P_o = (b)^{\frac{-Mg}{Ra}} \times C$
 \end{center}
 
 \begin{center}
-$\Rightarrow C= \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
+$\Rightarrow C= \frac{P_o}{b^{\frac{-Mg}{Ra}}}$
 \end{center}
 
 \begin{center}
-$P(z) = (T_o -az)^{\frac{Mg}{Ra}} \times \frac{P_o}{T_o^{\frac{Mg}{Ra}}}$
+$P(z) = (az+b)^{\frac{-Mg}{Ra}} \times \frac{P_o}{b^{\frac{-Mg}{Ra}}}$
 \end{center}
 
 \begin{center}
-$\Leftrightarrow P(z)= P_o (1-\frac{az}{T_o})^{\frac{Mg}{Ra}}$
+$\Leftrightarrow P(z)= P_o (\frac{az+b}{b})^{\frac{-Mg}{Ra}}$
+\end{center}
+
+\begin{center}
+$\Leftrightarrow P(z)= P_o (1+\frac{az}{b})^{\frac{-Mg}{Ra}}$
 \end{center}
 
 On a donc :
 \begin{center}
-   $n(z)=\frac{P(z)}{kT(z)}= \frac{ P_o (1-\frac{a(z)z}{b(z)})^{\frac{Mg}{Ra(z)}}}{kT(z)}$
+   $n(z)=\frac{P(z)}{{k_B}{T(z)}}= \frac{ P_o (1+\frac{a(z)z}{b(z)})^{\frac{-Mg}{Ra(z)}}}{{k_B}{T(z)}}$
 \end{center}
+
 
 On peut ainsi à l'aide du programme Python calculer (1-$\tau_{CO2}$), et ainsi calculer l'intégralité des flèches.
 
