@@ -79,11 +79,11 @@ def profile_température_altitude():
     return None
 
 def profile_quantité_matière_CO2_altitude():
-    x = np.linspace(0, h_max -1 )
+    z = np.linspace(0, h_max - 1)
     n = fonction_mathématique_quantité_matière_altitude()
     plt.xlabel("Altitude atmosphérique (en m)")
     plt.ylabel("Quantité de matière (en mol)")
-    plt.plot(x, n(x))
+    plt.scatter(z, n(z), marker = '+')
     plt.grid(True)
     plt.show()
     return None

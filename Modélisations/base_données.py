@@ -18,7 +18,7 @@ def chargement_données_NIST():
     taux transmission CO2 (en %) et longueur d'onde (en m) """
     data = np.loadtxt(chemin_acces('Bases de données','CO2 Absorption NIST','csv'), delimiter = ';')
     taux_CO2 = []
-    nombre_onde = 1E-2 * data[:-1,0] # Nan dernière ligne, on exclu pour éviter erreurs à l'exécution
+    nombre_onde = 1E-2 * data[:-1,0] # NaN dernière ligne, on exclu pour éviter erreurs à l'exécution
     for i in range(0,np.size(data[:,0]) - 1):
         taux_CO2.append(np.mean(data[i,1:5]))
     return 1 / nombre_onde, taux_CO2
@@ -71,6 +71,8 @@ def fonction_mathématique_température_altitude():
     
     def température_altitude(z):
         a, b = fonction_mathématiques_coefficients()
+        if a(z) == 0:
+            print(z)
         return a(z) * z + b(z)
     
     return température_altitude
@@ -113,6 +115,21 @@ def chargement_données_HITRAN_complet_fonction_z():
             fichier_csv.write(str(nombre_onde[lignes]) + ' ; ' + str(transmittance[lignes]) + '\n')
     return None
 
+def chargement_données_HITRAN_complet_fonction_z_k_abs():
+    """ Chargement données de la base donnée depuis le site HITRAN.org
+    et redistribution dans un fichier csv en deux colonnes:
+    taux transmission CO2 (pas en %) et nombre d'onde (en m) """
+    db_begin('data') # Chargement données depuis site
+    fetch('CO2', 2, 1, 500, 2100) # Accès aux données: (numéro molécule CO2 = 2) entre 500 et 2100 cm^-1
+    nombre_onde, k_abs = absorptionCoefficient_Lorentz(SourceTables = 'CO2', 
+                                         Diluent = {'air': 1.0},
+                                         HITRAN_units = False)
+    nom_fichier = chemin_acces('Bases de données', 'CO2 Absorption fonction z HITRAN k_abs', 'csv')
+    with open(nom_fichier, mode = 'w', newline = '') as fichier_csv:
+        for lignes in range(0, len(nombre_onde)):
+            fichier_csv.write(str(nombre_onde[lignes]) + ' ; ' + str(k_abs[lignes]) + '\n')
+    return None
+
 def chargement_données_HITRAN(nom_fichier):
     """ Chargement données de la base donnée HITRAN en un tableau à 2 colonnes:
     taux transmission CO2 (pas en %) et longueur d'onde (en m). Préciser dans <nom_fichier>
@@ -125,18 +142,10 @@ def chargement_données_HITRAN(nom_fichier):
     return 1 / nombre_onde, taux_CO2
 
 def chargement_données():
+    # return chargement_données_HITRAN('CO2 Absorption fonction z HITRAN k_abs')
+    # return chargement_données_HITRAN('CO2 Absorption NIST')
     return chargement_données_HITRAN('CO2 Absorption fonction z HITRAN')
+    # return chargement_données_HITRAN('CO2 Absorption z constant HITRAN')
 
-def profile_quantité_matière_CO2_altitude():
-    z = np.linspace(0, h_max - 1)
-    n = fonction_mathématique_quantité_matière_altitude()
-    plt.xlabel("Altitude atmosphérique (en m)")
-    plt.ylabel("Quantité de matière (en mol)")
-    plt.scatter(z, n(z), marker = '+')
-    plt.grid(True)
-    plt.show()
-    return None
-
-profile_quantité_matière_CO2_altitude()
-# print(quad(fonction_mathématique_quantité_matière_altitude(), 0, h_max, limit = 10 ** 7, full_output = 1)[0]) 
-chargement_données_HITRAN_complet_fonction_z()
+print(quad(fonction_mathématique_quantité_matière_altitude(), 0, h_max, limit = 10 ** 7, full_output = 1)[0]) 
+# chargement_données_HITRAN_complet_fonction_z()

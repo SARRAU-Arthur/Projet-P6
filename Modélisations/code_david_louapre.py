@@ -2,6 +2,10 @@
 
 import matplotlib.pyplot as plt # Bibliothèque graphique pour tracer des courbes fonctionelles
 import numpy as np # Bibliothèque maths avec l'ensemble des opérateurs, outils statistiques et fonctions de référence
+from scipy.interpolate import interp1d
+
+from base_données import chargement_données
+from modèle import évaluer_fonction_interpolation
 
 # Constantes
 
@@ -16,8 +20,8 @@ T_0 = 2.8815E2 # Température 15 degrés Celcius (K)
 
 # Loi de Plank, calcul de la luminance énergétique spectrale à une longueur d'onde et une température données (W.s.m^−2.sr^−1)
 def planck_function(lambda_wavelength, T):
-    term1 = (2 * h * c ** 2) / (lambda_wavelength ** 5) # Terme de gauche de la relation
-    term2 = np.exp((h * c) / (lambda_wavelength * kB * T)) - 1 # Terme de droite de la relation
+    term1 = (2 * h * c**2) / lambda_wavelength**5
+    term2 = np.exp((h * c) / (lambda_wavelength * kB * T)) - 1
     return term1 / term2
 
 # Formule du modèle de nivellement barométrique, calcul de la pression à une altitude donnée (T et M constants)
@@ -100,6 +104,22 @@ def cross_section_CO2(wavelength):
     sigma = 10 ** exponent
     return sigma
 
+def fonction_mathématique_interpolation (longueur_onde, k_abs):
+    """ Retourne l'absorbance et la transmittance du CO2 en fonction de 
+    la longueur d'onde (en m) sous forme d'un objet de classe <function> 
+    qui est mathématiquement continue """
+    
+    def valeur_interpolation (longueur_onde, k_abs):
+        """ Retourne la transmittance du CO2 à une longueur d'onde donnée, 
+        sous la forme d'un objet de classe <interp1D> """
+        return interp1d(longueur_onde, k_abs, kind = 'linear', 
+                        bounds_error = False, fill_value = (100, 100))
+    
+    k_abs_fonction = lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, k_abs), x) \
+                    if min(longueur_onde) <= x <= max(longueur_onde) \
+                    else 1
+    return k_abs_fonction
+
 # RADIATIVE TRANSFER SIMULATION, All wavelengths are treated in parallel using vectorization
 def simulate_radiative_transfer(CO2_fraction, z_max = 8E4, delta_z = 1E1, lambda_min = 1E-7, lambda_max = 1E-4, delta_lambda = 1E-8):
     z_range = np.arange(0, z_max, delta_z) # Tableau d'altitudes de 0 à z_max avec un écart constant de delta_z entre deux altitude successives
@@ -111,7 +131,10 @@ def simulate_radiative_transfer(CO2_fraction, z_max = 8E4, delta_z = 1E1, lambda
     flux_in = earth_flux
     for i, z in enumerate(z_range): # Instruction "enumerate" permet de boucler sur i et z simultanément, et évite un double boucle for imbriquée
         n_CO2 = air_number_density(z) * CO2_fraction # Densité CO2 en fonction de l'altitude dans l'atmosphère
-        kappa = cross_section_CO2(lambda_range) * n_CO2 # Calcul du coefficient d'absorption du C02 en fonction de sa section efficcace dépendant de la longueur d'onde
+        # kappa = cross_section_CO2(lambda_range) * n_CO2 # Calcul du coefficient d'absorption du C02 en fonction de sa section efficcace dépendant de la longueur d'onde
+        fonction_k_abs = fonction_mathématique_interpolation(chargement_données())
+        print('OK')
+        kappa = fonction_k_abs(lambda_range) * n_CO2
         # Compute fluxes within the layer
         optical_thickness[i,:] = kappa * delta_z
         absorbed_flux = np.minimum(kappa * delta_z * flux_in , flux_in)
