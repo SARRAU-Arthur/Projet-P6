@@ -19,7 +19,7 @@ def fonction_mathématique_corps_noir():
     """ Renvoie la fonction de luminance d'un corps noir de température T 
         et en fonction de la longueur d'onde lambda_ """
     
-    def valeur_luminance_corps_noir (lambda_, T = T):
+    def valeur_luminance_corps_noir (lambda_, T = T_S):
         """ Renvoie l'image d'une valeur lamba_ donnée à travers la fonction de luminance 
         d'un corps noir de température T """
         term_1 = np.pi * (C_1 * (10 ** 6) ** 4) / lambda_ ** 5
@@ -59,40 +59,40 @@ def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     plt.show()
     return None
 
-def spectre_luminance_corps_noir (abscisses, fonction):
+def spectre_luminance_corps_noir ():
     """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
-    affichage_fonction_continue(abscisses, fonction)
+    x = np.linspace(0, 2500 * 10E9)
+    y = fonction_mathématique_corps_noir()
+    plt.plot(x, y(x))
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
     plt.grid(True)
     plt.show()
     return None
 
-def profile_température_altitude():
-    x = np.linspace(0, h_max -1 )
-    T = fonction_mathématique_température_altitude()
+def profile_fonction_altitude():
+    z = np.linspace(0, z_meso - 1)
+    f = fonction_mathématique_température_altitude()
     plt.xlabel("Altitude atmosphérique (en m)")
-    plt.ylabel("Température (en K)")
-    plt.plot(x, T(x))
+    plt.scatter(z, f(z), marker = '+')
     plt.grid(True)
     plt.show()
     return None
 
-def profile_quantité_matière_CO2_altitude():
-    z = np.linspace(0, h_max - 1)
-    n = fonction_mathématique_quantité_matière_altitude()
-    plt.xlabel("Altitude atmosphérique (en m)")
-    plt.ylabel("Quantité de matière (en mol)")
-    plt.scatter(z, n(z), marker = '+')
-    plt.grid(True)
-    plt.show()
-    return None
-
-def affichage_fonction_continue (tableau_absicces, fonction):
-    """ Affiche le graphique d'une fonction parfaitement continue """
-    x = np.logspace(min(tableau_absicces), max(tableau_absicces))
-    plt.plot(x, fonction(x))
-    return None
+def fonction_mathématique_pression_altitude():
+  
+    def pression_altitude(z):
+        a, b, P_base = fonction_mathématiques_coefficients()
+        liste_z = np.array([0, z_trop, z_strat1, z_strat2])
+        indice =  np.argmin([np.abs(z - élément_liste) for élément_liste in liste_z])
+        z_base = liste_z[indice - 1] if z < liste_z[indice] and indice > 0 else liste_z[indice]
+        return np.piecewise(z, 
+                            [(z_trop <= z) & (z < z_strat1),
+                            (z_trop > z) & (z >= z_strat1)],
+                            [P_base(z) * np.exp((-M * g * (z_trop - z)) / (R * T_T)),
+                            P_base(z) * (a(z) * z / (z_base * a(z) + b(z))) ** (-M * g / (R * a(z)))])
+        
+    return pression_altitude
         
 def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
     """ Retourne l'absorbance et la transmittance du CO2 en fonction de 
@@ -106,7 +106,7 @@ def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
                         bounds_error = False, fill_value = (100, 100))
     
     transmittance = lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
-                    if min(longueur_onde) <= x <= max(longueur_onde) \
+                    if (min(longueur_onde) <= x) and (x <= max(longueur_onde)) \
                     else 1
     absorbance = fonction_transmittance_vers_absorbance(transmittance)
     return transmittance, absorbance
@@ -137,7 +137,6 @@ warnings.filterwarnings('ignore')
 
 """ Chargement données selon le modèle choisi """
 longueur_onde, taux_CO2 = chargement_données()
-spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Transformation vers fonctions mathématiques continues """
 CO2_transmittance = fonction_mathématique_interpolation_transmittance(longueur_onde, taux_CO2)
@@ -147,7 +146,7 @@ CO2_absorbance = fonction_mathématique_interpolation_absorbance(longueur_onde, 
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage spectre luminance spectrale corps noir """
-# spectre_luminance_corps_noir(longueur_onde, fonction_mathématique_corps_noir())
+spectre_luminance_corps_noir()
 
 """ Calculs différents flux par système sous hypothèse de corps noirs """
 # Système Terre
@@ -158,6 +157,9 @@ luminance_corps_noir_Terre = fonction_mathématique_corps_noir()
 flux_émis_corps_noir_Terre = (C_S * T ** 4, 0.00)
 affichage_physique('théorique', flux_émis_corps_noir_Terre)
 
+plt.plot(longueur_onde, CO2_absorbance(longueur_onde))
+plt.plot(longueur_onde, CO2_transmittance(longueur_onde))
+plt.show()
 intégrande_absorbance_Terre = produit_de_fonctions(CO2_absorbance, luminance_corps_noir_Terre)
 M_0_absorbance_Terre = intégrale(intégrande_absorbance_Terre, 0, np.inf)
 affichage_physique('absorbance', M_0_absorbance_Terre) # Flèche 3
@@ -168,7 +170,7 @@ affichage_physique('transmittance', M_0_transmittance_Terre) # Flèche 4
 
 # Système Soleil
 T = T_S
-print(f'> Système Soleil: T = {T} K \n')
+print(f'\n > Système Soleil: T = {T} K \n')
 luminance_corps_noir_Soleil = fonction_mathématique_corps_noir()
 
 flux_émis_corps_noir_Soleil = (C_S * T ** 4, 0.00)
@@ -183,7 +185,7 @@ M_0_transmittance_Soleil = intégrale(intégrande_transmittance_Soleil, 0, np.in
 affichage_physique('transmittance', M_0_transmittance_Soleil) # Flèche 2
 
 # Système Atmosphère
-print(f'> Système Atmosphère: T = {T} K \n')
+print(f'\n > Système Atmosphère: T = {T} K \n')
 
 M_0_atmosphère = M_0_absorbance_Terre[0] / 2
 affichage_physique('transmittance & absorbance', M_0_atmosphère) # Flèches 5, 6
