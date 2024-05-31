@@ -713,12 +713,27 @@ donc
 \end{center}
 
 \begin{center}
-    $\Rightarrow P(z)= P_o e^{-\frac{gM}{RT} z }$
+    $\Rightarrow P(z)= C\times e^{-\frac{gM}{RT} z }$
 \end{center}
+
+On détermine C grâce aux conditions initiales de chaque modèle. Nous pouvons connaitre la pression de la 1er altitude de modèle $P(z_i)$ grâce au modèle précédent
+
+\begin{center}
+     $P(z_i)  = C\times e^{-\frac{gM}{RT} z_i }$
+\end{center}
+
+\begin{center}
+     $C = \frac{P(z_i)}{e^{-\frac{gM}{RT} z_i}}$
+\end{center}
+
+\begin{center}
+     ${P(z)} = {P(z_i)}{e^{-\frac{gM}{RT} (z_i-z)}}$
+\end{center}
+
 
 On a donc 
 \begin{center}
-	$n(z)=\frac{P(z)}{kT}= \frac{ P_o e^{-\frac{gM}{RT} z }}{kT}$
+	$n(z)=\frac{P(z)}{{k_B}T}= \frac{ P_(z_i) e^{-\frac{gM}{RT} (z_i-z) }}{{k_B}T}$
  \end{center}
 
 Pour le deuxième cas, il nous faut des profils de température selon l'altitude. Pour déterminer ces différents profils, on prendra le modèle atmosphère standard dite "ISA" (International Standard Atmosphere)
@@ -768,32 +783,27 @@ $\Leftrightarrow \frac{dP}{P}$ = $\frac{dz}{(az+b)} \times \frac{- Mg}{R}$
 
 avec $e^{K}$ = C \vspace{\baselineskip}
 
-On détermine C :
+On détermine C grâce aux conditions initiales de chaque modèle. Nous pouvons connaitre la pression de la 1er altitude de modèle $P(z_i)$ grâce au modèle précédent (ou pour le 1er modèle, en sachant que à z = 0km on a ${P_o}$ :
 \begin{center}
-$P(0)= P_o = (b)^{\frac{-Mg}{Ra}} \times C$
+$P(z_i) = (a{z_i}+b)^{\frac{-Mg}{Ra}} \times C$
 \end{center}
 
 \begin{center}
-$\Rightarrow C= \frac{P_o}{b^{\frac{-Mg}{Ra}}}$
+$\Rightarrow C= \frac{P(z_i)}{((a{z_i}+b))^{\frac{-Mg}{Ra}}}$
 \end{center}
 
 \begin{center}
-$P(z) = (az+b)^{\frac{-Mg}{Ra}} \times \frac{P_o}{b^{\frac{-Mg}{Ra}}}$
+$P(z) = (az+b)^{\frac{-Mg}{Ra}} \times \frac{P(z_i)}{((a{z_i}+b))^{\frac{-Mg}{Ra}}}$
 \end{center}
 
 \begin{center}
-$\Leftrightarrow P(z)= P_o (\frac{az+b}{b})^{\frac{-Mg}{Ra}}$
-\end{center}
-
-\begin{center}
-$\Leftrightarrow P(z)= P_o (1+\frac{az}{b})^{\frac{-Mg}{Ra}}$
+$\Leftrightarrow P(z)={P(z_i)} (\frac{az+b}{(a{z_i}+b)})^{\frac{-Mg}{Ra}}$
 \end{center}
 
 On a donc :
 \begin{center}
-   $n(z)=\frac{P(z)}{{k_B}{T(z)}}= \frac{ P_o (1+\frac{a(z)z}{b(z)})^{\frac{-Mg}{Ra(z)}}}{{k_B}{T(z)}}$
+   $n(z)=\frac{P(z)}{{k_B}{T(z)}}= \frac{{P(z_i)}(\frac{a(z)z+b(z)}{(a(z){z_i}+b(z))})^{\frac{-Mg}{Ra(z)}}}{{k_B}{T(z)}}$
 \end{center}
-
 
 On peut ainsi à l'aide du programme Python calculer (1-$\tau_{CO2}$), et ainsi calculer l'intégralité des flèches.
 
