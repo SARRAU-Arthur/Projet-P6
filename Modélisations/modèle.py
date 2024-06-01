@@ -15,18 +15,32 @@ import warnings
 
 # Signatures et implémentation de fonctions
     
-def fonction_mathématique_corps_noir():
+def fonction_mathématique_corps_noir(T):
     """ Renvoie la fonction de luminance d'un corps noir de température T 
         et en fonction de la longueur d'onde lambda_ """
     
-    def valeur_luminance_corps_noir (lambda_, T = T_S):
+    def valeur_luminance_corps_noir (lambda_):
         """ Renvoie l'image d'une valeur lamba_ donnée à travers la fonction de luminance 
         d'un corps noir de température T """
-        term_1 = np.pi * (C_1 * (10 ** 6) ** 4) / lambda_ ** 5
-        term_2 = np.exp(C_2 * (10 ** 6) / (T * lambda_)) - 1
+        term_1 = C_1 / lambda_ ** 5
+        term_2 = np.exp(C_2 / (T * lambda_)) - 1
+        print(term_1, term_2)
         return term_1 / term_2
     
     return valeur_luminance_corps_noir
+
+def spectre_luminance_corps_noir ():
+    """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
+    x = np.linspace(0, 10)
+    y = fonction_mathématique_corps_noir(T_S)
+    plt.plot(x, y(x))
+    y = fonction_mathématique_corps_noir(T_T)
+    plt.plot(x, y(x))
+    plt.xlabel("Longueur d'onde (en m)")
+    plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
+    plt.grid(True)
+    plt.show()
+    return None
 
 def produit_de_fonctions(fonction1, fonction2):
     """ Réalise un produit de fonctions et retourne un objet de type <function> """
@@ -55,17 +69,6 @@ def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     plt.title("Taux de transmission du CO2 en fonction de la longueur d'onde")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel("Taux de transmission du CO2 (en %)")
-    plt.grid(True)
-    plt.show()
-    return None
-
-def spectre_luminance_corps_noir ():
-    """ Représentation graphique luminance corps noir en fonction de la longuer d'onde """
-    x = np.linspace(0, 2500 * 10E9)
-    y = fonction_mathématique_corps_noir()
-    plt.plot(x, y(x))
-    plt.xlabel("Longueur d'onde (en m)")
-    plt.ylabel('Luminance spectrale (en kg.m^-1.s^-3)')
     plt.grid(True)
     plt.show()
     return None
@@ -152,7 +155,7 @@ spectre_luminance_corps_noir()
 # Système Terre
 T = T_T
 print(f'> Système Terre: T = {T} K \n')
-luminance_corps_noir_Terre = fonction_mathématique_corps_noir()
+luminance_corps_noir_Terre = fonction_mathématique_corps_noir(T)
 
 flux_émis_corps_noir_Terre = (C_S * T ** 4, 0.00)
 affichage_physique('théorique', flux_émis_corps_noir_Terre)
@@ -171,7 +174,7 @@ affichage_physique('transmittance', M_0_transmittance_Terre) # Flèche 4
 # Système Soleil
 T = T_S
 print(f'\n > Système Soleil: T = {T} K \n')
-luminance_corps_noir_Soleil = fonction_mathématique_corps_noir()
+luminance_corps_noir_Soleil = fonction_mathématique_corps_noir(T)
 
 flux_émis_corps_noir_Soleil = (C_S * T ** 4, 0.00)
 affichage_physique('théorique', flux_émis_corps_noir_Soleil)
