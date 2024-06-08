@@ -65,7 +65,7 @@ def intégrale(fonction, borne_inf, borne_sup):
 
 def spectre_transmission_CO2 (données_abscisses, données_ordonnées):
     """ Représentation graphique spectre transmission CO2 en fonction de la longueur d'onde """
-    plt.plot(données_abscisses, données_ordonnées, linewidth = 0.7)
+    plt.plot(données_abscisses, données_ordonnées * 100, linewidth = 0.7)
     plt.title("Taux de transmission du CO2 en fonction de la longueur d'onde")
     plt.xlabel("Longueur d'onde (en m)")
     plt.ylabel("Taux de transmission du CO2 (en %)")
@@ -107,11 +107,11 @@ def fonction_mathématique_interpolation (longueur_onde, taux_CO2):
         """ Retourne la transmittance du CO2 à une longueur d'onde donnée, 
         sous la forme d'un objet de classe <interp1D> """
         return interp1d(longueur_onde, taux_CO2, kind = 'linear', 
-                        bounds_error = False, fill_value = (100, 100))
+                        bounds_error = False, fill_value = (1, 1))
     
     transmittance = lambda x: évaluer_fonction_interpolation(valeur_interpolation(longueur_onde, taux_CO2), x) \
                     if (min(longueur_onde) <= x) and (x <= max(longueur_onde)) \
-                    else 100
+                    else 1
     absorbance = fonction_transmittance_vers_absorbance(transmittance)
     return transmittance, absorbance
 
@@ -141,18 +141,23 @@ warnings.filterwarnings('ignore')
 
 """ Chargement données selon le modèle choisi """
 longueur_onde, taux_CO2 = chargement_données()
+print(longueur_onde, taux_CO2)
+
+spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Transformation vers fonctions mathématiques continues """
+
 CO2_transmittance = fonction_mathématique_interpolation_transmittance(longueur_onde, taux_CO2)
 CO2_absorbance = fonction_mathématique_interpolation_absorbance(longueur_onde, taux_CO2)
 
-profile_fonction_altitude()
+exit()
+
+# profile_fonction_altitude()
 
 """ Affichage spectre tranmission CO2 """
 # spectre_transmission_CO2(longueur_onde, taux_CO2)
 
 """ Affichage spectres luminance spectrale corps noir """
-
 # intervalle = np.linspace(1E-7, 100E-6, 10000)
 # spectre_luminance_corps_noir(intervalle, T_S, 'Soleil')
 # intervalle = np.linspace(1E-6, 1000E-6, 10000)
@@ -161,7 +166,7 @@ profile_fonction_altitude()
 """ Calculs différents flux par système sous hypothèse de corps noirs """
 # Système Soleil
 T = T_S
-print(f'\n > Système Soleil: T = {T} K \n')
+print(f'> Système Soleil: T = {T} K \n')
 luminance_corps_noir_Soleil = fonction_mathématique_corps_noir(T)
 
 flux_émis_corps_noir_Soleil = (C_S * T ** 4, 0.00)
@@ -195,7 +200,7 @@ M_0_transmittance_Terre = intégrale(intégrande_transmittance_Terre, 0, np.inf)
 affichage_physique('transmittance', M_0_transmittance_Terre) # Flèche 4
 
 # Système Atmosphère
-print(f'\n > Système Atmosphère: T = {T} K \n')
+print(f'\n> Système Atmosphère: T = {T} K \n')
 
 M_0_atmosphère = M_0_absorbance_Terre[0] / 2
 affichage_physique('transmittance & absorbance', M_0_atmosphère) # Flèches 5, 6
