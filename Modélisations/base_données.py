@@ -3,6 +3,7 @@ from constantes import *
 from scipy.integrate import quad
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 def chemin_acces(langue, lettre, extension):
     """ Raccourci pour aller chercher le fichier au format choisi 
@@ -12,7 +13,7 @@ def chemin_acces(langue, lettre, extension):
 def chargement_données_NIST():
     """ Chargement données de la base donnée NIST en deux tableaux: 
     taux transmission CO2 (pas en %) et longueur d'onde (en m) """
-    data = np.loadtxt(chemin_acces('Bases de données/NIST','CO2 Absorption NIST','csv'), delimiter = ';')
+    data = np.loadtxt(chemin_acces('Bases de données/NIST','CO2 Absorption','csv'), delimiter = ';')
     taux_CO2 = []
     longueur_onde = 1E-2 * 1 / data[:-1,0] # NaN dernière ligne, on exclu pour éviter erreurs à l'exécution
     for i in range(0,np.size(data[:,0]) - 1):
@@ -26,10 +27,12 @@ def chargement_données_HITRAN_complet_z_constant():
     db_begin('../Bases de données/HITRAN z constant') # Chargement données depuis site
     # fetch('CO2', 2, 1, 0.757, 19908.186) # Accès aux données molécule CO2 entre 5.0231e-7 m et 1.321e-2 m
     fetch('CO2', 2, 1, 500, 2500)
-    nombre_onde, coef = absorptionCoefficient_Lorentz(SourceTables = 'CO2', Diluent = {'air': 1.0}) 
-    nombre_onde, transmittance = transmittanceSpectrum(nombre_onde, coef)
+    nombre_onde, k_abs = absorptionCoefficient_Lorentz(SourceTables = 'CO2', 
+                                                      Diluent = {'air': 1.0}, 
+                                                      HITRAN_units = False) 
+    nombre_onde, transmittance = transmittanceSpectrum(nombre_onde, k_abs)
     longueur_onde = 1 / nombre_onde * 1E-2
-    nom_fichier = chemin_acces('Bases de données/HITRAN z constant', 'CO2 Absorption z constant HITRAN', 'csv')
+    nom_fichier = chemin_acces('Bases de données/HITRAN z constant', 'CO2 Absorption', 'csv')
     with open(nom_fichier, mode = 'w', newline = '') as fichier_csv:
         for lignes in range(0, len(longueur_onde)):
             fichier_csv.write(str(longueur_onde[lignes]) + ' ; ' + str(transmittance[lignes]) + '\n')
@@ -119,14 +122,15 @@ def chargement_données_HITRAN_complet_fonction_z():
     """ Chargement données de la base donnée depuis le site HITRAN.org
     et redistribution dans un fichier csv en deux colonnes:
     taux transmission CO2 (pas en %) et nombre d'onde (en m) """
-    db_begin('../Bases de données/HITRAN fonction z') # Chargement données depuis site
+    db_begin('../Bases de données/HITRAN fonction z')
     fetch('CO2', 2, 1, 500, 2500)
-    nombre_onde, k_abs = absorptionCoefficient_Lorentz(SourceTables = 'CO2', Diluent = {'air': 1.0})
+    nombre_onde, k_abs = absorptionCoefficient_Lorentz(SourceTables = 'CO2', 
+                                                       Diluent = {'air': 1.0})
     intégrale_densité_moléculaire = quad(fonction_mathématique_quantité_matière_altitude(), 0, z_meso, \
                                     limit = 10 ** 7, full_output = 1)[0]
-    transmittance = 1 - (k_abs * 10E-4 * CO2_fraction) * intégrale_densité_moléculaire
+    transmittance = 1 - (k_abs * 1E-4 * CO2_fraction) * intégrale_densité_moléculaire
     longueur_onde = 1 / nombre_onde * 1E-2
-    nom_fichier = chemin_acces('Bases de données/HITRAN fonction z', 'CO2 Absorption fonction z HITRAN', 'csv')
+    nom_fichier = chemin_acces('Bases de données/HITRAN fonction z', 'CO2 Absorption', 'csv')
     with open(nom_fichier, mode = 'w', newline = '') as fichier_csv:
         for lignes in range(0, len(longueur_onde)):
             fichier_csv.write(str(longueur_onde[lignes]) + ' ; ' + str(transmittance[lignes]) + '\n')
@@ -141,7 +145,13 @@ def chargement_données_HITRAN(nom_fichier):
     return longueur_onde, taux_CO2
 
 def chargement_données():
-    return chargement_données_HITRAN('HITRAN fonction z/CO2 Absorption fonction z HITRAN')
+    # return chargement_données_HITRAN('HITRAN fonction z/CO2 Absorption')
+    return chargement_données_HITRAN('HITRAN z constant/CO2 Absorption')
 
 # chargement_données_HITRAN_complet_z_constant()
 # chargement_données_HITRAN_complet_fonction_z()
+
+# longueur_onde, taux_CO2 = chargement_données_HITRAN('HITRAN fonction z/CO2 Absorption')
+# print(min(longueur_onde), max(longueur_onde))
+# plt.plot(longueur_onde, taux_CO2, linewidth = 0.75, c = 'b')
+# plt.show()
