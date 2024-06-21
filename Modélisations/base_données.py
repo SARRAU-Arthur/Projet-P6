@@ -21,11 +21,11 @@ def chargement_données_NIST():
     return longueur_onde, taux_CO2
 
 def chargement_données_HITRAN_complet_z_constant():
-    """ Chargement données de la base donnée depuis le site HITRAN.org
-    et redistribution dans un fichier csv en deux colonnes:
-    taux transmission CO2 (pas en %) et nombre d'onde (en m) """
-    db_begin('../Bases de données/HITRAN z constant') # Chargement données depuis site
-    # fetch('CO2', 2, 1, 0.757, 19908.186) # Accès aux données molécule CO2 entre 5.0231e-7 m et 1.321e-2 m
+    """ Chargement données de la base donnée et redistribution 
+    dans un fichier csv en deux colonnes: taux transmission CO2 
+    (pas en %) et longueur d'onde (en m) """
+    db_begin('../Bases de données/HITRAN z constant')
+    # fetch('CO2', 2, 1, 0.757, 19908.186)
     fetch('CO2', 2, 1, 500, 2500)
     nombre_onde, k_abs = absorptionCoefficient_Lorentz(SourceTables = 'CO2', 
                                                       Diluent = {'air': 1.0}, 
@@ -78,15 +78,6 @@ def fonction_mathématiques_coefficients():
             
     return coefficient_a, coefficient_b, coefficient_P_0
 
-def fonction_mathématique_température_altitude():
-    
-    def température_altitude(z):
-        a, b, _ = fonction_mathématiques_coefficients()
-        z_base = fonction_mathématique_altitude_base()
-        return a(z) * (z - z_base(z)) + b(z)
-    
-    return température_altitude
-
 def fonction_mathématique_altitude_base():
     
     def altitude_base(z):
@@ -96,6 +87,15 @@ def fonction_mathématique_altitude_base():
         return z_base
     
     return altitude_base
+
+def fonction_mathématique_température_altitude():
+    
+    def température_altitude(z):
+        a, b, _ = fonction_mathématiques_coefficients()
+        z_base = fonction_mathématique_altitude_base()
+        return a(z) * (z - z_base(z)) + b(z)
+    
+    return température_altitude
 
 def fonction_mathématique_pression_altitude():
   
@@ -109,14 +109,14 @@ def fonction_mathématique_pression_altitude():
     
     return pression_altitude
 
-def fonction_mathématique_quantité_matière_altitude():
+def densité_particulaire_volumique_altitude():
 
-    def quantité_matière_altitude(z):
+    def densité_particulaire_volumique_altitude(z):
         T = fonction_mathématique_température_altitude()  
         P = fonction_mathématique_pression_altitude()
         return P(z) / (k_B * T(z))
     
-    return quantité_matière_altitude
+    return densité_particulaire_volumique_altitude
 
 def chargement_données_HITRAN_complet_fonction_z():
     """ Chargement données de la base donnée depuis le site HITRAN.org
@@ -126,9 +126,10 @@ def chargement_données_HITRAN_complet_fonction_z():
     fetch('CO2', 2, 1, 500, 2500)
     nombre_onde, k_abs = absorptionCoefficient_Lorentz(SourceTables = 'CO2', 
                                                        Diluent = {'air': 1.0})
-    intégrale_densité_moléculaire = quad(fonction_mathématique_quantité_matière_altitude(), 0, z_meso, \
+    intégrale_densité_particulaire_volumique_altitude = \
+                                    quad(densité_particulaire_volumique_altitude(), 0, z_meso, \
                                     limit = 10 ** 7, full_output = 1)[0]
-    transmittance = 1 - (k_abs * 1E-4 * CO2_fraction) * intégrale_densité_moléculaire
+    transmittance = 1 - (k_abs * 1E-4) * intégrale_densité_particulaire_volumique_altitude
     longueur_onde = 1 / nombre_onde * 1E-2
     nom_fichier = chemin_acces('Bases de données/HITRAN fonction z', 'CO2 Absorption', 'csv')
     with open(nom_fichier, mode = 'w', newline = '') as fichier_csv:
@@ -147,11 +148,14 @@ def chargement_données_HITRAN(nom_fichier):
 def chargement_données():
     # return chargement_données_HITRAN('HITRAN fonction z/CO2 Absorption')
     return chargement_données_HITRAN('HITRAN z constant/CO2 Absorption')
-
-# chargement_données_HITRAN_complet_z_constant()
+    
+# # chargement_données_HITRAN_complet_z_constant()
 # chargement_données_HITRAN_complet_fonction_z()
 
-# longueur_onde, taux_CO2 = chargement_données_HITRAN('HITRAN fonction z/CO2 Absorption')
-# print(min(longueur_onde), max(longueur_onde))
-# plt.plot(longueur_onde, taux_CO2, linewidth = 0.75, c = 'b')
+# longueur_onde, k_abs = chargement_données()
+# plt.scatter(longueur_onde ,k_abs)
 # plt.show()
+
+# intégrale_densité_moléculaire = quad(fonction_mathématique_quantité_matière_altitude(), 0, z_meso, \
+#                                     limit = 10 ** 7, full_output = 1)[0]
+# print(intégrale_densité_moléculaire)
